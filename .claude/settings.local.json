@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"c:/Users/Naim/OneDrive - TimeTec Cloud Sdn Bhd/Documents/PM/SentriTec\" -type f 2>/dev/null | head -50; echo \"---\"; cat \"c:/Users/Naim/OneDrive - TimeTec Cloud Sdn Bhd/Documents/PM/SentriTec/web-html/index.html\")",
+      "Read(//c/Users/Naim/OneDrive - TimeTec Cloud Sdn Bhd/Documents/PM/SentriTec/**)",
+      "Bash(mkdir -p assets/products assets/img)",
+      "Bash(cp \"../product/SentriTec.svg\" \"assets/sentritec-logo.svg\")",
+      "Bash(cp \"../SVG/sentritec-icon.svg\" \"assets/sentritec-icon.svg\")",
+      "Bash(cp \"../product/SentriTec.svg\" \"assets/sentritec-icon.svg\")",
+      "Bash(cp \"../product/access-core.png\" \"assets/products/access-core.png\")",
+      "Bash(node -v)",
+      "Bash(npx -v)",
+      "Bash(ls \"C:/Program Files/Google/Chrome/Application/chrome.exe\")",
+      "Bash(ls \"C:/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe\")",
+      "Bash(node _shot.mjs)",
+      "Bash(echo \"exit $?\")",
+      "Bash(ls -la shot-full.png)",
+      "Bash(node _shot.mjs \"#products\" shot-scene.png)",
+      "Bash(node _shot.mjs \"#products\" shot-scene-active.png \"#access-core-pro\")",
+      "Bash(node _shot.mjs \"#products\" shot-scene-active.png \"#face-core\")"
+    ]
+  }
+}
