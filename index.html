@@ -36,80 +36,63 @@
     </div>
     <span class="hero-v-scrim"></span>
     <div class="wrap hero-v-inner">
-      <h1 class="hero-v-title">Access Control System, Reimagined.</h1>
+      <div class="hero-v-head">
+        <h1 class="hero-v-title">Modern access control to secure your space.</h1>
+        <p class="hero-v-sub">Meet SentriTec — a modern cloud access control system that is easy to use and deploy. Driven by intelligent, independent readers and secure mobile unlocking, it's the easiest way to secure your buildings without the headache of legacy hardware or on-premise servers.</p>
+      </div>
       <div class="hero-v-cta">
-        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="contact.html" class="btn btn-primary">Get Started
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ============== WHY SENTRITEC (tabs) ============== -->
+  <!-- ============== WHY SENTRITEC (auto-rotating tabs) ============== -->
   <section class="section" id="why-sentritec">
     <div class="wrap">
-      <div class="section-head center reveal">
-        <h2>Why SentriTec</h2>
+      <div class="why3-head reveal">
+        <h2>Say goodbye to the server closet.</h2>
+        <p class="lead">Traditional access control keeps security teams trapped maintaining old-school hardware. SentriTec moves your security infrastructure into the modern era.</p>
       </div>
 
-      <div class="why2 reveal">
-        <div class="why2-tabs" role="tablist" aria-label="Why SentriTec">
-          <button class="why2-tab active" id="t-install" role="tab" aria-selected="true" aria-controls="p-install" data-tab="install">Easy to Install</button>
-          <button class="why2-tab" id="t-scale" role="tab" aria-selected="false" aria-controls="p-scale" data-tab="scale">Easy to Scale</button>
-          <button class="why2-tab" id="t-integrate" role="tab" aria-selected="false" aria-controls="p-integrate" data-tab="integrate">Access Without Interruption</button>
+      <div class="why3 reveal">
+        <div class="why3-tabs" role="tablist" aria-label="The infrastructure shift">
+          <button class="why3-tab active" type="button" data-i="0" role="tab" aria-selected="true">
+            <span class="why3-line"><span class="why3-fill"></span></span>
+            <span class="why3-tx">
+              <b>Zero Servers</b>
+              <small>No physical servers or legacy control panels to install, patch, or maintain.</small>
+            </span>
+          </button>
+          <button class="why3-tab" type="button" data-i="1" role="tab" aria-selected="false">
+            <span class="why3-line"><span class="why3-fill"></span></span>
+            <span class="why3-tx">
+              <b>Plug-and-Play Setup</b>
+              <small>Devices connect straight to the cloud and receive OTA updates via standard network cables.</small>
+            </span>
+          </button>
+          <button class="why3-tab" type="button" data-i="2" role="tab" aria-selected="false">
+            <span class="why3-line"><span class="why3-fill"></span></span>
+            <span class="why3-tx">
+              <b>Infinite Global Scale</b>
+              <small>Whether you have one door or 100 offices around the world, you can manage them all from a single browser tab.</small>
+            </span>
+          </button>
         </div>
 
-        <div class="why2-panels">
-          <!-- Easy to Install -->
-          <div class="why2-panel active" id="p-install" role="tabpanel" aria-labelledby="t-install" data-panel="install">
-            <div class="why2-text">
-              <h3>Easy to Install</h3>
-              <p>Get sites up and running faster with a simpler installation process built for modern access control.</p>
-              <ul class="why2-points">
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>Plug and play</span></li>
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>Powered by PoE</span></li>
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>Less wiring, less cost, quick deployment</span></li>
-              </ul>
-              <!-- <a href="#contact" class="btn btn-primary why2-cta" hidden>Learn more</a> -->
-            </div>
-            <div class="why2-media">
-              <span class="why2-ph">Image</span>
-              <img src="assets/img/easy-install.webp" alt="Easy to Install" />
-            </div>
+        <div class="why3-media">
+          <div class="why3-pane active" data-i="0">
+            <!-- <img src="assets/img/why-zero-servers.jpg" alt="Zero servers — cloud-native access" loading="lazy" decoding="async" /> -->
+            <span class="img-ph"><span class="ph-mini">Zero Servers</span></span>
           </div>
-
-          <!-- Easy to Scale -->
-          <div class="why2-panel" id="p-scale" role="tabpanel" aria-labelledby="t-scale" data-panel="scale" hidden>
-            <div class="why2-text">
-              <h3>Easy to Scale</h3>
-              <p>Scale access control across branches, states, and countries with a flexible system built for multi-site operations.</p>
-              <ul class="why2-points">
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>No On-Premise Server</span></li>
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>Add and manage devices via cloud</span></li>
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>Low maintenance, easy expansion</span></li>
-              </ul>
-              <!-- <a href="#contact" class="btn btn-primary why2-cta" hidden>Learn more</a> -->
-            </div>
-            <div class="why2-media">
-              <span class="why2-ph">Image</span>
-              <img src="assets/img/easy-scale.webp" alt="Easy to Scale" />
-            </div>
+          <div class="why3-pane" data-i="1">
+            <!-- <img src="assets/img/why-plug-and-play.jpg" alt="Plug-and-play setup" loading="lazy" decoding="async" /> -->
+            <span class="img-ph"><span class="ph-mini">Plug-and-play setup</span></span>
           </div>
-
-          <!-- Access Without Interruption -->
-          <div class="why2-panel" id="p-integrate" role="tabpanel" aria-labelledby="t-integrate" data-panel="integrate" hidden>
-            <div class="why2-text">
-              <h3>Access Without Interruption</h3>
-              <p>Maintain secure door access even when the network is down, with device-level processing that keeps operations running.</p>
-              <ul class="why2-points">
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>Local device processing</span></li>
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>Offline access support</span></li>
-                <li><span class="why2-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg></span><span>Access logs stored on device</span></li>
-              </ul>
-              <!-- <a href="#contact" class="btn btn-primary why2-cta" hidden>Learn more</a> -->
-            </div>
-            <div class="why2-media">
-              <span class="why2-ph">Image</span>
-              <img src="assets/img/ready-integration.webp" alt="Ready for Integration" />
-            </div>
+          <div class="why3-pane" data-i="2">
+            <!-- <img src="assets/img/why-global-scale.jpg" alt="Infinite global scale" loading="lazy" decoding="async" /> -->
+            <span class="img-ph"><span class="ph-mini">Infinite global scale</span></span>
           </div>
         </div>
       </div>
@@ -302,8 +285,8 @@
     </div>
   </section>
 
-  <!-- ============== FEATURED FEATURES ============== -->
-  <section class="section" id="features">
+  <!-- ============== FEATURED FEATURES — hidden ============== -->
+  <section class="section" id="features" hidden>
     <div class="wrap">
       <div class="section-head center reveal">
         <h2>Featured Features</h2>
@@ -408,9 +391,52 @@
       </div>
 
       <div class="features-cta reveal">
-        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
       </div>
     </div>
+  </section>
+
+  <!-- ============== THE SOFTWARE EXPERIENCE ============== -->
+  <section class="section" id="software">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <h2>One platform. Total control.</h2>
+      </div>
+    </div>
+
+    <div class="sw-stack">
+        <!-- Row 1 — text left, admin visual right -->
+        <div class="sw-row reveal">
+          <div class="sw-text">
+            <p class="sw-label">The Administrator Experience</p>
+            <h3>SentriTec One</h3>
+            <p>A centralized web dashboard built to manage settings, provision users, and monitor live logs across all locations from any browser.</p>
+            <a href="#" class="btn btn-primary sw-btn">Learn More
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <div class="sw-media">
+            <!-- <img src="assets/img/software-one.jpg" alt="SentriTec One — admin dashboard" loading="lazy" decoding="async" /> -->
+            <span class="img-ph"><span class="ph-mini">Admin dashboard</span></span>
+          </div>
+        </div>
+
+        <!-- Row 2 — user visual left, text right -->
+        <div class="sw-row reverse reveal">
+          <div class="sw-text">
+            <p class="sw-label">The User Experience</p>
+            <h3>SentriTec Pass</h3>
+            <p>Turn any smartphone into a secure, encrypted mobile credential.</p>
+            <a href="#" class="btn btn-primary sw-btn">Learn More
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <div class="sw-media">
+            <!-- <img src="assets/img/software-pass.jpg" alt="SentriTec Pass — mobile credential" loading="lazy" decoding="async" /> -->
+            <span class="img-ph"><span class="ph-mini">Mobile credential</span></span>
+          </div>
+        </div>
+      </div>
   </section>
 
   <!-- ============== HOW IT WORKS — hidden ============== -->
@@ -485,7 +511,8 @@
     <div class="wrap">
       <div class="scene-head reveal">
         <div>
-          <h2>Hardware</h2>
+          <h2>Intelligent edge hardware.</h2>
+          <p class="lead">PoE-powered with a built-in access controller.</p>
         </div>
       </div>
 
@@ -494,36 +521,36 @@
         <article class="eco-card reveal" id="access-core">
           <div class="eco-stage">
             <span class="eco-halo"></span>
-            <img src="assets/products/access-core-front.png" alt="SentriTec Access Core reader" loading="lazy" decoding="async" />
+            <img src="assets/products/access-core-3.png" alt="SentriTec Access Core reader" loading="lazy" decoding="async" />
           </div>
           <div class="eco-body">
             <h3>Access Core</h3>
-            <p>A door controller and card reader in one device, supporting RFID cards, NFC, and Bluetooth mobile unlock for secure and convenient access control.</p>
-            <a href="#contact" class="link-arrow">Learn more <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p>The Access Core works with a wide variety of credentials, including secure mobile unlocking and traditional key cards or fobs.</p>
+            <a href="product/door-reader/access-core.html" class="link-arrow">Learn More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
 
         <article class="eco-card reveal" id="access-core-pro">
           <div class="eco-stage">
             <span class="eco-halo"></span>
-            <img src="assets/products/access-core-pro-front.png" alt="SentriTec Access Core Pro reader" loading="lazy" decoding="async" />
+            <img src="assets/products/access-core-pro-1.png" alt="SentriTec Access Core Pro reader" loading="lazy" decoding="async" />
           </div>
           <div class="eco-body">
             <h3>Access Core Pro</h3>
-            <p>All the functionality of Access Core in a slimmer design, with added QR code and PIN code authentication for two factor authentication.</p>
-            <a href="#contact" class="link-arrow">Learn more <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p>Everything that the Access Core has, plus a built-in QR code scanner and PIN pad for visitor management or two-factor authentication.</p>
+            <a href="product/door-reader/access-core-pro.html" class="link-arrow">Learn More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
 
         <article class="eco-card reveal" id="face-core">
           <div class="eco-stage">
             <span class="eco-halo"></span>
-            <img src="assets/products/face-core-front.png" alt="SentriTec Face Core terminal" loading="lazy" decoding="async" />
+            <img src="assets/products/face-core-2.png" alt="SentriTec Face Core terminal" loading="lazy" decoding="async" />
           </div>
           <div class="eco-body">
             <h3>Face Core</h3>
-            <p>Supports the same core access methods as Access Core Pro, with added face recognition, liveness detection, and two-way audio intercom.</p>
-            <a href="#contact" class="link-arrow">Learn more <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <p>Our flagship biometric terminal. It delivers lightning-fast, secure facial recognition without compromising user privacy.</p>
+            <a href="product/face-recognition/face-core.html" class="link-arrow">Learn More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </article>
       </div>
@@ -533,25 +560,60 @@
   <!-- ============== INTEGRATION ============== -->
   <section class="section" id="integration">
     <div class="wrap">
-      <div class="intg reveal">
-        <div class="intg-copy">
-          <h2>Integration</h2>
-          <p class="lead">Work seamlessly with the platforms you already use.</p>
-          <a href="#contact" class="btn btn-dark">Learn more</a>
+      <div class="section-head center reveal">
+        <h2>Built to fit your IT stack.</h2>
+        <p class="lead">SentriTec syncs seamlessly with the cloud tools your team already uses every day.</p>
+      </div>
+
+      <div class="intg2 reveal">
+        <div class="intg2-visual">
+          <div class="intg2-pane active" data-i="0">
+            <!-- <img src="assets/img/integration-directory.jpg" alt="Automated directory sync" loading="lazy" decoding="async" /> -->
+            <span class="img-ph"><span class="ph-mini">Directory Sync</span></span>
+          </div>
+          <div class="intg2-pane" data-i="1">
+            <!-- <img src="assets/img/integration-api.jpg" alt="Open API" loading="lazy" decoding="async" /> -->
+            <span class="img-ph"><span class="ph-mini">Open API</span></span>
+          </div>
+          <div class="intg2-pane" data-i="2">
+            <!-- <img src="assets/img/integration-webhooks.jpg" alt="Real-time webhooks" loading="lazy" decoding="async" /> -->
+            <span class="img-ph"><span class="ph-mini">Webhooks</span></span>
+          </div>
         </div>
 
-        <div class="intg-logos">
-          <span class="brand-tile"><img src="assets/integrations/google.svg" alt="Google" loading="lazy" /></span>
-          <span class="brand-tile"><img src="assets/integrations/microsoft.svg" alt="Microsoft" loading="lazy" /></span>
-          <span class="brand-tile"><img src="assets/integrations/timetec.svg" alt="TimeTec" loading="lazy" /></span>
-          <span class="brand-tile"><img src="assets/integrations/ineighbour.svg" alt="iNeighbour" loading="lazy" /></span>
+        <div class="intg2-list">
+          <button class="intg2-item active" type="button" data-i="0">
+            <span class="intg2-line"></span>
+            <span class="intg2-tx">
+              <b><span class="intg2-num">01</span> Automated Directory Sync</b>
+              <small>Sync instantly with Okta, Microsoft Entra ID, or Google Workspace to automatically provision or revoke access the moment an employee's HR status changes.</small>
+            </span>
+          </button>
+          <button class="intg2-item" type="button" data-i="1">
+            <span class="intg2-line"></span>
+            <span class="intg2-tx">
+              <b><span class="intg2-num">02</span> Open API</b>
+              <small>Build your own custom integrations for specific security and operational needs with our developer-friendly cloud API.</small>
+            </span>
+          </button>
+          <button class="intg2-item" type="button" data-i="2">
+            <span class="intg2-line"></span>
+            <span class="intg2-tx">
+              <b><span class="intg2-num">03</span> Real-Time Webhooks</b>
+              <small>Trigger instant security alerts directly to IT communication channels like Slack or Microsoft Teams the second an anomaly is detected.</small>
+            </span>
+          </button>
+
+          <a href="#" class="btn btn-primary sw-btn intg2-cta">Explore Integrations
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============== BUILT FOR ============== -->
-  <section class="section" id="built-for">
+  <!-- ============== BUILT FOR — hidden ============== -->
+  <section class="section" id="built-for" hidden>
     <div class="wrap">
 
       <div class="builtfor reveal">
@@ -571,14 +633,14 @@
           <div class="section-head reveal">
             <h2>Industries</h2>
           </div>
-          <a class="bf-item active" href="#contact" data-ind="office">
+          <a class="bf-item active" href="industries/office.html" data-ind="office">
             <span class="bf-index">01</span>
             <div class="bf-text">
               <h3>Office</h3>
             </div>
             <svg class="bf-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="bf-item" href="#contact" data-ind="factory">
+          <a class="bf-item" href="industries/factory.html" data-ind="factory">
             <span class="bf-index">02</span>
             <div class="bf-text">
               <h3>Factory</h3>
@@ -586,6 +648,32 @@
             <svg class="bf-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== COMPLIANCE ============== -->
+  <section class="section" id="compliance">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <h2>Certified for<br>enterprise-grade trust.</h2>
+        <p class="lead">SentriTec meets strict regional and global standards, ensuring your physical and digital infrastructure is fully compliant from day one.</p>
+      </div>
+
+      <div class="comp-grid reveal">
+        <span class="comp-logo">
+          <img src="assets/compliance/gdpr.png" alt="GDPR" loading="lazy" />
+        </span>
+        <span class="comp-logo">
+          <!-- <img src="assets/compliance/pdpa.svg" alt="PDPA" loading="lazy" /> -->
+          PDPA
+        </span>
+        <span class="comp-logo">
+          <img src="assets/compliance/iso-27001-logo.webp" alt="ISO 27001" loading="lazy" />
+        </span>
+        <span class="comp-logo">
+          <img src="assets/compliance/Logo-SIRIM.jpg" alt="SIRIM" loading="lazy" />
+        </span>
       </div>
     </div>
   </section>
@@ -606,10 +694,13 @@
 
   <!-- ============== CTA ============== -->
   <section class="cta-section" id="contact">
-    <a class="cta-link reveal" href="mailto:hello@sentritec.com">
+    <a class="cta-link reveal" href="contact.html">
       <div class="wrap cta-inner">
-        <h2>Ready to explore?</h2>
-        <span class="cta-go">Get in Touch
+        <div class="cta-text">
+          <h2>Secure your space now with SentriTec.</h2>
+          <p>Experience the new standard of frictionless, cloud-based access control.</p>
+        </div>
+        <span class="cta-go">Get Started
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </div>
@@ -621,7 +712,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/sentritec-logo-white.svg" alt="SentriTec" />
+          <img src="assets/sentritec-logo.svg" alt="SentriTec" />
           <p>One cloud platform for building access — manage doors, people and activity from a single dashboard, powered by SentriTec readers.</p>
         </div>
         <div>

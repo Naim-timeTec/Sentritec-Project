@@ -26,16 +26,16 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="mega">
-              <div class="wrap mega-inner">
-                <span class="mega-feature mega-feature--static">
-                  <span class="mega-feat-img"><span class="ph-mini">Image</span></span>
-                </span>
-                <div class="mega-content mega-tree">
-                  <div class="mega-branch">
-                    <span class="mega-branch-title">Access Control</span>
-                    <ul class="mega-branch-links">
-                      <li><a href="${root}product/door-access.html">Door Access</a></li>
-                    </ul>
+              <div class="wrap mega-inner mega-cat">
+                <div class="mega-cats" role="tablist" aria-label="Product categories">
+                  <button class="mega-cat-tab active" data-cat="access" role="tab" aria-selected="true">Access Control</button>
+                </div>
+                <div class="mega-cat-body">
+                  <div class="mega-cat-panel active" data-cat="access">
+                    <div class="mega-grid">
+                      <a class="mega-card" href="${root}product/door-access.html"><b>Door Access</b></a>
+                      <a class="mega-card" href="${root}product/face-recognition.html"><b>Face Recognition</b></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -48,21 +48,16 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="mega">
-              <div class="wrap mega-inner">
-                <a class="mega-feature" href="${root}index.html#built-for">
-                  <span class="mega-feat-img"><span class="ph-mini">Image</span></span>
-                  <span class="mega-feat-text"><b>Industries</b><small>Tailored access and attendance for every kind of space.</small></span>
-                </a>
-                <ul class="mega-content mega-links">
-                  <li><a href="${root}index.html#built-for">Office</a></li>
-                  <li><a href="${root}index.html#built-for">Factory</a></li>
-                  <li><a href="${root}index.html#built-for">Commercial Real Estate</a></li>
-                  <li><a href="${root}index.html#built-for">Multi-family Residential</a></li>
-                  <li><a href="${root}index.html#built-for">Education</a></li>
-                  <li><a href="${root}index.html#built-for">Healthcare</a></li>
-                  <li><a href="${root}index.html#built-for">Retail</a></li>
-                  <li><a href="${root}index.html#built-for">Warehousing &amp; Logistics</a></li>
-                </ul>
+              <div class="wrap mega-inner mega-inner--simple">
+                <span class="mega-aside">Industries</span>
+                <div class="mega-content mega-cards mega-cards--fixed">
+                  <a class="mega-card mega-card--ico" href="${root}industries/office.html">
+                    <span class="mega-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/><path d="M6 12H4a2 2 0 0 0-2 2v8h4"/><path d="M18 9h2a2 2 0 0 1 2 2v11h-4"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></svg></span><b>Office</b>
+                  </a>
+                  <a class="mega-card mega-card--ico" href="${root}industries/factory.html">
+                    <span class="mega-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M7 18h.01M12 18h.01M17 18h.01"/></svg></span><b>Factory</b>
+                  </a>
+                </div>
               </div>
             </div>
           </li>
@@ -73,16 +68,11 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="mega">
-              <div class="wrap mega-inner">
-                <a class="mega-feature" href="#">
-                  <span class="mega-feat-img mega-feat-img--dark"><span class="ph-mini">Image</span></span>
-                  <span class="mega-feat-text"><b>Knowledge Base</b><small>Guides and resources to deploy and support reliable systems.</small></span>
-                </a>
-                <div class="mega-content mega-cards">
-                  <a class="mega-card" href="#"><b>Technical Support</b><small>Setup help, troubleshooting and tech support.</small></a>
-                  <a class="mega-card" href="#"><b>Documentation</b><small>Manuals, datasheets and integration guides.</small></a>
-                  <a class="mega-card" href="#"><b>Customer Service</b><small>Talk to our team about orders and accounts.</small></a>
-                  <a class="mega-card" href="#"><b>Downloads</b><small>Apps, firmware and product resources.</small></a>
+              <div class="wrap mega-inner mega-inner--simple">
+                <span class="mega-aside">Resources</span>
+                <div class="mega-content mega-cards mega-cards--fixed">
+                  <a class="mega-card" href="${root}about.html"><b>About</b></a>
+                  <a class="mega-card" href="${root}contact.html"><b>Contact</b></a>
                 </div>
               </div>
             </div>
@@ -112,7 +102,7 @@
       </nav>
       <div class="nav-right">
         <a href="" class="btn btn-ghost nav-login">Login</a>
-        <a href="#contact" class="btn btn-primary nav-cta">Get in Touch</a>
+        <a href="${root}contact.html" class="btn btn-primary nav-cta">Get Started</a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -127,22 +117,17 @@
       <summary>Products<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
       <span class="m-sublabel">Access Control</span>
       <a href="${root}product/door-access.html">Door Access</a>
+      <a href="${root}product/face-recognition.html">Face Recognition</a>
     </details>
     <details class="m-group">
       <summary>Industries<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <a href="${root}index.html#built-for">Office</a>
-      <a href="${root}index.html#built-for">Factory</a>
-      <a href="${root}index.html#built-for">Commercial Real Estate</a>
-      <a href="${root}index.html#built-for">Multi-family Residential</a>
-      <a href="${root}index.html#built-for">Education</a>
-      <a href="${root}index.html#built-for">Healthcare</a>
+      <a href="${root}industries/office.html">Office</a>
+      <a href="${root}industries/factory.html">Factory</a>
     </details>
     <details class="m-group">
       <summary>Resources<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <a href="#">Technical Support</a>
-      <a href="#">Documentation</a>
-      <a href="#">Customer Service</a>
-      <a href="#">Downloads</a>
+      <a href="${root}about.html">About</a>
+      <a href="${root}contact.html">Contact</a>
     </details>
     <details class="m-group">
       <summary>Partners<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -152,6 +137,23 @@
       <a href="#">Become a Partner</a>
     </details>
     <a href="" class="btn btn-ghost">Login</a>
-    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+    <a href="${root}contact.html" class="btn btn-primary">Get Started</a>
   </div>`;
+
+  /* Products mega — left category rail switches the item grid on the right */
+  var catTabs = Array.prototype.slice.call(document.querySelectorAll(".mega-cat-tab"));
+  var catPanels = Array.prototype.slice.call(document.querySelectorAll(".mega-cat-panel"));
+  function selectCat(cat) {
+    catTabs.forEach(function (t) {
+      var on = t.getAttribute("data-cat") === cat;
+      t.classList.toggle("active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    catPanels.forEach(function (p) { p.classList.toggle("active", p.getAttribute("data-cat") === cat); });
+  }
+  catTabs.forEach(function (t) {
+    var cat = t.getAttribute("data-cat");
+    t.addEventListener("mouseenter", function () { selectCat(cat); });
+    t.addEventListener("click", function (e) { e.preventDefault(); selectCat(cat); });
+  });
 })();

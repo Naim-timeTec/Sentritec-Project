@@ -211,7 +211,7 @@
     window.addEventListener("resize", function () { if (activeBtn) position(activeBtn); });
   })();
 
-  /* Built For — click a list item to drive the preview */
+  /* Built For — hover a list item to drive the preview; click navigates to its page */
   (function () {
     var items = Array.prototype.slice.call(document.querySelectorAll(".bf-item"));
     var panes = Array.prototype.slice.call(document.querySelectorAll(".bf-pane"));
@@ -226,51 +226,23 @@
     items.forEach(function (it) {
       var ind = it.getAttribute("data-ind");
       var label = it.querySelector("h3") ? it.querySelector("h3").textContent : "";
-      // click selects the industry instead of jumping to the contact anchor
-      it.addEventListener("click", function (e) { e.preventDefault(); activate(ind, label); });
+      // hovering (or keyboard focus) swaps the preview; clicking follows the link to the page
+      it.addEventListener("mouseenter", function () { activate(ind, label); });
+      it.addEventListener("focus", function () { activate(ind, label); });
     });
   })();
 
-  /* Access Ecosystem — 3D tilt that follows the cursor */
+  /* Integration — click a feature to swap the visual on the left (no auto-rotate) */
   (function () {
-    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var fine = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    if (reduce || !fine) return;
-    var MAX = 22; // max degrees
-
-    document.querySelectorAll(".eco-card").forEach(function (card) {
-      var stage = card.querySelector(".eco-stage");
-      var img = card.querySelector(".eco-stage img");
-      var halo = card.querySelector(".eco-halo");
-      if (!stage || !img) return;
-      card.classList.add("tilt");
-      var raf = null, nx = 0, ny = 0;
-
-      function apply() {
-        raf = null;
-        var ry = nx * MAX, rx = -ny * MAX;
-        img.style.transform =
-          "translateY(-10px) scale(1.1) rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg)";
-        if (halo) {
-          halo.style.transform =
-            "translate(calc(-50% + " + (nx * 36).toFixed(1) + "px), calc(-50% + " + (ny * 36).toFixed(1) + "px)) scale(1.18)";
-        }
-      }
-      stage.addEventListener("mousemove", function (e) {
-        var r = stage.getBoundingClientRect();
-        nx = (e.clientX - r.left) / r.width - 0.5;   // -0.5 .. 0.5
-        ny = (e.clientY - r.top) / r.height - 0.5;
-        if (!raf) raf = requestAnimationFrame(apply);
-      });
-      stage.addEventListener("mouseleave", function () {
-        if (raf) { cancelAnimationFrame(raf); raf = null; }
-        img.style.transition = "";   // fall back to the .5s ease reset
-        img.style.transform = "";
-        if (halo) halo.style.transform = "";
-      });
-      stage.addEventListener("mouseenter", function () {
-        img.style.transition = "transform .12s ease-out";
-      });
+    var items = Array.prototype.slice.call(document.querySelectorAll(".intg2-item"));
+    var panes = Array.prototype.slice.call(document.querySelectorAll(".intg2-pane"));
+    if (!items.length) return;
+    function show(i) {
+      items.forEach(function (t, idx) { t.classList.toggle("active", idx === i); });
+      panes.forEach(function (p, idx) { p.classList.toggle("active", idx === i); });
+    }
+    items.forEach(function (t, idx) {
+      t.addEventListener("click", function () { show(idx); });
     });
   })();
 
@@ -319,26 +291,37 @@
     vids.forEach(function (v) { io.observe(v); });
   })();
 
-  /* Why SentriTec — tabs */
+  /* Why SentriTec — auto-rotating tabs with a 5s progress line */
   (function () {
-    var tabs = Array.prototype.slice.call(document.querySelectorAll(".why2-tab"));
-    var panels = Array.prototype.slice.call(document.querySelectorAll(".why2-panel"));
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".why3-tab"));
+    var panes = Array.prototype.slice.call(document.querySelectorAll(".why3-pane"));
     if (!tabs.length) return;
-    function select(id) {
-      tabs.forEach(function (t) {
-        var on = t.getAttribute("data-tab") === id;
-        t.classList.toggle("active", on);
-        t.setAttribute("aria-selected", on ? "true" : "false");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var current = -1, timer = null;
+
+    function show(i) {
+      current = i;
+      tabs.forEach(function (t, idx) {
+        if (idx === i) return;
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
       });
-      panels.forEach(function (p) {
-        var on = p.getAttribute("data-panel") === id;
-        p.classList.toggle("active", on);
-        p.hidden = !on;
-      });
+      panes.forEach(function (p, idx) { p.classList.toggle("active", idx === i); });
+      // restart the fill animation even if the same tab is re-selected
+      var el = tabs[i];
+      el.classList.remove("active");
+      void el.offsetWidth;
+      el.classList.add("active");
+      el.setAttribute("aria-selected", "true");
     }
-    tabs.forEach(function (t) {
-      t.addEventListener("click", function () { select(t.getAttribute("data-tab")); });
+    function next() { show((current + 1) % tabs.length); }
+    function start() { if (reduce) return; clearInterval(timer); timer = setInterval(next, 5000); }
+
+    tabs.forEach(function (t, idx) {
+      t.addEventListener("click", function () { show(idx); start(); });
     });
+    show(0);
+    start();
   })();
 
   /* Scrollspy — highlight the nav link for the section in view */
