@@ -729,10 +729,9 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .why2-media img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
 .why2-media img[src=""], .why2-media img:not([src]) { display: none; }
 
-/* ---------- Why SentriTec — header (title left / description right), then tabs + image ---------- */
-.why3-head { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: end; margin-bottom: clamp(40px, 5vw, 64px); }
-.why3-head h2 { margin: 0; max-width: 16ch; }
-.why3-head .lead { margin: 0; }
+/* ---------- Why SentriTec — centered title, then tabs + image ---------- */
+.why3-head { text-align: center; max-width: 800px; margin: 0 auto clamp(40px, 5vw, 64px); }
+.why3-head h2 { margin: 0; }
 .why3 { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
 .why3-tabs { display: flex; flex-direction: column; min-width: 0; }
 .why3-tab {
@@ -756,8 +755,7 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .why3-pane img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 @media (max-width: 920px) {
-  .why3-head { grid-template-columns: 1fr; gap: 16px; align-items: start; margin-bottom: clamp(28px, 5vw, 40px); }
-  .why3-head h2 { max-width: none; }
+  .why3-head { margin-bottom: clamp(28px, 5vw, 40px); }
   .why3 { grid-template-columns: 1fr; gap: clamp(28px, 5vw, 40px); }
   .why3-media { aspect-ratio: 16 / 10; }
 }
@@ -863,7 +861,7 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .persona p { font-size: 14.5px; color: rgba(255,255,255,.75); margin: 0; }
 
 /* ---------- Access Ecosystem (interactive scene) ---------- */
-.scene-head { margin-bottom: 36px; }
+.scene-head { margin-bottom: 36px; text-align: center; }
 .scene-head h2 { font-size: clamp(30px, 4.4vw, 54px); }
 .scene-intro { max-width: 560px; margin-top: 20px; }
 .scene-intro p { color: var(--slate); font-size: 17px; margin: 0 0 14px; }
