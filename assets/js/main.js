@@ -232,6 +232,24 @@
     });
   })();
 
+  /* Software — Admin/User toggle swaps the screen and the copy */
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".sw2-tab"));
+    var panes = Array.prototype.slice.call(document.querySelectorAll(".sw2-pane"));
+    var texts = Array.prototype.slice.call(document.querySelectorAll(".sw2-text"));
+    if (!tabs.length) return;
+    function show(i) {
+      tabs.forEach(function (t, idx) {
+        var on = idx === i;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      panes.forEach(function (p, idx) { p.classList.toggle("active", idx === i); });
+      texts.forEach(function (t, idx) { t.classList.toggle("active", idx === i); });
+    }
+    tabs.forEach(function (t, idx) { t.addEventListener("click", function () { show(idx); }); });
+  })();
+
   /* Integration — click a feature to swap the visual on the left (no auto-rotate) */
   (function () {
     var items = Array.prototype.slice.call(document.querySelectorAll(".intg2-item"));
