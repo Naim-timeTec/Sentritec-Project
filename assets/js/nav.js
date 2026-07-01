@@ -102,7 +102,7 @@
       </nav>
       <div class="nav-right">
         <a href="" class="btn btn-ghost nav-login">Login</a>
-        <a href="${root}contact.html" class="btn btn-primary nav-cta">Get Started</a>
+        <a href="${root}contact.html" class="btn btn-dark nav-cta">Get Started</a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -137,7 +137,7 @@
       <a href="#">Become a Partner</a>
     </details>
     <a href="" class="btn btn-ghost">Login</a>
-    <a href="${root}contact.html" class="btn btn-primary">Get Started</a>
+    <a href="${root}contact.html" class="btn btn-dark">Get Started</a>
   </div>`;
 
   /* Products mega — left category rail switches the item grid on the right */

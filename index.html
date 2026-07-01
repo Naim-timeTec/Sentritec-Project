@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css?v=2" />
 </head>
-<body>
+<body class="home">
 
   <a class="skip-link" href="#top">Skip to content</a>
 
@@ -26,13 +26,7 @@
       <video class="hero-v-video" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
         <source src="assets/video/hero.mp4" type="video/mp4" />
       </video> -->
-      <div class="hero-v-ph">
-        <div class="ph-label">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5-6-3.5Z"/></svg>
-          Hero video
-          <small>Product in web &amp; app, then real-life use — coming soon</small>
-        </div>
-      </div>
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="Modern glass office building" fetchpriority="high" decoding="async" />
     </div>
     <span class="hero-v-scrim"></span>
     <div class="wrap hero-v-inner">
@@ -41,7 +35,7 @@
         <!-- <p class="hero-v-sub">Meet Sentritec — a modern cloud access control system that is easy to use and deploy. Driven by intelligent, independent readers and secure mobile unlocking, it's the easiest way to secure your buildings without the headache of legacy hardware or on-premise servers.</p> -->
       </div>
       <div class="hero-v-cta">
-        <a href="contact.html" class="btn btn-primary">Get Started
+        <a href="contact.html" class="btn btn-secondary">Get Started
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
@@ -82,16 +76,13 @@
 
         <div class="why3-media">
           <div class="why3-pane active" data-i="0">
-            <!-- <img src="assets/img/why-zero-servers.jpg" alt="Zero servers — cloud-native access" loading="lazy" decoding="async" /> -->
-            <span class="img-ph"><span class="ph-mini">Zero Servers</span></span>
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Server room — the closet Sentritec replaces" loading="lazy" decoding="async" />
           </div>
           <div class="why3-pane" data-i="1">
-            <!-- <img src="assets/img/why-plug-and-play.jpg" alt="Plug-and-play setup" loading="lazy" decoding="async" /> -->
-            <span class="img-ph"><span class="ph-mini">Plug-and-play setup</span></span>
+            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Network cables plugged into a switch" loading="lazy" decoding="async" />
           </div>
           <div class="why3-pane" data-i="2">
-            <!-- <img src="assets/img/why-global-scale.jpg" alt="Infinite global scale" loading="lazy" decoding="async" /> -->
-            <span class="img-ph"><span class="ph-mini">Infinite global scale</span></span>
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Global network — the Earth at night from space" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -390,51 +381,47 @@
       </div>
 
       <div class="features-cta reveal">
-        <a href="#contact" class="btn btn-primary">Get Started</a>
+        <a href="#contact" class="btn btn-dark">Get Started</a>
       </div>
     </div>
   </section>
 
   <!-- ============== THE SOFTWARE EXPERIENCE ============== -->
-  <section class="section" id="software">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <h2>One platform. Total control.</h2>
+  <section class="section sw2-hero" id="software">
+    <div class="sw2 reveal">
+      <div class="sw2-visual">
+        <div class="sw2-pane active" data-i="0">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="Analytics dashboard on a laptop" loading="lazy" decoding="async" />
+        </div>
+        <div class="sw2-pane" data-i="1">
+          <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="Unlocking a door with a smartphone" loading="lazy" decoding="async" />
+        </div>
       </div>
+      <span class="sw2-scrim"></span>
 
-      <div class="sw2 reveal">
-        <div class="sw2-toggle" role="tablist" aria-label="Choose experience">
-          <button class="sw2-tab active" type="button" data-i="0" role="tab" aria-selected="true">Administrator</button>
-          <button class="sw2-tab" type="button" data-i="1" role="tab" aria-selected="false">User</button>
+      <div class="wrap sw2-overlay">
+        <div class="sw2-top">
+          <h2 class="sw2-heading">One platform. Total control.</h2>
+          <div class="sw2-toggle" role="tablist" aria-label="Choose experience">
+            <button class="sw2-tab active" type="button" data-i="0" role="tab" aria-selected="true">Administrator Experience</button>
+            <button class="sw2-tab" type="button" data-i="1" role="tab" aria-selected="false">User Experience</button>
+          </div>
         </div>
 
-        <div class="sw2-body">
-          <div class="sw2-visual">
-            <div class="sw2-pane active" data-i="0">
-              <!-- <img src="assets/img/software-one.jpg" alt="SentriTec One — admin dashboard" loading="lazy" decoding="async" /> -->
-              <span class="img-ph"><span class="ph-mini">Admin dashboard</span></span>
-            </div>
-            <div class="sw2-pane" data-i="1">
-              <!-- <img src="assets/img/software-pass.jpg" alt="SentriTec Pass — mobile credential" loading="lazy" decoding="async" /> -->
-              <span class="img-ph"><span class="ph-mini">Mobile credential</span></span>
-            </div>
+        <div class="sw2-copy">
+          <div class="sw2-text active" data-i="0">
+            <h3>Sentritec One</h3>
+            <p>A centralized web dashboard built to manage settings, provision users, and monitor live logs across all locations from any browser.</p>
+            <a href="#" class="btn btn-light sw-btn">Learn More
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
-
-          <div class="sw2-copy">
-            <div class="sw2-text active" data-i="0">
-              <h3>Sentritec One</h3>
-              <p>A centralized web dashboard built to manage settings, provision users, and monitor live logs across all locations from any browser.</p>
-              <a href="#" class="btn btn-primary sw-btn">Learn More
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-            <div class="sw2-text" data-i="1">
-              <h3>Sentritec Pass</h3>
-              <p>Turn any smartphone into a secure, encrypted mobile credential.</p>
-              <a href="#" class="btn btn-primary sw-btn">Learn More
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
+          <div class="sw2-text" data-i="1">
+            <h3>Sentritec Pass</h3>
+            <p>Turn any smartphone into a secure, encrypted mobile credential.</p>
+            <a href="#" class="btn btn-light sw-btn">Learn More
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -519,39 +506,25 @@
 
       <div class="eco-grid">
 
-        <article class="eco-card reveal" id="access-core">
-          <div class="eco-stage">
-            <span class="eco-halo"></span>
-            <img src="assets/products/access-core-3.png" alt="Sentritec Access Core reader" loading="lazy" decoding="async" />
-          </div>
-          <div class="eco-body">
-            <h3>Access Core</h3>
-            <p>The Access Core works with a wide variety of credentials, including secure mobile unlocking and traditional key cards or fobs.</p>
-            <a href="product/door-reader/access-core.html" class="link-arrow">Learn More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </article>
-
         <article class="eco-card reveal" id="access-core-pro">
+          <div class="eco-body">
+            <h3>Door Reader</h3>
+            <a href="product/door-reader/access-core-pro.html" class="link-arrow">Learn More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
           <div class="eco-stage">
             <span class="eco-halo"></span>
-            <img src="assets/products/access-core-pro-1.png" alt="Sentritec Access Core Pro reader" loading="lazy" decoding="async" />
-          </div>
-          <div class="eco-body">
-            <h3>Access Core Pro</h3>
-            <p>Everything that the Access Core has, plus a built-in QR code scanner and PIN pad for visitor management or two-factor authentication.</p>
-            <a href="product/door-reader/access-core-pro.html" class="link-arrow">Learn More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <img src="assets/products/access-core-pro-1.png" alt="Sentritec Door Reader" loading="lazy" decoding="async" />
           </div>
         </article>
 
         <article class="eco-card reveal" id="face-core">
+          <div class="eco-body">
+            <h3>Face Recognition</h3>
+            <a href="product/face-recognition/face-core.html" class="link-arrow">Learn More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
           <div class="eco-stage">
             <span class="eco-halo"></span>
-            <img src="assets/products/face-core-3.png" alt="Sentritec Face Core terminal" loading="lazy" decoding="async" />
-          </div>
-          <div class="eco-body">
-            <h3>Face Core</h3>
-            <p>Our flagship biometric terminal. It delivers lightning-fast, secure facial recognition without compromising user privacy.</p>
-            <a href="product/face-recognition/face-core.html" class="link-arrow">Learn More <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <img src="assets/products/face-core-3.png" alt="Sentritec Face Recognition terminal" loading="lazy" decoding="async" />
           </div>
         </article>
       </div>
@@ -561,23 +534,28 @@
   <!-- ============== INTEGRATION ============== -->
   <section class="section" id="integration">
     <div class="wrap">
-      <div class="section-head center reveal">
-        <h2>Built to fit your IT stack.</h2>
+      <div class="intg2-head reveal">
+        <div class="intg2-head-title">
+          <h2>Built to fit<br>your IT stack.</h2>
+        </div>
+        <div class="intg2-head-aside">
+          <p class="lead">Sentritec syncs seamlessly with the cloud tools your team already uses every day.</p>
+          <a href="#" class="btn btn-dark sw-btn intg2-cta">Explore Integrations
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="intg2 reveal">
         <div class="intg2-visual">
           <div class="intg2-pane active" data-i="0">
-            <!-- <img src="assets/img/integration-directory.jpg" alt="Automated directory sync" loading="lazy" decoding="async" /> -->
-            <span class="img-ph"><span class="ph-mini">Directory Sync</span></span>
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Team collaborating in an office" loading="lazy" decoding="async" />
           </div>
           <div class="intg2-pane" data-i="1">
-            <!-- <img src="assets/img/integration-api.jpg" alt="Open API" loading="lazy" decoding="async" /> -->
-            <span class="img-ph"><span class="ph-mini">Open API</span></span>
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Source code on a developer's screen" loading="lazy" decoding="async" />
           </div>
           <div class="intg2-pane" data-i="2">
-            <!-- <img src="assets/img/integration-webhooks.jpg" alt="Real-time webhooks" loading="lazy" decoding="async" /> -->
-            <span class="img-ph"><span class="ph-mini">Webhooks</span></span>
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Real-time data stream" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -585,28 +563,24 @@
           <button class="intg2-item active" type="button" data-i="0">
             <span class="intg2-line"></span>
             <span class="intg2-tx">
-              <b><span class="intg2-num">01</span> Automated Directory Sync</b>
+              <b>Automated Directory Sync</b>
               <small>Sync instantly with Okta, Microsoft Entra ID, or Google Workspace to automatically provision or revoke access the moment an employee's HR status changes.</small>
             </span>
           </button>
           <button class="intg2-item" type="button" data-i="1">
             <span class="intg2-line"></span>
             <span class="intg2-tx">
-              <b><span class="intg2-num">02</span> Open API</b>
+              <b>Open API</b>
               <small>Build your own custom integrations for specific security and operational needs with our developer-friendly cloud API.</small>
             </span>
           </button>
           <button class="intg2-item" type="button" data-i="2">
             <span class="intg2-line"></span>
             <span class="intg2-tx">
-              <b><span class="intg2-num">03</span> Real-Time Webhooks</b>
+              <b>Real-Time Webhooks</b>
               <small>Trigger instant security alerts directly to IT communication channels like Slack or Microsoft Teams the second an anomaly is detected.</small>
             </span>
           </button>
-
-          <a href="#" class="btn btn-primary sw-btn intg2-cta">Explore Integrations
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
         </div>
       </div>
     </div>

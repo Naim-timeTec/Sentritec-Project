@@ -77,6 +77,8 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .btn-ghost:hover { border-color: var(--ink); }
 .btn-dark { background: var(--ink); color: #fff; }
 .btn-dark:hover { background: #2c2c30; }
+.btn-secondary { background: transparent; color: #fff; border-color: #fff; }
+.btn-secondary:hover { background: rgba(255,255,255,.08); border-color: #fff; }
 .btn-ghost.on-dark { color: #fff; border-color: rgba(255,255,255,.28); }
 .btn-ghost.on-dark:hover { border-color: #fff; background: rgba(255,255,255,.06); }
 
@@ -249,7 +251,10 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 /* ---------- Hero (full-screen video) ---------- */
 .hero-v {
   position: relative; min-height: 100vh; overflow: hidden;
-  display: flex; align-items: center; justify-content: center; text-align: center;
+  display: flex; 
+  /* align-items: center;  */
+  align-items: flex-end; 
+  justify-content: center; text-align: center;
   color: #fff; background: #0c0d12;
 }
 .hero-v-media { position: absolute; inset: 0; z-index: 0; }
@@ -290,7 +295,7 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
   display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
   animation: heroRise 1s var(--ease) .4s both;
 }
-.hero-v-cta .btn-primary { padding: 15px 34px; font-size: 16px; }
+.hero-v-cta .btn { padding: 15px 34px; font-size: 16px; }
 /* the video/placeholder gently settles in as the hero loads */
 .hero-v-media { animation: heroMedia 1.4s var(--ease) both; }
 @keyframes heroRise {
@@ -363,7 +368,7 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 @keyframes drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
 /* ---------- Sections ---------- */
-.section { padding: clamp(72px, 11vw, 140px) 0; }
+/* .section { padding: clamp(72px, 11vw, 140px) 0; } */
 .section.spec { background: linear-gradient(180deg,rgba(247, 248, 255, 1) 0%, rgba(255, 255, 255, 1) 20%); }
 .section.mission { padding-bottom: 50px; }
 #ecosystem { overflow-x: clip; }  /* clip the carousel bleed at the viewport edge, no sideways page scroll */
@@ -786,13 +791,75 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .sw-btn svg { flex: none; transition: transform .2s var(--ease); }
 .sw-btn:hover svg { transform: translateX(3px); }
 
+/* ---------- Software — full-bleed media stage (homepage) ----------
+   Video/image fills the whole viewport; a full-width segmented control sits
+   up top; the title, description and CTA are anchored bottom-left over a
+   legibility scrim. */
+.home #software.sw2-hero { padding: 0; }
+.sw2-hero .sw2 {
+  position: relative; margin: 0; width: 100%;
+  min-height: 100vh; min-height: 100svh;
+  display: flex; overflow: hidden; border-radius: 0;
+}
+.sw2-hero .sw2-visual {
+  position: absolute; inset: 0; z-index: 0;
+  aspect-ratio: auto; border-radius: 0; overflow: hidden; background: #0c0d12;
+}
+.sw2-hero .sw2-pane { position: absolute; inset: 0; }
+.sw2-hero .sw2-pane .img-ph {
+  width: 100%; height: 100%; border-radius: 0;
+  background:
+    radial-gradient(80% 70% at 30% 18%, #23263b 0%, rgba(35,38,59,0) 60%),
+    linear-gradient(135deg, #1a1c2b 0%, #0c0d12 100%);
+}
+.sw2-hero .sw2-pane .ph-mini { color: rgba(255,255,255,.5); }
+.sw2-scrim {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(8,9,14,.6) 0%, rgba(8,9,14,.14) 30%, rgba(8,9,14,.2) 52%, rgba(8,9,14,.82) 100%);
+}
+.sw2-overlay {
+  position: relative; z-index: 2; align-self: stretch;
+  display: flex; flex-direction: column; color: #fff;
+  padding-top: calc(var(--nav-h) + clamp(24px, 4vw, 52px));
+  padding-bottom: clamp(40px, 6vw, 84px);
+}
+.sw2-top { display: flex; flex-direction: column; gap: clamp(18px, 2.6vw, 30px); }
+.sw2-heading {
+  margin: 0; color: #fff; 
+  /* max-width: 18ch; */
+  font-size: clamp(30px, 4vw, 50px); letter-spacing: -0.03em; line-height: 1.06;
+  text-shadow: 0 2px 30px rgba(0,0,0,.35);
+  text-align: center;
+}
+.sw2-hero .sw2-toggle {
+  width: 100%; margin: 0; gap: 6px; padding: 6px;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.sw2-hero .sw2-tab { flex: 1; text-align: center; color: rgba(255,255,255,.82); padding: 13px 26px; }
+.sw2-hero .sw2-tab:hover { color: #fff; }
+.sw2-hero .sw2-tab.active { background: #fff; color: var(--ink); }
+.sw2-hero .sw2-copy { margin-top: auto; max-width: 600px; padding-top: clamp(40px, 8vw, 90px); }
+.sw2-hero .sw2-text h3 { color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
+.sw2-hero .sw2-text > p { color: rgba(255,255,255,.86); }
+
 @media (max-width: 860px) {
   .sw2-body { grid-template-columns: 1fr; gap: 24px; }
   .sw2-visual { order: -1; aspect-ratio: 16 / 10; }
 }
 
 /* Integration — dark visual + clickable numbered feature list (swaps the visual) */
-.intg2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 84px); align-items: stretch; margin-top: clamp(44px, 6vw, 72px); }
+/* Integration — two-column header: title on the left, subheading + CTA on the right */
+.intg2-head { display: flex; align-items: flex-start; gap: clamp(32px, 5vw, 80px); }
+.intg2-head-title { flex: 1 1 0; min-width: 0; }
+.intg2-head-title h2 { margin: 0; }
+.intg2-head-aside { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
+.intg2-head-aside .lead { margin: 0; color: var(--slate); }
+
+.intg2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 84px); align-items: stretch; 
+  /* margin-top: clamp(44px, 6vw, 72px);  */
+  margin-top: clamp(44px, 6vw, 50px); 
+}
 .intg2-visual { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: clamp(380px, 42vw, 520px); }
 .intg2-pane { position: absolute; inset: 0; opacity: 0; transition: opacity .4s var(--ease); }
 .intg2-pane.active { opacity: 1; }
@@ -816,12 +883,44 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .intg2-item.active .intg2-tx small { color: var(--slate); }
 .intg2-cta { align-self: flex-start; margin-top: clamp(22px, 3vw, 32px); }
 @media (max-width: 920px) {
+  .intg2-head { flex-direction: column; gap: clamp(16px, 3vw, 24px); }
   .intg2 { grid-template-columns: 1fr; gap: clamp(28px, 5vw, 40px); }
   .intg2-visual { min-height: 0; aspect-ratio: 16 / 11; order: -1; }
 }
 
-/* Compliance — monochrome logo row that goes full colour on hover */
-#compliance { padding-top: clamp(96px, 13vw, 168px); padding-bottom: clamp(96px, 13vw, 168px); }
+/* Homepage — each major section fills ~one viewport with its content vertically
+   centered, so the page reads as one clean screen per section instead of tall
+   gaps between them. Compliance is intentionally excluded below (short logo row). */
+.home #why-sentritec,
+.home #software,
+.home #products,
+.home #integration {
+  /* min-height: 100vh; */
+  /* min-height: 100svh; */
+  min-height: calc(100svh - 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding-top: clamp(88px, 12vh, 120px);
+  padding-bottom: clamp(56px, 8vh, 90px); */
+}
+
+/* Compliance — monochrome logo row that goes full colour on hover.
+   Kept at natural (short) height — not stretched to the viewport. */
+#compliance { padding-top: clamp(56px, 8vw, 88px); padding-bottom: clamp(56px, 8vw, 88px); }
+
+/* Mobile — once the sections stack, their content grows past the viewport and
+   the 100vh sizing collapses to content height, so neighbours end up touching.
+   Add real vertical breathing room between them (the full-bleed software stage
+   stays edge-to-edge and keeps its own padding:0). */
+@media (max-width: 920px) {
+  .home #why-sentritec,
+  .home #products,
+  .home #integration {
+    padding-top: clamp(60px, 10vw, 88px);
+    padding-bottom: clamp(60px, 10vw, 88px);
+  }
+}
 .comp-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(40px, 7vw, 96px); margin-top: clamp(44px, 5vw, 64px); }
 .comp-logo {
   display: inline-flex; align-items: center;
@@ -842,14 +941,32 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 #products .scene-head h2,
 #built-for .section-head h2,
 #compliance .section-head h2,
-#integration .section-head h2 {
+#integration .intg2-head h2 {
   font-size: clamp(30px, 4vw, 50px); letter-spacing: -0.03em; line-height: 1.06;
 }
 #why-sentritec .why3-head .lead,
 #compliance .section-head .lead,
-#integration .section-head .lead {
+#integration .intg2-head .lead {
   font-size: clamp(16px, 1.6vw, 18.5px);
 }
+
+/* Homepage — one standardized gap between every section title and its content
+   (was 20px / 36px / 64px across the different heading wrappers). */
+.home .why3-head,
+.home .scene-head,
+.home .section-head {
+  margin-bottom: clamp(22px, 2.4vw, 34px);
+  padding-bottom: 0;
+}
+
+/* Why Sentritec — enlarge the visual so the content fills the viewport section
+   instead of leaving a tall empty band above the title. */
+.home #why-sentritec .why3 { align-items: stretch; }
+.home #why-sentritec .why3-media {
+  aspect-ratio: auto;
+  height: clamp(400px, 60vh, 640px);
+}
+.home #why-sentritec .why3-tabs { justify-content: center; }
 
 /* ---------- Unified operations (persona stripe) ---------- */
 .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
@@ -966,40 +1083,42 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .scene-popup p { color: var(--slate); font-size: 15px; margin: 0 0 20px; }
 
 /* ---------- Hardware — floating product image with centered text (no card, no border, no grey) ---------- */
-.eco-grid { display: flex; gap: clamp(24px, 3vw, 56px); margin-top: 56px; }
+.eco-grid { display: flex; gap: clamp(24px, 3vw, 56px); 
+  /* margin-top: 56px;  */
+}
 /* a single featured product sits centred rather than stretching full width */
 .eco-grid--single { justify-content: center; }
 .eco-grid--single .eco-card { flex: 0 1 clamp(360px, 52%, 540px); }
 .eco-card {
   flex: 1 1 0; min-width: 0; position: relative;
   display: flex; flex-direction: column; align-items: center; text-align: center;
-  background: none; border: 0;
+  background: var(--paper-2); border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 3vw, 44px) clamp(20px, 2vw, 32px) 0;
 }
 
+/* title + learn-more anchored at the top of the card */
+.eco-body {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 0; max-width: 400px; margin: 0 auto;
+}
+.eco-body h3 { font-size: clamp(22px, 2.4vw, 28px); margin: 0 0 12px; }
+.eco-body .link-arrow { color: var(--accent); }
+
+/* product image sits at the bottom — same footprint for every card */
 .eco-stage {
-  position: relative; width: 100%; height: clamp(320px, 34vw, 460px);
-  display: flex; align-items: flex-end; justify-content: center; padding: clamp(8px, 1.2vw, 18px);
+  position: relative; width: 100%; margin-top: clamp(22px, 3vw, 40px);
+  height: clamp(300px, 30vw, 420px);
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 0 clamp(8px, 1.2vw, 18px) clamp(28px, 3vw, 44px);
   background: none;
 }
 .eco-stage img {
-  position: relative; z-index: 1; max-width: 100%; width: auto; height: auto;
+  position: relative; z-index: 1; width: auto; max-width: 100%;
+  max-height: clamp(210px, 24vw, 320px);
   filter: drop-shadow(0 22px 28px rgba(45,49,66,.18));
   transform-origin: center bottom;
 }
-/* keep each reader at its true relative size (Face Core tallest → Access Core smallest),
-   sitting on a shared baseline */
-#face-core .eco-stage img { max-height: 100%; }
-#access-core-pro .eco-stage img { max-height: 74%; }
-#access-core .eco-stage img { max-height: 50%; max-height: 40%; }
-
-/* body — centered title, 3-line description, learn more */
-.eco-body {
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  padding: clamp(18px, 2.2vw, 30px) clamp(8px, 1.5vw, 20px) 0; max-width: 400px; margin: 0 auto;
-}
-.eco-body h3 { font-size: clamp(22px, 2.4vw, 28px); margin: 0 0 14px; }
-.eco-body p { color: var(--slate); font-size: 15px; line-height: 1.6; margin: 0 0 18px; }
-.eco-body .link-arrow { margin-top: auto; color: var(--accent); }
 
 /* ---------- Hero CTA buttons ---------- */
 .hs-cta { display: flex; gap: 14px; margin-top: clamp(24px, 3vw, 34px); flex-wrap: wrap; }
