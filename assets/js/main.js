@@ -264,6 +264,44 @@
     });
   })();
 
+  /* Sentritec One — Control & Secure: icon tabs swap the bottom-right description card */
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".oc-tab"));
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".oc-card"));
+    if (!tabs.length) return;
+    function show(i) {
+      tabs.forEach(function (t, idx) {
+        var on = idx === i;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      cards.forEach(function (c, idx) { c.classList.toggle("active", idx === i); });
+    }
+    tabs.forEach(function (t, idx) { t.addEventListener("click", function () { show(idx); }); });
+  })();
+
+  /* Sentritec One — accordion: always exactly one open (click another to switch) */
+  (function () {
+    var groups = Array.prototype.slice.call(document.querySelectorAll(".acc"));
+    if (!groups.length) return;
+    groups.forEach(function (group) {
+      var items = Array.prototype.slice.call(group.querySelectorAll(".acc-item"));
+      items.forEach(function (item) {
+        var head = item.querySelector(".acc-head");
+        if (!head) return;
+        head.addEventListener("click", function () {
+          if (item.classList.contains("is-open")) return; // can't close the active one
+          items.forEach(function (it) {
+            var on = it === item;
+            it.classList.toggle("is-open", on);
+            var h = it.querySelector(".acc-head");
+            if (h) h.setAttribute("aria-expanded", on ? "true" : "false");
+          });
+        });
+      });
+    });
+  })();
+
   /* Mega-menu: hover works via CSS; this adds click/touch + keyboard + outside-close */
   (function () {
     var items = Array.prototype.slice.call(document.querySelectorAll(".nav-item"));

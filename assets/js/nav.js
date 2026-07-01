@@ -28,10 +28,17 @@
             <div class="mega">
               <div class="wrap mega-inner mega-cat">
                 <div class="mega-cats" role="tablist" aria-label="Product categories">
-                  <button class="mega-cat-tab active" data-cat="access" role="tab" aria-selected="true">Access Control</button>
+                  <button class="mega-cat-tab active" data-cat="platform" role="tab" aria-selected="true">Platform</button>
+                  <button class="mega-cat-tab" data-cat="access" role="tab" aria-selected="false">Access Control</button>
                 </div>
                 <div class="mega-cat-body">
-                  <div class="mega-cat-panel active" data-cat="access">
+                  <div class="mega-cat-panel active" data-cat="platform">
+                    <div class="mega-grid">
+                      <a class="mega-card" href="${root}product/platform/sentritec-one.html"><b>Sentritec One</b></a>
+                      <a class="mega-card" href="${root}index.html#software"><b>Sentritec Pass</b></a>
+                    </div>
+                  </div>
+                  <div class="mega-cat-panel" data-cat="access">
                     <div class="mega-grid">
                       <a class="mega-card" href="${root}product/door-access.html"><b>Door Access</b></a>
                       <a class="mega-card" href="${root}product/face-recognition.html"><b>Face Recognition</b></a>
@@ -115,6 +122,9 @@
     <!-- Products — nested: Products > Access Control > Door Access -->
     <details class="m-group">
       <summary>Products<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <span class="m-sublabel">Platform</span>
+      <a href="${root}product/platform/sentritec-one.html">Sentritec One</a>
+      <a href="${root}index.html#software">Sentritec Pass</a>
       <span class="m-sublabel">Access Control</span>
       <a href="${root}product/door-access.html">Door Access</a>
       <a href="${root}product/face-recognition.html">Face Recognition</a>
