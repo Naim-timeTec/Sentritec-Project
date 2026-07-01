@@ -929,6 +929,10 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
   padding-bottom: clamp(56px, 8vh, 90px); */
 }
 
+  .home #integration.sec-bg{
+        background-color: #F4F4F7;
+  }
+
 /* Compliance — monochrome logo row that goes full colour on hover.
    Kept at natural (short) height — not stretched to the viewport. */
 #compliance { padding-top: clamp(56px, 8vw, 88px); padding-bottom: clamp(56px, 8vw, 88px); }
