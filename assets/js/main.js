@@ -264,9 +264,10 @@
     });
   })();
 
-  /* Sentritec One — Control & Secure: icon tabs swap the bottom-right description card */
+  /* Sentritec One — Control & Secure: icon tabs swap the image + bottom-right card */
   (function () {
     var tabs = Array.prototype.slice.call(document.querySelectorAll(".oc-tab"));
+    var panes = Array.prototype.slice.call(document.querySelectorAll(".oc-pane"));
     var cards = Array.prototype.slice.call(document.querySelectorAll(".oc-card"));
     if (!tabs.length) return;
     function show(i) {
@@ -275,6 +276,7 @@
         t.classList.toggle("active", on);
         t.setAttribute("aria-selected", on ? "true" : "false");
       });
+      panes.forEach(function (p, idx) { p.classList.toggle("active", idx === i); });
       cards.forEach(function (c, idx) { c.classList.toggle("active", idx === i); });
     }
     tabs.forEach(function (t, idx) { t.addEventListener("click", function () { show(idx); }); });
