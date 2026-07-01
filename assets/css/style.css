@@ -834,40 +834,20 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
   text-shadow: 0 2px 30px rgba(0,0,0,.35);
   text-align: center;
 }
-/* bottom row: copy anchored bottom-left, tabs bottom-right */
-.sw2-bottom {
-  margin-top: auto; display: flex; align-items: flex-end;
-  justify-content: space-between; gap: clamp(24px, 4vw, 64px);
-}
-.sw2-hero .sw2-copy { max-width: 600px; }
-
-/* minimal text tabs with an underline indicator (reference-style), bottom-right */
+/* full-width glass segmented control at the top */
 .sw2-hero .sw2-toggle {
-  width: auto; margin: 0; flex: none; padding: 0;
-  gap: clamp(18px, 2.4vw, 36px);
-  background: none; border: 0;
-  -webkit-backdrop-filter: none; backdrop-filter: none;
+  width: 100%; margin: 0; gap: 6px; padding: 6px;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
 }
-.sw2-hero .sw2-tab {
-  flex: none; padding: 10px 2px; border-radius: 0; background: none;
-  color: rgba(255,255,255,.68); position: relative; white-space: nowrap;
-}
-.sw2-hero .sw2-tab::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
-  background: #fff; transform: scaleX(0); transform-origin: left;
-  transition: transform .25s var(--ease);
-}
-.sw2-hero .sw2-tab:hover { background: none; color: #fff; }
-.sw2-hero .sw2-tab.active { background: none; color: #fff; }
-.sw2-hero .sw2-tab.active::after { transform: scaleX(1); }
+.sw2-hero .sw2-tab { flex: 1; text-align: center; color: rgba(255,255,255,.82); padding: 13px 26px; }
+.sw2-hero .sw2-tab:hover { color: #fff; }
+.sw2-hero .sw2-tab.active { background: #fff; color: var(--ink); }
 
+/* copy anchored to the bottom-left */
+.sw2-hero .sw2-copy { margin-top: auto; max-width: 600px; padding-top: clamp(40px, 8vw, 90px); }
 .sw2-hero .sw2-text h3 { color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
 .sw2-hero .sw2-text > p { color: rgba(255,255,255,.86); }
-
-@media (max-width: 760px) {
-  .sw2-bottom { flex-direction: column; align-items: flex-start; gap: clamp(20px, 5vw, 32px); }
-  .sw2-hero .sw2-toggle { order: -1; }
-}
 
 /* Integration — dark visual + clickable numbered feature list (swaps the visual) */
 /* Integration — two-column header: title on the left, subheading + CTA on the right */
