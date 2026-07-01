@@ -928,6 +928,7 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
   /* padding-top: clamp(88px, 12vh, 120px);
   padding-bottom: clamp(56px, 8vh, 90px); */
 }
+/* a */
 
   .home #integration.sec-bg{
         background-color: #F4F4F7;
