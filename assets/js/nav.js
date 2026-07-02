@@ -37,6 +37,7 @@
                     <div class="mega-grid">
                       <a class="mega-card" href="${root}one"><b>Sentritec One</b></a>
                       <a class="mega-card" href="${root}pass"><b>Sentritec Pass</b></a>
+                      <a class="mega-card" href="${root}integrations"><b>Integrations</b></a>
                     </div>
                   </div>
                   <div class="mega-cat-panel" data-cat="access">
@@ -126,6 +127,7 @@
       <span class="m-sublabel">Platform</span>
       <a href="${root}one">Sentritec One</a>
       <a href="${root}pass">Sentritec Pass</a>
+      <a href="${root}integrations">Integrations</a>
       <span class="m-sublabel">Access Control</span>
       <a href="${root}access-control/door-readers">Door Access</a>
       <a href="${root}access-control/face-recognition">Face Recognition</a>
