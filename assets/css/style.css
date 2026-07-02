@@ -854,7 +854,7 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 
 /* Integration — dark visual + clickable numbered feature list (swaps the visual) */
 /* Integration — two-column header: title on the left, subheading + CTA on the right */
-.intg2-head { display: flex; align-items: flex-start; gap: clamp(32px, 5vw, 80px); }
+.intg2-head { display: flex; align-items: flex-start; gap: clamp(32px, 5vw, 80px); margin-bottom: 20px;}
 .intg2-head-title { flex: 1 1 0; min-width: 0; }
 .intg2-head-title h2 { margin: 0; }
 .intg2-head-aside { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
@@ -2058,13 +2058,15 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .pass-block .section-head h2,
 .pass-split-copy h2,
 .guest-head h2,
-.pass-cta h2 {
+.pass-cta h2,
+.pass-block .intg2-head h2 {
   font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -0.02em; line-height: 1.1;
 }
 .unlock-head .lead,
 .pass-split-copy .lead,
 .pass-block .section-head .lead,
-.guest-head .lead {
+.guest-head .lead,
+.pass-block .intg2-head .lead {
   font-size: clamp(16px, 1.7vw, 18.5px); line-height: 1.55;
 }
 
@@ -2110,4 +2112,73 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 }
 @media (max-width: 560px) {
   .perim-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Integrations page
+   ============================================================ */
+/* 2. Types of integration — centered icon-on-top columns with vertical dividers */
+.int-types { display: grid; grid-template-columns: repeat(2, 1fr); margin: clamp(40px, 5vw, 60px) auto 0; max-width: 940px; }
+.int-type { text-align: center; display: flex; flex-direction: column; align-items: center; padding: clamp(6px, 1.5vw, 12px) clamp(28px, 4vw, 56px); }
+.int-type + .int-type { border-left: 1px solid var(--line); }
+.int-type-ic { display: inline-flex; color: var(--ink-2); margin-bottom: clamp(16px, 2vw, 22px); }
+.int-type-ic svg { width: 36px; height: 36px; }
+.int-type h3 { margin: 0 0 12px; font-size: clamp(19px, 2.1vw, 24px); letter-spacing: -0.01em; }
+.int-type p { margin: 0 0 18px; color: var(--slate); font-size: 15.5px; line-height: 1.6; }
+.int-type .link-arrow { margin-top: auto; color: var(--accent); }
+
+/* 3. Native integrations — card grid */
+.nat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.4vw, 30px); margin-top: clamp(40px, 5vw, 60px); }
+.nat-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+.nat-media { aspect-ratio: 16 / 10; overflow: hidden; background: var(--paper-2); }
+.nat-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nat-body { padding: clamp(22px, 2.4vw, 30px); }
+.nat-body h3 { margin: 0 0 10px; font-size: clamp(17px, 1.8vw, 20px); letter-spacing: -0.01em; line-height: 1.25; }
+.nat-body p { margin: 0; color: var(--slate); font-size: 15px; line-height: 1.6; }
+
+/* shared button rows */
+.int-btnrow { display: flex; justify-content: center; margin-top: clamp(40px, 5vw, 56px); }
+.int-btnrow--left { justify-content: flex-start; margin-top: clamp(28px, 3vw, 36px); }
+
+/* 4. API — copy + dark code block */
+.api-split { align-items: stretch; }
+.api-split .pass-points { margin-top: 0; }
+.api-code { border-radius: var(--radius-lg); overflow: hidden; background: #0e1017; border: 1px solid #23283a; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.api-code-top { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid #23283a; }
+.api-code-top span { width: 11px; height: 11px; border-radius: 50%; background: #3a4055; }
+.api-code-top em { margin-left: 10px; font-style: normal; font-size: 12.5px; color: rgba(255,255,255,.5); letter-spacing: .02em; }
+.api-code-body { flex: 1; 
+  /* margin: 0;  */
+  padding: clamp(18px, 2vw, 26px); overflow-x: auto; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13.5px; line-height: 1.7; color: #cfd6e6; }
+.api-code-body .c-m { color: #8ea2ee; }
+.api-code-body .c-k { color: #7fd4c1; }
+.api-code-body .c-s { color: #e6b980; }
+.api-code-body .c-d { color: rgba(255,255,255,.4); }
+
+/* 5. Security — 3-up icon columns with dividers */
+.sec-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(40px, 5vw, 60px); }
+.sec-item { text-align: center; padding: clamp(6px, 1.5vw, 12px) clamp(24px, 3vw, 44px); }
+.sec-item + .sec-item { border-left: 1px solid var(--line); }
+.sec-ic { display: inline-flex; color: var(--ink-2); margin-bottom: clamp(16px, 2vw, 22px); }
+.sec-item h3 { margin: 0 0 10px; font-size: clamp(18px, 2vw, 22px); letter-spacing: -0.01em; }
+.sec-item p { margin: 0; color: var(--slate); font-size: 15px; line-height: 1.6; }
+
+/* 6. Final CTA — full-width black band, centered content */
+#request { background: var(--ink); }
+.int-final { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.int-final .section-head { max-width: 640px; padding-bottom: 0; }
+.int-final .section-head h2 { color: #fff; }
+.int-final .section-head .lead { color: rgba(255,255,255,.78); }
+.int-final .btn { margin-top: clamp(24px, 3vw, 32px); }
+
+@media (max-width: 920px) {
+  .nat-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .int-types { grid-template-columns: 1fr; }
+  .nat-grid { grid-template-columns: 1fr; }
+  .sec-grid { grid-template-columns: 1fr; }
+  .int-type, .sec-item { padding: 0; }
+  .int-type + .int-type,
+  .sec-item + .sec-item { border-left: 0; border-top: 1px solid var(--line); padding-top: clamp(26px, 5vw, 34px); }
 }
