@@ -282,6 +282,32 @@
     tabs.forEach(function (t, idx) { t.addEventListener("click", function () { show(idx); }); });
   })();
 
+  /* Sentritec Pass — Modern Unlocking carousel arrows */
+  (function () {
+    var track = document.getElementById("unlockTrack");
+    if (!track) return;
+    var arrows = Array.prototype.slice.call(document.querySelectorAll(".unlock-arrow"));
+    function step() {
+      var c = track.querySelector(".uc");
+      return c ? c.getBoundingClientRect().width + 24 : Math.round(track.clientWidth * 0.7);
+    }
+    function sync() {
+      var prev = arrows.filter(function (a) { return a.getAttribute("data-dir") === "-1"; })[0];
+      var next = arrows.filter(function (a) { return a.getAttribute("data-dir") === "1"; })[0];
+      var max = track.scrollWidth - track.clientWidth - 2;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max;
+    }
+    arrows.forEach(function (a) {
+      a.addEventListener("click", function () {
+        var dir = parseInt(a.getAttribute("data-dir"), 10) || 1;
+        track.scrollBy({ left: dir * step(), behavior: "smooth" });
+      });
+    });
+    track.addEventListener("scroll", sync, { passive: true });
+    sync();
+  })();
+
   /* Mega-menu: hover works via CSS; this adds click/touch + keyboard + outside-close */
   (function () {
     var items = Array.prototype.slice.call(document.querySelectorAll(".nav-item"));

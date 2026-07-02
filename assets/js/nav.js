@@ -8,12 +8,13 @@
   var mount = document.getElementById("site-nav");
   if (!mount) return;
   var root = mount.getAttribute("data-root") || "";
+  var home = root || "./";
 
   mount.outerHTML = `
   <!-- ============== NAV ============== -->
   <header class="nav" id="nav">
     <div class="wrap">
-      <a href="${root}index.html" aria-label="SentriTec home">
+      <a href="${home}" aria-label="SentriTec home">
         <img src="${root}assets/sentritec-logo-white.svg" alt="SentriTec" class="nav-logo white" />
         <img src="${root}assets/sentritec-logo.svg" alt="SentriTec" class="nav-logo dark" />
       </a>
@@ -34,14 +35,14 @@
                 <div class="mega-cat-body">
                   <div class="mega-cat-panel active" data-cat="platform">
                     <div class="mega-grid">
-                      <a class="mega-card" href="${root}product/platform/sentritec-one.html"><b>Sentritec One</b></a>
-                      <a class="mega-card" href="${root}index.html#software"><b>Sentritec Pass</b></a>
+                      <a class="mega-card" href="${root}one"><b>Sentritec One</b></a>
+                      <a class="mega-card" href="${root}pass"><b>Sentritec Pass</b></a>
                     </div>
                   </div>
                   <div class="mega-cat-panel" data-cat="access">
                     <div class="mega-grid">
-                      <a class="mega-card" href="${root}product/door-access.html"><b>Door Access</b></a>
-                      <a class="mega-card" href="${root}product/face-recognition.html"><b>Face Recognition</b></a>
+                      <a class="mega-card" href="${root}access-control/door-readers"><b>Door Access</b></a>
+                      <a class="mega-card" href="${root}access-control/face-recognition"><b>Face Recognition</b></a>
                     </div>
                   </div>
                 </div>
@@ -58,10 +59,10 @@
               <div class="wrap mega-inner mega-inner--simple">
                 <span class="mega-aside">Industries</span>
                 <div class="mega-content mega-cards mega-cards--fixed">
-                  <a class="mega-card mega-card--ico" href="${root}industries/office.html">
+                  <a class="mega-card mega-card--ico" href="${root}industries/office">
                     <span class="mega-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/><path d="M6 12H4a2 2 0 0 0-2 2v8h4"/><path d="M18 9h2a2 2 0 0 1 2 2v11h-4"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></svg></span><b>Office</b>
                   </a>
-                  <a class="mega-card mega-card--ico" href="${root}industries/factory.html">
+                  <a class="mega-card mega-card--ico" href="${root}industries/factory">
                     <span class="mega-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M7 18h.01M12 18h.01M17 18h.01"/></svg></span><b>Factory</b>
                   </a>
                 </div>
@@ -78,8 +79,8 @@
               <div class="wrap mega-inner mega-inner--simple">
                 <span class="mega-aside">Resources</span>
                 <div class="mega-content mega-cards mega-cards--fixed">
-                  <a class="mega-card" href="${root}about.html"><b>About</b></a>
-                  <a class="mega-card" href="${root}contact.html"><b>Contact</b></a>
+                  <a class="mega-card" href="${root}about"><b>About</b></a>
+                  <a class="mega-card" href="${root}contact"><b>Contact</b></a>
                 </div>
               </div>
             </div>
@@ -109,7 +110,7 @@
       </nav>
       <div class="nav-right">
         <a href="" class="btn btn-ghost nav-login">Login</a>
-        <a href="${root}contact.html" class="btn btn-dark nav-cta">Get Started</a>
+        <a href="${root}contact" class="btn btn-dark nav-cta">Get Started</a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -123,21 +124,21 @@
     <details class="m-group">
       <summary>Products<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
       <span class="m-sublabel">Platform</span>
-      <a href="${root}product/platform/sentritec-one.html">Sentritec One</a>
-      <a href="${root}index.html#software">Sentritec Pass</a>
+      <a href="${root}one">Sentritec One</a>
+      <a href="${root}pass">Sentritec Pass</a>
       <span class="m-sublabel">Access Control</span>
-      <a href="${root}product/door-access.html">Door Access</a>
-      <a href="${root}product/face-recognition.html">Face Recognition</a>
+      <a href="${root}access-control/door-readers">Door Access</a>
+      <a href="${root}access-control/face-recognition">Face Recognition</a>
     </details>
     <details class="m-group">
       <summary>Industries<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <a href="${root}industries/office.html">Office</a>
-      <a href="${root}industries/factory.html">Factory</a>
+      <a href="${root}industries/office">Office</a>
+      <a href="${root}industries/factory">Factory</a>
     </details>
     <details class="m-group">
       <summary>Resources<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <a href="${root}about.html">About</a>
-      <a href="${root}contact.html">Contact</a>
+      <a href="${root}about">About</a>
+      <a href="${root}contact">Contact</a>
     </details>
     <details class="m-group">
       <summary>Partners<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -147,7 +148,7 @@
       <a href="#">Become a Partner</a>
     </details>
     <a href="" class="btn btn-ghost">Login</a>
-    <a href="${root}contact.html" class="btn btn-dark">Get Started</a>
+    <a href="${root}contact" class="btn btn-dark">Get Started</a>
   </div>`;
 
   /* Products mega — left category rail switches the item grid on the right */

@@ -1958,3 +1958,156 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
   .oc-tab { flex: 0 0 auto; min-width: 104px; }
   .oc-cards { width: auto; left: clamp(14px, 4vw, 20px); right: clamp(14px, 4vw, 20px); }
 }
+
+/* ============================================================
+   Sentritec Pass — mobile app page
+   ============================================================ */
+.pass-eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; font-weight: 600; color: var(--accent); margin: 0 0 18px; }
+.pass-block { padding: clamp(64px, 9vw, 112px) 0; }
+.pass-block .section-head { max-width: 780px; margin: 0 auto; }
+.pass-block .section-head .lead { margin: 16px auto 0; }
+
+/* 1. Hero — full-bleed background image with copy overlaid on the left */
+.pass-hero {
+  position: relative; overflow: hidden; color: #fff;
+  min-height: 100vh; min-height: 100svh;
+  display: flex; align-items: flex-end;
+}
+.pass-hero-bg { position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; background: linear-gradient(135deg, #2b2f4a 0%, #14161f 100%); }
+.pass-hero-bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pass-hero-ph { color: rgba(255,255,255,.4); font-size: 14px; letter-spacing: .05em; text-transform: uppercase; }
+.pass-hero-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(8,9,14,.74) 0%, rgba(8,9,14,.42) 46%, rgba(8,9,14,.08) 100%); }
+.pass-hero-inner { position: relative; z-index: 2; padding-top: var(--nav-h); padding-bottom: clamp(48px, 8vh, 100px); }
+.pass-hero-copy { max-width: 620px; }
+.pass-hero .pass-eyebrow { color: #b6bce0; }
+.pass-hero-copy h1 { margin: 0; color: #fff; font-size: clamp(34px, 5vw, 58px); letter-spacing: -0.03em; line-height: 1.05; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
+.pass-hero-copy .lead { margin-top: 18px; color: rgba(255,255,255,.85); }
+
+.pass-badges { display: flex; flex-wrap: wrap; gap: 14px; margin-top: clamp(26px, 3vw, 34px); }
+/* real badge artwork */
+.pass-badge-img { height: 50px; width: auto; display: block; }
+/* placeholder until the PNGs are added */
+.pass-badge-ph { display: inline-flex; align-items: center; justify-content: center; 
+    height: 60px;
+    min-width: 160px;
+    padding: 16px 40px;
+    border: 1.5px solid #73808c;
+    border-radius: 240px;
+  color: rgba(255,255,255,.75); font-size: 12.5px; font-weight: 600; letter-spacing: .02em; }
+
+/* 2. Modern unlocking — horizontal carousel of wide video cards */
+/* header — title left, subheader right; split by ratio (no fixed widths) */
+.unlock-head { display: flex; align-items: flex-start; gap: clamp(24px, 5vw, 64px); }
+.unlock-head h2 { flex: 1 1 0; min-width: 0; margin: 0; }
+.unlock-head .lead { flex: 1 1 0; min-width: 0; margin: 0 0 6px; }
+#unlock { overflow-x: clip; }   /* keep the right-edge bleed from adding a page scrollbar */
+.unlock-carousel { margin-top: clamp(34px, 4.5vw, 56px); }
+.unlock-track {
+  display: flex; gap: clamp(20px, 2.4vw, 28px); overflow-x: auto;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; padding-bottom: 2px;
+  /* extend the track to the right edge of the screen — the peek runs to the screen edge */
+  margin-right: calc(50% - 50vw);
+}
+.unlock-track::-webkit-scrollbar { display: none; }
+/* one large card with the next peeking in; the peek fades out (see track mask) */
+.uc { flex: 0 0 clamp(300px, 72%, 940px); scroll-snap-align: start; }
+.uc-media { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16 / 8.4; background: linear-gradient(160deg, #23273e 0%, #0f1119 100%); }
+.uc-media::after { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 34px 34px; }
+.uc-badge { position: absolute; top: 16px; left: 16px; z-index: 2; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.82); font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 999px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.uc-badge svg { width: 10px; height: 10px; }
+/* description anchored to the bottom-left of the card */
+.uc-media-in { position: absolute; left: clamp(22px, 3vw, 36px); right: clamp(22px, 3vw, 36px); bottom: clamp(20px, 2.6vw, 28px); z-index: 1; text-align: left; color: rgba(255,255,255,.85); max-width: 460px; }
+.uc-media-in p { margin: 0; font-size: 15px; line-height: 1.55; }
+.uc-cap { margin-top: 18px; font-size: clamp(18px, 1.9vw, 22px); font-weight: 600; letter-spacing: -0.01em; }
+.unlock-nav { display: flex; justify-content: flex-end; gap: 12px; margin-top: clamp(20px, 2.5vw, 28px); }
+.unlock-arrow { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: background .2s var(--ease), border-color .2s var(--ease); }
+.unlock-arrow:hover { background: var(--paper-2); border-color: var(--ink); }
+.unlock-arrow:disabled { opacity: .4; cursor: default; }
+
+/* 3. Security perimeter — centered icon-on-top columns with vertical dividers */
+.perim-grid { display: grid; grid-template-columns: repeat(2, 1fr); margin: clamp(40px, 5vw, 60px) auto 0; max-width: 940px; }
+.perim-item { text-align: center; padding: clamp(6px, 1.5vw, 12px) clamp(28px, 4vw, 56px); }
+.perim-item + .perim-item { border-left: 1px solid var(--line); }
+.perim-ic { display: inline-flex; color: var(--ink-2); margin-bottom: clamp(16px, 2vw, 22px); }
+.perim-ic svg { width: 30px; height: 30px; }
+.perim-item h3 { margin: 0 0 10px; font-size: clamp(19px, 2vw, 23px); letter-spacing: -0.01em; }
+.perim-item p { margin: 0; color: var(--slate); font-size: 15px; line-height: 1.6; }
+
+/* 4 & 5. Split rows */
+.pass-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 5vw, 80px); align-items: center; }
+.pass-split--rev .pass-split-media { order: -1; }
+.pass-split-copy h2 { margin: 0; font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -0.02em; line-height: 1.1; }
+.pass-split-copy .lead { margin-top: 16px; }
+.pass-points { display: flex; flex-direction: column; margin-top: clamp(24px, 3vw, 36px); }
+.pass-point { padding: clamp(18px, 2.2vw, 26px) 0; border-top: 1px solid var(--line); }
+.pass-point:first-child { border-top: 0; padding-top: 0; }
+.pass-point h3 { margin: 0 0 8px; font-size: clamp(17px, 1.7vw, 20px); letter-spacing: -0.01em; }
+.pass-point p { margin: 0; color: var(--slate); font-size: 15px; line-height: 1.6; }
+.pass-media { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 3; background: var(--paper-2); border: 1px solid var(--line); }
+.pass-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 6. CTA */
+.pass-cta { background: var(--ink); color: #fff; padding: clamp(64px, 9vw, 110px) 0; }
+.pass-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 5vw, 64px); flex-wrap: wrap; }
+.pass-cta h2 { margin: 0; color: #fff; }
+.pass-cta .pass-badges { justify-content: flex-start; margin: 0; }
+
+/* Standardized section title & subheading sizes across the Pass page (hero excluded) */
+.unlock-head h2,
+.pass-block .section-head h2,
+.pass-split-copy h2,
+.guest-head h2,
+.pass-cta h2 {
+  font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -0.02em; line-height: 1.1;
+}
+.unlock-head .lead,
+.pass-split-copy .lead,
+.pass-block .section-head .lead,
+.guest-head .lead {
+  font-size: clamp(16px, 1.7vw, 18.5px); line-height: 1.55;
+}
+
+/* 4. Facial registration — full-viewport section with a large image */
+.pass-vh { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; }
+.face-media { border-radius: var(--radius-lg); overflow: hidden; background: var(--paper-2); border: 1px solid var(--line); height: clamp(400px, 58vh, 640px); display: grid; place-items: center; }
+.face-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.face-media-ph { color: var(--slate); font-size: 14px; letter-spacing: .05em; text-transform: uppercase; }
+
+/* 5. Temporary guest keys — light, icon columns with dividers, full-width pass image */
+.guest-sec { background: var(--paper-2); padding: clamp(64px, 9vw, 112px) 0; }
+.guest-head { display: flex; align-items: flex-end; gap: clamp(24px, 5vw, 64px); }
+.guest-head h2 { flex: 1 1 0; min-width: 0; margin: 0; }
+.guest-head .lead { flex: 1 1 0; min-width: 0; margin: 0 0 6px; color: var(--slate); }
+.guest-grid { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: clamp(40px, 5vw, 60px); }
+.guest-item { padding: 4px clamp(24px, 3vw, 48px); }
+.guest-item:first-child { padding-left: 0; }
+.guest-item + .guest-item { border-left: 1px solid var(--line); }
+.guest-ic { display: inline-flex; color: var(--accent); margin-bottom: clamp(16px, 2vw, 22px); }
+.guest-ic svg { width: 30px; height: 30px; }
+.guest-item h3 { margin: 0 0 10px; font-size: clamp(19px, 2vw, 24px); letter-spacing: -0.01em; }
+.guest-item p { margin: 0; color: var(--slate); font-size: 15px; line-height: 1.6; }
+.guest-media { margin-top: clamp(44px, 5.5vw, 72px); border-radius: var(--radius-lg); overflow: hidden; }
+.guest-media img { width: 100%; height: clamp(300px, 40vw, 560px); object-fit: cover; display: block; }
+
+@media (max-width: 860px) {
+  .pass-hero-scrim { background: linear-gradient(180deg, rgba(8,9,14,.5) 0%, rgba(8,9,14,.35) 40%, rgba(8,9,14,.72) 100%); }
+  .unlock-head,
+  .guest-head { display: block; }
+  .unlock-head .lead,
+  .guest-head .lead { margin: 14px 0 0; max-width: none; }
+  .uc { flex-basis: 100%; }                 /* one full card per view */
+  .pass-split { grid-template-columns: 1fr; gap: clamp(28px, 5vw, 40px); }
+  .pass-split--rev .pass-split-media { order: -1; }
+  #facial.pass-vh { min-height: 0; }
+  .face-media { height: auto; aspect-ratio: 4 / 3; }
+  .guest-grid,
+  .perim-grid { grid-template-columns: 1fr; gap: clamp(26px, 5vw, 34px); }
+  .guest-item, .perim-item { padding: 0; }
+  .guest-item + .guest-item,
+  .perim-item + .perim-item { border-left: 0; border-top: 1px solid var(--line); padding-top: clamp(26px, 5vw, 34px); }
+  .pass-cta-inner { flex-direction: column; align-items: flex-start; gap: clamp(24px, 5vw, 32px); }
+}
+@media (max-width: 560px) {
+  .perim-grid { grid-template-columns: 1fr; }
+}
