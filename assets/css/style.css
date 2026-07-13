@@ -1435,7 +1435,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .dr-bio-copy .lead { margin: 0; color: rgba(255,255,255,.82); font-size: clamp(15.5px, 1.7vw, 18px); line-height: 1.62; }
 .dr-bio-copy .btn { margin-top: clamp(26px, 3.2vw, 36px); }
 .dr-bio-media { position: relative; min-height: 340px; }
-.dr-bio-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+.dr-bio-media img, .dr-bio-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
 
 /* Compare Models — balanced card padding, image top, CTA bottom-aligned */
 #compare .eco-card { padding-bottom: clamp(26px, 3vw, 40px); }
