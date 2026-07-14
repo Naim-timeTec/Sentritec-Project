@@ -129,36 +129,42 @@
     </div>
   </section>
 
-  <!-- ============== 4. FACIAL REGISTRATION (title top-center; list + bigger media; full screen) ============== -->
-  <section class="section pass-block pass-vh" id="facial">
+  <!-- ============== 4. FACIAL REGISTRATION (alternating media / text rows) ============== -->
+  <section class="section pass-block" id="facial">
     <div class="wrap">
       <div class="section-head center reveal">
         <h2>Privacy-first facial registration.</h2>
       </div>
 
-      <div class="one-body reveal">
-        <div class="one-list">
-          <div class="one-litem">
-            <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M20 16v2a2 2 0 0 1-2 2h-2"/><path d="M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="11" r="2.4"/><path d="M8.5 16.2a3.6 3.6 0 0 1 7 0"/></svg></span>
-            <div class="one-litem-tx">
-              <b>Instant Facial Recognition Setup</b>
-              <p>Skip the HR line entirely. Employees can securely capture and register their facial profile directly inside the Sentritec Pass app to gain seamless access at all Face Core biometric terminals.</p>
+      <div class="feature-stack reveal">
+
+        <!-- 1 · media left, text right -->
+        <div class="feature">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <img src="assets/pass/face-recog.jpg" alt="Registering a facial profile in the Sentritec Pass app" loading="lazy" decoding="async" />
             </div>
           </div>
-          <div class="one-litem">
-            <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <div class="one-litem-tx">
-              <b>The Right to Data Sovereignty</b>
-              <p>We believe in absolute data privacy. Users can delete their facial template instantly within the app interface at any time. The moment you click delete, your face profile is completely and permanently wiped from our cloud servers. No residual logs, no tracking.</p>
-            </div>
+          <div class="feature-text">
+            <h3>Instant Facial Recognition Setup</h3>
+            <p>Skip the HR line entirely. Employees can securely capture and register their facial profile directly inside the Sentritec Pass app to gain seamless access at all Face Core biometric terminals.</p>
           </div>
         </div>
 
-        <div class="face-media">
-          <!-- Add your image path here, e.g. -->
-          <img src="assets/pass/face-recog.jpg" alt="Registering a facial profile in the app" loading="lazy" decoding="async" />
-          <!-- <span class="face-media-ph">Facial registration image</span> -->
+        <!-- 2 · text left, media right -->
+        <div class="feature reverse">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <!-- final asset: the in-app "Delete face profile" confirmation screen. -->
+              <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="A smartphone where users control their own facial data" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>The Right to Data Sovereignty</h3>
+            <p>We believe in absolute data privacy. Users can delete their facial template instantly within the app interface at any time. The moment you click delete, your face profile is completely and permanently wiped from our cloud servers. No residual logs, no tracking.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>

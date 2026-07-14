@@ -39,84 +39,114 @@
     </div>
   </section>
 
-  <!-- ============== 2. ONBOARD & SYNC (title row on top; list left / media right) ============== -->
-  <section class="section one-vh">
+  <!-- ============== 2. ONBOARD & SYNC (alternating media / text rows) ============== -->
+  <section class="section pass-block" id="onboard">
     <div class="wrap">
-      <div class="one-head reveal">
+      <div class="section-head center reveal">
         <h2>User management, automated.</h2>
         <p class="lead">Streamline onboarding and offboarding. Sentritec One perfectly syncs your physical spaces with your IT directory.</p>
       </div>
 
-      <div class="one-body reveal">
-        <div class="one-list">
-          <div class="one-litem">
-            <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
-            <div class="one-litem-tx">
-              <b>SCIM &amp; SSO Integration</b>
-              <p>Connect with your identity provider (Okta, Microsoft Entra ID, Google Workspace) to automatically sync your IT user groups directly to Sentritec.</p>
+      <div class="feature-stack reveal">
+
+        <!-- 1 · media left, text right -->
+        <div class="feature">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <!-- final asset: directory auto-sync animation (Okta / Entra ID / Google Workspace groups flowing into Sentritec). -->
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="A team onboarding new employees at a laptop" loading="lazy" decoding="async" />
             </div>
           </div>
-          <div class="one-litem">
-            <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M13 10h5M13 14h5M5.5 16a3 3 0 0 1 6 0"/></svg></span>
-            <div class="one-litem-tx">
-              <b>Instant Credentials</b>
-              <p>Issue mobile passes, register facial profiles, or assign physical smart cards instantly from a single user profile.</p>
-            </div>
-          </div>
-          <div class="one-litem">
-            <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg></span>
-            <div class="one-litem-tx">
-              <b>One-Click Revoke</b>
-              <p>Instantly strip access rights globally across all readers the moment an employee departs or changes roles.</p>
-            </div>
+          <div class="feature-text">
+            <h3>SCIM &amp; SSO Integration</h3>
+            <p>Connect with your identity provider (Okta, Microsoft Entra ID, Google Workspace) to automatically sync your IT user groups directly to Sentritec.</p>
           </div>
         </div>
 
-        <div class="one-media">
-          <!-- Suggested asset: looping video/GIF — directory auto-sync → issue a mobile pass → click a red "Revoke". -->
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Onboarding users and syncing an IT directory" loading="lazy" decoding="async" />
+        <!-- 2 · text left, media right -->
+        <div class="feature reverse">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <!-- final asset: issuing a mobile pass to a phone from a user profile. -->
+              <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="A mobile credential delivered to a smartphone" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Instant Credentials</h3>
+            <p>Issue mobile passes, register facial profiles, or assign physical smart cards instantly from a single user profile.</p>
+          </div>
         </div>
+
+        <!-- 3 · media left, text right -->
+        <div class="feature">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <!-- final asset: clicking a red "Revoke" in the admin console. -->
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="An administrator dashboard managing user access" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>One-Click Revoke</h3>
+            <p>Instantly strip access rights globally across all readers the moment an employee departs or changes roles.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ============== 3. MONITOR & MAINTAIN (title row on top; media left / list right) ============== -->
-  <section class="section muted one-vh">
+  <!-- ============== 3. MONITOR & MAINTAIN (alternating media / text rows) ============== -->
+  <section class="section muted pass-block" id="monitor">
     <div class="wrap">
-      <div class="one-head reveal">
+      <div class="section-head center reveal">
         <h2>Complete visibility. Continuous live updates.</h2>
         <p class="lead">Monitor facility events, track hardware health, and receive instant alerts the moment a security anomaly occurs.</p>
       </div>
 
-      <div class="one-body reveal">
-        <div class="one-media">
-          <!-- Suggested asset: crisp static screens — live event feed, "● 24 Online / OTA Updating" device counter, amber "Door Held Open" alert card. -->
-          <img src="assets/one/live-updates.jpg" alt="Live activity feed and device health dashboard" loading="lazy" decoding="async" />
+      <div class="feature-stack reveal">
+
+        <!-- 1 · media left, text right -->
+        <div class="feature">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <!-- final asset: live event feed screen with time-stamped access entries. -->
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Real-time activity charts and logs on a laptop" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Live Feed &amp; Audit Logs</h3>
+            <p>Track access events in real time and instantly export tamper-proof, time-stamped reports for compliance reviews.</p>
+          </div>
         </div>
 
-        <div class="one-list">
-          <div class="one-litem">
-            <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
-            <div class="one-litem-tx">
-              <b>Live Feed &amp; Audit Logs</b>
-              <p>Track access events in real time and instantly export tamper-proof, time-stamped reports for compliance reviews.</p>
+        <!-- 2 · text left, media right -->
+        <div class="feature reverse">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <!-- final asset: amber "Door Held Open" alert card in the console. -->
+              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="A security alert representing an access anomaly" loading="lazy" decoding="async" />
             </div>
           </div>
-          <div class="one-litem">
-            <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
-            <div class="one-litem-tx">
-              <b>Instant Anomaly Alerts</b>
-              <p>Receive immediate live alerts for critical events, such as doors held open or unauthorized access attempts.</p>
-            </div>
-          </div>
-          <div class="one-litem">
-            <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"/><path d="m8 17 4 4 4-4"/><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg></span>
-            <div class="one-litem-tx">
-              <b>Device Health &amp; OTA Updates</b>
-              <p>Monitor the live online/offline status of your readers and deploy automated firmware patches globally in the background.</p>
-            </div>
+          <div class="feature-text">
+            <h3>Instant Anomaly Alerts</h3>
+            <p>Receive immediate live alerts for critical events, such as doors held open or unauthorized access attempts.</p>
           </div>
         </div>
+
+        <!-- 3 · media left, text right -->
+        <div class="feature">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <!-- final asset: "● 24 Online / OTA Updating" device health counter screen. -->
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="A monitoring workstation tracking device status" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Device Health &amp; OTA Updates</h3>
+            <p>Monitor the live online/offline status of your readers and deploy automated firmware patches globally in the background.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
