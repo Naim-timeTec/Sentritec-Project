@@ -942,9 +942,6 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 }
 .trust-set img { height: clamp(42px, 5.5vw, 64px); width: auto; filter: grayscale(1) opacity(.6); }
 @keyframes trustScroll { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) {
-  .trust-track { animation: none; flex-wrap: wrap; width: auto; }
-}
 
 /* Mobile — once the sections stack, their content grows past the viewport and
    the 100vh sizing collapses to content height, so neighbours end up touching.
@@ -1667,6 +1664,8 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  /* the trust logo marquee is expected to keep scrolling */
+  .trust-track { animation: trustScroll 30s linear infinite !important; }
 }
 
 /* =========================================================
