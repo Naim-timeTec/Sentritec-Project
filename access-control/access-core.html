@@ -50,18 +50,20 @@
       <div class="spec-head reveal">
         <div class="spec-head-l">
           <h2>Product Specification</h2>
+          <!-- hidden until the documents are ready
           <div class="spec-actions">
             <a href="#" class="btn btn-dark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg> Brochure</a>
             <a href="#" class="btn btn-ghost"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg> Installation Guide</a>
           </div>
+          -->
         </div>
         <div class="spec-dim">
           <img src="../assets/products/access-core-dimensions.png" alt="Access Core dimensions, 86 × 86 mm" loading="lazy" decoding="async" />
         </div>
       </div>
 
-      <!-- At a Glance -->
-      <div class="spec-group reveal">
+      <!-- At a Glance — hidden for now; remove the hidden attribute to restore -->
+      <div class="spec-group reveal" hidden>
         <h3>At a Glance</h3>
         <ul class="spec-list">
           <li><svg class="spec-ic" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm5 7.6-6.1 6.1a1 1 0 0 1-1.4 0L6 12.2l1.4-1.4 2.8 2.8 5.4-5.4L17 9.6Z"/></svg>Aluminum alloy frame with toughened glass front</li>
@@ -74,39 +76,57 @@
         </ul>
       </div>
 
-      <!-- Capacity -->
+      <!-- Power & Connectivity -->
       <div class="spec-group reveal">
-        <h3>Capacity</h3>
+        <h3>Power &amp; Connectivity</h3>
         <div class="spec-rows">
-          <div class="spec-row"><span class="k">User capacity</span><span class="v">20,000</span></div>
-          <div class="spec-row"><span class="k">Card capacity</span><span class="v">20,000</span></div>
-          <div class="spec-row"><span class="k">Event logs</span><span class="v">100,000</span></div>
+          <div class="spec-row"><span class="k">Power input</span><span class="v">IEEE 802.3af PoE or 12V DC, 1A</span></div>
+          <div class="spec-row"><span class="k">Connectivity</span><span class="v">Ethernet, 10/100Mbps RJ-45 connector for network / PoE</span></div>
+          <div class="spec-row"><span class="k">Power consumption</span><span class="v">10W maximum</span></div>
+          <div class="spec-row"><span class="k">Wiegand</span><span class="v">Support</span></div>
         </div>
       </div>
 
-      <!-- Physical & Power -->
+      <!-- Compliance & Rating -->
       <div class="spec-group reveal">
-        <h3>Physical &amp; Power</h3>
+        <h3>Compliance &amp; Rating</h3>
+        <div class="spec-rows">
+          <div class="spec-row"><span class="k">Compliance</span><span class="v">CE, FCC, SIRIM</span></div>
+          <div class="spec-row"><span class="k">Rating</span><span class="v">IP65, IK07</span></div>
+        </div>
+      </div>
+
+      <!-- Compatibility -->
+      <div class="spec-group reveal">
+        <h3>Compatibility</h3>
+        <div class="spec-rows">
+          <div class="spec-row"><span class="k">Controller</span><span class="v">Built-in</span></div>
+          <div class="spec-row"><span class="k">Maximum users</span><span class="v">20,000</span></div>
+          <div class="spec-row"><span class="k">Card capacity</span><span class="v">20,000</span></div>
+          <div class="spec-row"><span class="k">Event logs</span><span class="v">100,000</span></div>
+          <div class="spec-row"><span class="k">Low frequency card</span><span class="v">125kHz proximity card</span></div>
+          <div class="spec-row"><span class="k">High frequency card</span><span class="v">NFC, MIFARE DESFire EV1, EV2, EV3, MIFARE Classic, FeliCa</span></div>
+          <div class="spec-row"><span class="k">Mobile credentials</span><span class="v">Sentritec Pass app (BLE)</span></div>
+        </div>
+      </div>
+
+      <!-- General -->
+      <div class="spec-group reveal">
+        <h3>General</h3>
         <div class="spec-rows">
           <div class="spec-row"><span class="k">Front panel</span><span class="v">Toughened glass</span></div>
           <div class="spec-row"><span class="k">Frame</span><span class="v">Aluminum alloy</span></div>
-          <div class="spec-row"><span class="k">RFID card reader</span><span class="v">13.56MHz and 125kHz</span></div>
-          <div class="spec-row"><span class="k">BLE</span><span class="v">Support</span></div>
-          <div class="spec-row"><span class="k">Relay out</span><span class="v">1</span></div>
-          <div class="spec-row"><span class="k">Inputs</span><span class="v">2</span></div>
-          <div class="spec-row"><span class="k">Wiegand</span><span class="v">Support</span></div>
           <div class="spec-row"><span class="k">Speaker</span><span class="v">1</span></div>
-          <div class="spec-row"><span class="k">Tamper proof alarm</span><span class="v">Support</span></div>
-          <div class="spec-row"><span class="k">Ethernet port</span><span class="v">RJ45, 10/100Mbps adaptive</span></div>
-          <div class="spec-row"><span class="k">PoE</span><span class="v">IEEE 802.3af</span></div>
-          <div class="spec-row"><span class="k">Power input</span><span class="v">12V DC connector (if not using PoE)</span></div>
-          <div class="spec-row"><span class="k">IP rating</span><span class="v">IP65</span></div>
-          <div class="spec-row"><span class="k">IK rating</span><span class="v">IK07</span></div>
-          <div class="spec-row"><span class="k">Installation</span><span class="v">Flush-mounted or wall-mounted</span></div>
-          <div class="spec-row"><span class="k">Dimension</span><span class="v">86 × 86 × 33mm</span></div>
-          <div class="spec-row"><span class="k">Working humidity</span><span class="v">10–90%, no condensing</span></div>
-          <div class="spec-row"><span class="k">Working temperature</span><span class="v">-20°C to +55°C</span></div>
+          <div class="spec-row"><span class="k">Dimensions (H × W × D)</span><span class="v">86 × 86 × 33mm</span></div>
+          <div class="spec-row"><span class="k">Weight</span><span class="v">300g</span></div>
+          <div class="spec-row"><span class="k">Operating temperature</span><span class="v">-20°C to +55°C</span></div>
+          <div class="spec-row"><span class="k">Operating humidity</span><span class="v">10–90% RH, non-condensing</span></div>
           <div class="spec-row"><span class="k">Storage temperature</span><span class="v">-30°C to +70°C</span></div>
+          <div class="spec-row"><span class="k">Tamper detection</span><span class="v">Yes</span></div>
+          <div class="spec-row"><span class="k">Mounting option</span><span class="v">Wall-mount / flush-mount</span></div>
+          <div class="spec-row"><span class="k">Input</span><span class="v">2</span></div>
+          <div class="spec-row"><span class="k">Relay output</span><span class="v">Yes</span></div>
+          <div class="spec-row"><span class="k">Warranty</span><span class="v">3 years</span></div>
         </div>
       </div>
 

@@ -369,7 +369,10 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 
 /* ---------- Sections ---------- */
 /* .section { padding: clamp(72px, 11vw, 140px) 0; } */
-.section.spec { background: linear-gradient(180deg,rgba(247, 248, 255, 1) 0%, rgba(255, 255, 255, 1) 20%); }
+.section.spec {
+  padding: clamp(64px, 9vw, 112px) 0;
+  background: linear-gradient(180deg,rgba(247, 248, 255, 1) 0%, rgba(255, 255, 255, 1) 20%);
+}
 .section.mission { padding-bottom: 50px; }
 #ecosystem { overflow-x: clip; }  /* clip the carousel bleed at the viewport edge, no sideways page scroll */
 .section.tight { padding: clamp(56px, 8vw, 96px) 0; }
@@ -1139,6 +1142,8 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 }
 .eco-body h3 { font-size: clamp(22px, 2.4vw, 28px); margin: 0 0 12px; }
 .eco-body .link-arrow { color: var(--accent); }
+/* image-first cards: the body is last, so it carries the card's bottom padding */
+.eco-stage + .eco-body { padding-bottom: clamp(28px, 3vw, 44px); }
 
 /* product image sits at the bottom — same footprint for every card */
 .eco-stage {
@@ -1542,8 +1547,8 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 }
 .spec-more > summary::-webkit-details-marker { display: none; }
 .spec-more > summary svg { transition: transform .25s var(--ease); }
-.spec-more[open] > summary svg { transform: rotate(180deg); }
-.spec-more[open] > summary { margin-bottom: 8px; }
+/* once expanded, the toggle disappears — the extra specs stay open */
+.spec-more[open] > summary { display: none; }
 
 /* ---------- Reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
