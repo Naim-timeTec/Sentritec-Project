@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SentriTec — Contact Us</title>
-  <meta name="description" content="Get Started with SentriTec — reach tech support, sales, or our partner team, send us a message, or visit our Malaysia global headquarters." />
+  <title>Sentritec — Let&rsquo;s Connect</title>
+  <meta name="description" content="Contact Sentritec — reach our sales team, explore partnership inquiries, get technical support, or send us a message and we'll respond within one business day." />
   <link rel="icon" type="image/svg+xml" href="assets/sentritec-icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,36 +19,36 @@
   <div id="site-nav" data-root=""></div>
   <script src="assets/js/nav.js"></script>
 
-  <!-- ============== CONTACT US ============== -->
+  <!-- ============== 1. HERO + ROUTING OPTIONS ============== -->
   <section class="section contact-top" id="top" tabindex="-1">
     <div class="wrap">
       <div class="section-head center reveal">
-        <h1>Contact Us</h1>
-        <p class="lead">Find the right team for what you need.</p>
+        <h1>Let&rsquo;s connect.</h1>
+        <p class="lead">Whether you are looking to secure a facility, explore a technical integration, or join our partner network, our team operates as one with yours to deliver direct, efficient support.</p>
       </div>
 
       <div class="cx-grid reveal">
 
-        <a class="cx-card" href="#">
-          <h3>Tech Support</h3>
-          <p>For existing customers who need help with product setup, troubleshooting or technical issues.</p>
-          <span class="cx-link">Visit the Help Centre
+        <a class="cx-card" href="get-started">
+          <h3>Sales &amp; Growth</h3>
+          <p>Looking to deploy cloud access control?</p>
+          <span class="cx-link">Connect with sales
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </span>
         </a>
 
-        <a class="cx-card" href="#form">
-          <h3>Sales</h3>
-          <p>For product enquiries, quotations, project discussions, or help choosing the right SentriTec solution.</p>
-          <span class="cx-link">Contact Sales
+        <a class="cx-card" href="partner">
+          <h3>Partnership Inquiries</h3>
+          <p>Want to partner with us?</p>
+          <span class="cx-link">Visit Partner Program
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </span>
         </a>
 
-        <a class="cx-card" href="#">
-          <h3>Partners</h3>
-          <p>For companies interested in becoming a SentriTec partner, or existing partners who need support.</p>
-          <span class="cx-link">Visit the Partner Portal
+        <a class="cx-card" href="help">
+          <h3>Technical Support</h3>
+          <p>Need help with your system? Visit our Help Centre or email us at support@sentritec.io.</p>
+          <span class="cx-link">Visit Help Centre
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </span>
         </a>
@@ -57,81 +57,44 @@
     </div>
   </section>
 
-  <!-- ============== STILL NOT SURE — FORM ============== -->
-  <section class="section contact-sep" id="form">
+  <!-- ============== 2. GENERAL INQUIRY FORM ============== -->
+  <section class="section contact-sep contact-form-sec" id="form">
     <div class="wrap">
       <div class="cf-grid reveal">
 
         <div class="cf-intro">
-          <h2>Still Not Sure Where to Go?</h2>
-          <p class="lead">Tell us what you need, and we'll connect you with the right team to assist you.</p>
+          <h2>Still not sure where to go?</h2>
+          <p class="lead">Drop us a message and we&rsquo;ll get back to you within one business day.</p>
         </div>
 
         <!-- Mock form — wire the action to your form handler / email service when ready -->
-        <form class="cf-form" action="#" method="post" novalidate>
+        <form class="cf-form" id="cxForm" novalidate>
           <div class="cf-field">
-            <label for="cf-email">Work Email Address</label>
-            <input type="email" id="cf-email" name="email" placeholder="you@company.com" required />
+            <label for="cf-company">Company Name</label>
+            <input type="text" id="cf-company" name="company" autocomplete="organization" />
+          </div>
+          <div class="cf-field">
+            <label for="cf-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="cf-name" name="full_name" autocomplete="name" required />
           </div>
           <div class="cf-row">
             <div class="cf-field">
-              <label for="cf-first">First Name</label>
-              <input type="text" id="cf-first" name="first_name" placeholder="First name" />
+              <label for="cf-email">Business Email <span class="req">*</span></label>
+              <input type="email" id="cf-email" name="email" placeholder="you@company.com" autocomplete="email" required />
             </div>
             <div class="cf-field">
-              <label for="cf-last">Last Name</label>
-              <input type="text" id="cf-last" name="last_name" placeholder="Last name" />
-            </div>
-          </div>
-          <div class="cf-row">
-            <div class="cf-field">
-              <label for="cf-title">Job Title</label>
-              <input type="text" id="cf-title" name="job_title" placeholder="Job title" />
-            </div>
-            <div class="cf-field">
-              <label for="cf-phone">Phone Number</label>
-              <input type="tel" id="cf-phone" name="phone" placeholder="Phone number" />
+              <label for="cf-phone">Phone Number <span style="font-weight:500;color:#9aa0b4;">(Optional)</span></label>
+              <input type="tel" id="cf-phone" name="phone" autocomplete="tel" />
             </div>
           </div>
           <div class="cf-field">
-            <label for="cf-comments">Comments</label>
-            <textarea id="cf-comments" name="comments" rows="4" placeholder="Tell us what you need…"></textarea>
+            <label for="cf-message">Message <span class="req">*</span></label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="How can our team assist you today?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-dark cf-submit">Submit</button>
+          <button type="submit" class="btn btn-dark cf-submit">Send Message</button>
           <a class="cf-privacy" href="#">Privacy center</a>
         </form>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== OFFICE LOCATION ============== -->
-  <section class="section contact-sep" id="location">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>SentriTec Office Location</h2>
-      </div>
-
-      <div class="loc reveal">
-        <div class="loc-info">
-          <h3>Malaysia Office <span>(Global HQ)</span></h3>
-          <address>
-            Level 18, Tower 5 @ PFCC, Jalan Puteri 1/2<br />
-            Bandar Puteri Puchong, 47100 Puchong<br />
-            Selangor, Malaysia
-          </address>
-          <a class="cx-link cx-link--dark" href="https://maps.google.com/?q=Tower+5+PFCC+Bandar+Puteri+Puchong" target="_blank" rel="noopener">Get Directions
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <dl class="loc-contact">
-            <div><dt>Phone</dt><dd><a href="tel:+60380709933">+603-8070 9933</a></dd></div>
-            <div><dt>Email</dt><dd><a href="mailto:info@sentritec.io">info@sentritec.io</a></dd></div>
-          </dl>
-        </div>
-        <div class="loc-map">
-          <!-- Replace with a Google Maps embed iframe of the HQ -->
-          <span class="img-ph"><span class="ph-mini">Map</span></span>
-        </div>
       </div>
     </div>
   </section>
@@ -141,5 +104,22 @@
   <script src="assets/js/footer.js"></script>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    /* Mock submit — validates, then shows a confirmation (hook a real endpoint later) */
+    (function () {
+      var form = document.getElementById("cxForm");
+      if (!form) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        form.innerHTML =
+          '<div class="pa-success">' +
+          '<span class="pa-success-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
+          "<h2>Message sent.</h2>" +
+          "<p>Thanks for reaching out — our team will get back to you within one business day.</p>" +
+          "</div>";
+      });
+    })();
+  </script>
 </body>
 </html>

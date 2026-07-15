@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentritec — Help Center</title>
+  <meta name="description" content="Sentritec Help Center — setup guides, configuration articles and troubleshooting for door readers, face recognition and the Sentritec cloud platform. Coming soon." />
+  <link rel="icon" type="image/svg+xml" href="assets/sentritec-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css?v=3" />
+</head>
+<body>
+
+  <a class="skip-link" href="#apid-main">Skip to content</a>
+
+  <!-- ============== HELP CENTER SHELL (standalone — no site nav/footer) ============== -->
+  <div class="apid-shell">
+
+    <!-- Left: categories — each item opens its own page on the right -->
+    <aside class="apid-side">
+      <a class="apid-brand" href="./" title="Back to sentritec.io">
+        <img src="assets/sentritec-icon.svg" alt="" />
+        Sentritec Help Center
+      </a>
+
+      <div class="apid-search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="apidSearch" placeholder="Search articles" aria-label="Filter help topics" />
+        <kbd>CTRL-/</kbd>
+      </div>
+
+      <nav id="apidNav" aria-label="Help Center topics">
+        <span class="apid-label">Getting Started</span>
+        <a class="apid-item active" href="#welcome" data-page="welcome">Welcome</a>
+        <a class="apid-item" href="#get-started" data-page="get-started" data-title="Get Started with Sentritec">Get Started with Sentritec <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#quick-reference" data-page="quick-reference" data-title="Quick Reference Guide">Quick Reference Guide <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#roles-permissions" data-page="roles-permissions" data-title="Roles &amp; Permissions">Roles &amp; Permissions <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#network-settings" data-page="network-settings" data-title="Network Settings">Network Settings <span class="tag">Soon</span></a>
+
+        <span class="apid-label">Installation</span>
+        <a class="apid-item" href="#deployment-best-practices" data-page="deployment-best-practices" data-title="Deployment Best Practices">Deployment Best Practices <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#wiring-poe" data-page="wiring-poe" data-title="Wiring a Door Reader (PoE)">Wiring a Door Reader (PoE) <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#face-core-install" data-page="face-core-install" data-title="Face Core Installation">Face Core Installation <span class="tag">Soon</span></a>
+
+        <span class="apid-label">Configuration</span>
+        <a class="apid-item" href="#managing-users" data-page="managing-users" data-title="Managing Users">Managing Users <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#access-groups-schedules" data-page="access-groups-schedules" data-title="Access Groups &amp; Schedules">Access Groups &amp; Schedules <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#credentials-cards" data-page="credentials-cards" data-title="Credentials &amp; Cards">Credentials &amp; Cards <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#lockdown-alerts" data-page="lockdown-alerts" data-title="Lockdown &amp; Alerts">Lockdown &amp; Alerts <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#temporary-keys" data-page="temporary-keys" data-title="Temporary Keys">Temporary Keys <span class="tag">Soon</span></a>
+
+        <span class="apid-label">Sentritec Pass</span>
+        <a class="apid-item" href="#mobile-unlock" data-page="mobile-unlock" data-title="Mobile Unlock">Mobile Unlock <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#facial-registration" data-page="facial-registration" data-title="Facial Registration">Facial Registration <span class="tag">Soon</span></a>
+
+        <span class="apid-label">Troubleshooting</span>
+        <a class="apid-item" href="#device-offline" data-page="device-offline" data-title="Device Offline / Connectivity">Device Offline / Connectivity <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#firmware-updates" data-page="firmware-updates" data-title="Firmware Updates">Firmware Updates <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#faq" data-page="faq" data-title="Frequently Asked Questions">Frequently Asked Questions <span class="tag">Soon</span></a>
+      </nav>
+    </aside>
+
+    <!-- Right: one page per topic; only the active page is visible -->
+    <main class="apid-main" id="apid-main">
+
+      <!-- Welcome (landing page) -->
+      <section class="apid-page active" id="page-welcome">
+        <h1>Sentritec Help Center</h1>
+        <span class="apid-ver">Knowledge Base · In Progress</span>
+
+        <div class="apid-coming">
+          <span class="apid-coming-ic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><path d="M12 17.5h.01"/></svg>
+          </span>
+          <h2>Help Center coming soon.</h2>
+          <p>Our support knowledge base — setup guides, configuration articles and troubleshooting steps for every Sentritec product — is being written and will be published here soon. In the meantime, our team is happy to help you directly.</p>
+          <a href="contact" class="btn btn-dark">Contact Support
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="mailto:support@sentritec.io" class="btn btn-ghost">support@sentritec.io</a>
+        </div>
+
+        <section class="apid-sec">
+          <h3>Popular topics</h3>
+          <div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </section>
+      </section>
+
+      <!-- topic pages are generated as placeholders by the script below;
+           replace each with real articles at launch -->
+      <div id="apidPages"></div>
+    </main>
+
+    <!-- Right: "On this page" mini-TOC — rebuilt from the active page's headings -->
+    <aside class="apid-toc" aria-label="On this page">
+      <ul id="apidTocList"></ul>
+    </aside>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var nav = document.getElementById("apidNav");
+      var holder = document.getElementById("apidPages");
+      if (!nav || !holder) return;
+      var links = Array.prototype.slice.call(nav.querySelectorAll(".apid-item"));
+
+      /* build a placeholder page for every topic that doesn't have one yet */
+      links.forEach(function (l) {
+        var id = l.getAttribute("data-page");
+        if (!id || document.getElementById("page-" + id)) return;
+        var title = l.getAttribute("data-title") || l.textContent.trim();
+        var sec = document.createElement("section");
+        sec.className = "apid-page";
+        sec.id = "page-" + id;
+        sec.innerHTML =
+          "<h1>" + title + "</h1>" +
+          '<div class="apid-note">' +
+          '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>' +
+          "<span>This article is being written and will be published here soon. Need help now? Email <a href=\"mailto:support@sentritec.io\">support@sentritec.io</a>.</span>" +
+          "</div>" +
+          '<div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div>' +
+          '<section class="apid-sec"><h3>Overview</h3>' +
+          '<div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div></section>' +
+          '<section class="apid-sec"><h3>Step-by-step</h3>' +
+          '<div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div></section>';
+        holder.appendChild(sec);
+      });
+
+      var pages = Array.prototype.slice.call(document.querySelectorAll(".apid-page"));
+
+      /* "on this page" rail */
+      var tocList = document.getElementById("apidTocList");
+      var tocObs = null;
+      function slug(s) { return s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+      function renderToc(page) {
+        if (!tocList || !page) return;
+        if (tocObs) { tocObs.disconnect(); tocObs = null; }
+        tocList.innerHTML = "";
+        var heads = Array.prototype.slice.call(page.querySelectorAll("h2, h3"));
+        heads.forEach(function (h, i) {
+          if (!h.id) h.id = page.id + "-" + slug(h.textContent);
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.href = "#" + h.id;
+          a.textContent = h.textContent;
+          if (i === 0) a.className = "active";
+          a.addEventListener("click", function (e) {
+            e.preventDefault();
+            h.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+          li.appendChild(a);
+          tocList.appendChild(li);
+        });
+        if ("IntersectionObserver" in window && heads.length) {
+          tocObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (!en.isIntersecting) return;
+              Array.prototype.slice.call(tocList.querySelectorAll("a")).forEach(function (a) {
+                a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id);
+              });
+            });
+          }, { rootMargin: "-15% 0px -75% 0px" });
+          heads.forEach(function (h) { tocObs.observe(h); });
+        }
+      }
+
+      function show(id, push) {
+        var page = document.getElementById("page-" + id);
+        if (!page) return;
+        pages.forEach(function (p) { p.classList.toggle("active", p === page); });
+        links.forEach(function (l) { l.classList.toggle("active", l.getAttribute("data-page") === id); });
+        if (push) history.replaceState(null, "", "#" + id);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        renderToc(page);
+      }
+      links.forEach(function (l) {
+        l.addEventListener("click", function (e) {
+          e.preventDefault();
+          show(l.getAttribute("data-page"), true);
+        });
+      });
+      var initial = location.hash.slice(1);
+      if (initial && document.getElementById("page-" + initial)) show(initial, false);
+      window.addEventListener("hashchange", function () {
+        var id = location.hash.slice(1);
+        if (document.getElementById("page-" + id)) show(id, false);
+      });
+      renderToc(document.querySelector(".apid-page.active"));
+
+      /* sidebar search — filters the topics as you type (CTRL-/ focuses it) */
+      var input = document.getElementById("apidSearch");
+      var labels = Array.prototype.slice.call(nav.querySelectorAll(".apid-label"));
+      if (input) {
+        input.addEventListener("input", function () {
+          var q = input.value.trim().toLowerCase();
+          links.forEach(function (l) {
+            l.style.display = l.textContent.toLowerCase().indexOf(q) !== -1 ? "" : "none";
+          });
+          labels.forEach(function (lb) { lb.style.display = q ? "none" : ""; });
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.ctrlKey && e.key === "/") { e.preventDefault(); input.focus(); }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

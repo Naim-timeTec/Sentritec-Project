@@ -1778,7 +1778,10 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
    Contact page
    ========================================================= */
 /* first section clears the fixed nav (no hero on this page) */
-.contact-top { padding-top: calc(var(--nav-h) + clamp(36px, 5vw, 72px)); }
+.contact-top { padding-top: calc(var(--nav-h) + clamp(36px, 5vw, 72px)); padding-bottom: clamp(56px, 8vw, 96px); }
+.contact-form-sec { padding: clamp(56px, 8vw, 96px) 0; }
+.cx-card small { display: block; margin-top: 10px; color: var(--slate); font-size: 13.5px; }
+.cx-card small a { color: var(--accent); text-decoration: underline; }
 .contact-top .section-head h1 { font-size: clamp(32px, 4.4vw, 54px); margin: 0; }
 
 /* Contact Us — three dark cards */
@@ -1867,6 +1870,10 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
    About page
    ========================================================= */
 /* Title band (dark, centered) */
+/* About page — the sections carry their own vertical rhythm
+   (the base .section padding is disabled globally) */
+#about, #evolution, #mission, #leadership { padding: clamp(64px, 9vw, 112px) 0; }
+
 .about-hero {
   background: var(--ink); color: #fff; text-align: center;
   padding: calc(var(--nav-h) + clamp(64px, 11vw, 130px)) 0 clamp(64px, 11vw, 130px);
@@ -2064,7 +2071,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .oc-media { position: absolute; inset: 0; overflow: hidden; background: #1a1e2b; }
 .oc-pane { position: absolute; inset: 0; opacity: 0; transition: opacity .5s var(--ease); }
 .oc-pane.active { opacity: 1; }
-.oc-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.oc-media img, .oc-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .oc-media::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
@@ -2523,6 +2530,50 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .pa-combo.open .pa-combo-panel { display: block; }
 .pa-combo-panel .fp-list { max-height: 240px; }
 .pa-combo-empty { padding: 12px 14px; font-size: 14px; color: var(--slate); list-style: none; }
+
+/* ---------- Newsroom / Blog / Docs pages ---------- */
+.pt-hero--center { text-align: center; border-bottom: 0; }
+.pt-hero--center .lead { margin-left: auto; margin-right: auto; max-width: 62ch; }
+
+/* featured carousel — one story at a time, image left / copy right, arrows bottom-right */
+.nw-sec { padding: clamp(36px, 5vw, 64px) 0; }
+.nw-feat { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.nw-slides { position: relative; min-height: clamp(260px, 30vw, 360px); }
+.nw-slide { position: absolute; inset: 0; display: grid; grid-template-columns: 1.15fr 1fr; opacity: 0; pointer-events: none; transition: opacity .45s var(--ease); }
+.nw-slide.active { opacity: 1; pointer-events: auto; }
+.nw-slide-media { position: relative; overflow: hidden; }
+.nw-slide-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.nw-slide-body { display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: clamp(22px, 3vw, 44px); padding-bottom: clamp(64px, 7vw, 84px); }
+.nw-slide-body h3 { margin: 0; font-size: clamp(18px, 1.9vw, 24px); letter-spacing: -0.015em; line-height: 1.35; }
+.nw-feat-nav { position: absolute; right: clamp(18px, 2.4vw, 28px); bottom: clamp(16px, 2.2vw, 24px); display: flex; gap: 10px; z-index: 2; }
+
+/* article grid */
+.nw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2vw, 24px); }
+.nw-card { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; transition: border-color .2s var(--ease), box-shadow .2s var(--ease), transform .2s var(--ease); }
+.nw-card:hover { border-color: transparent; box-shadow: var(--shadow); transform: translateY(-3px); }
+.nw-card-media { aspect-ratio: 16 / 10; overflow: hidden; }
+.nw-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease); }
+.nw-card:hover .nw-card-media img { transform: scale(1.04); }
+.nw-card-body { flex: 1; display: flex; flex-direction: column; gap: 10px; padding: clamp(18px, 2.2vw, 26px); }
+.nw-card-body h3 { margin: 0; font-size: 16.5px; line-height: 1.45; letter-spacing: -0.01em; }
+.nw-card-body time { font-size: 13.5px; color: var(--slate); }
+.nw-card-body .link-arrow { margin-top: auto; font-size: 14.5px; color: var(--accent); }
+
+/* documentation cards */
+.dc-tag { align-self: flex-start; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 11px; }
+/* fixed-ratio thumbnail box — the image centers inside and can never stretch the card */
+.dc-media { position: relative; aspect-ratio: 16 / 10; background: var(--paper-2); overflow: hidden; }
+.dc-media img { position: absolute; inset: 0; margin: auto; max-width: 70%; max-height: 76%; width: auto; height: auto; object-fit: contain; }
+
+@media (max-width: 990px) { .nw-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 860px) {
+  .nw-slides { min-height: 0; }
+  .nw-slide { position: static; display: none; grid-template-columns: 1fr; }
+  .nw-slide.active { display: grid; }
+  .nw-slide-media { aspect-ratio: 16 / 9; }
+  .nw-slide-media img { position: static; }
+}
+@media (max-width: 640px) { .nw-grid { grid-template-columns: 1fr; } }
 
 /* ---------- API documentation shell (api.html) ---------- */
 /* standalone docs shell — no site nav/footer, the sidebar brand links home */

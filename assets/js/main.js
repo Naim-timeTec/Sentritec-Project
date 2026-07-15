@@ -278,6 +278,18 @@
       });
       panes.forEach(function (p, idx) { p.classList.toggle("active", idx === i); });
       cards.forEach(function (c, idx) { c.classList.toggle("active", idx === i); });
+      /* pane videos: play from the start when their tab activates, stop otherwise */
+      panes.forEach(function (p) {
+        var v = p.querySelector("video");
+        if (!v) return;
+        if (p.classList.contains("active")) {
+          v.currentTime = 0;
+          var play = v.play();
+          if (play && play.catch) play.catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
     }
     tabs.forEach(function (t, idx) { t.addEventListener("click", function () { show(idx); }); });
   })();
