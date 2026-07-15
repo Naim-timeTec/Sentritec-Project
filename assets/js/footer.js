@@ -20,35 +20,37 @@
           <p>One cloud platform for building access — manage doors, people and activity from a single dashboard, powered by Sentritec readers.</p>
         </div>
         <div>
-          <h5>Platform</h5>
-          <ul>
-            <li><a href="${root}one">Sentritec One</a></li>
-            <li><a href="${root}pass">Sentritec Pass</a></li>
-            <li><a href="${root}integrations">Integrations</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Access Control</h5>
-          <ul>
-            <li><a href="${root}access-control/door-readers">Door Readers</a></li>
-            <li><a href="${root}access-control/facial-recognition">Face Recognition</a></li>
-            <li><a href="${home}#products">Hardware</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Partners</h5>
-          <ul>
-            <li><a href="${root}partner">Partner Program</a></li>
-            <li><a href="${root}partner/apply">Become a Partner</a></li>
-            <li><a href="${root}partner/find-partner">Find a Partner</a></li>
-          </ul>
-        </div>
-        <div>
           <h5>Company</h5>
           <ul>
             <li><a href="${root}about">About</a></li>
             <li><a href="${root}contact">Contact</a></li>
-            <li><a href="${root}contact">Request a Demo</a></li>
+            <li><a href="${root}legal">Legal</a></li>
+            <li><a href="${root}trust">Trust</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Products</h5>
+          <ul>
+            <li><a href="${root}one">Sentritec One</a></li>
+            <li><a href="${root}pass">Sentritec Pass</a></li>
+            <li><a href="${root}integrations">Integrations</a></li>
+            <li><a href="${root}access-control/door-readers">Door Readers</a></li>
+            <li><a href="${root}access-control/facial-recognition">Facial Recognition</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Support</h5>
+          <ul>
+            <li><a href="${root}contact">Contact</a></li>
+            <li><a href="${root}help">Help Centre</a></li>
+            <li><a href="${root}partner/find-partner">Find an Installer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Media</h5>
+          <ul>
+            <li><a href="${root}news">News</a></li>
+            <li><a href="${root}blog">Blogs</a></li>
           </ul>
         </div>
       </div>

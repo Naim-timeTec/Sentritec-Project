@@ -79,11 +79,26 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="mega">
-              <div class="wrap mega-inner mega-inner--simple">
-                <span class="mega-aside">Resources</span>
-                <div class="mega-content mega-cards mega-cards--fixed">
-                  <a class="mega-card" href="${root}about"><b>About</b></a>
-                  <a class="mega-card" href="${root}contact"><b>Contact</b></a>
+              <div class="wrap mega-inner mega-cat">
+                <div class="mega-cats" role="tablist" aria-label="Resource categories">
+                  <button class="mega-cat-tab active" data-cat="learn" role="tab" aria-selected="true">Learn</button>
+                  <button class="mega-cat-tab" data-cat="support" role="tab" aria-selected="false">Support</button>
+                </div>
+                <div class="mega-cat-body">
+                  <div class="mega-cat-panel active" data-cat="learn">
+                    <div class="mega-grid">
+                      <a class="mega-card" href="${root}news"><b>News</b></a>
+                      <a class="mega-card" href="${root}blog"><b>Blog</b></a>
+                      <a class="mega-card" href="${root}docs"><b>Datasheet</b></a>
+                      <a class="mega-card" href="${root}api"><b>Sentritec API</b></a>
+                    </div>
+                  </div>
+                  <div class="mega-cat-panel" data-cat="support">
+                    <div class="mega-grid">
+                      <a class="mega-card" href="${root}help"><b>Help Centre</b></a>
+                      <a class="mega-card" href="${root}contact"><b>Contact</b></a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -141,7 +156,13 @@
 
     <details class="m-group">
       <summary>Resources<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <a href="${root}about">About</a>
+      <span class="m-sublabel">Learn</span>
+      <a href="${root}news">News</a>
+      <a href="${root}blog">Blog</a>
+      <a href="${root}docs">Datasheet</a>
+      <a href="${root}api">Sentritec API</a>
+      <span class="m-sublabel">Support</span>
+      <a href="${root}help">Help Centre</a>
       <a href="${root}contact">Contact</a>
     </details>
     <details class="m-group">
@@ -154,20 +175,22 @@
     <a href="${root}contact" class="btn btn-dark">Get Started</a>
   </div>`;
 
-  /* Products mega — left category rail switches the item grid on the right */
-  var catTabs = Array.prototype.slice.call(document.querySelectorAll(".mega-cat-tab"));
-  var catPanels = Array.prototype.slice.call(document.querySelectorAll(".mega-cat-panel"));
-  function selectCat(cat) {
+  /* Category-rail megas (Products, Resources) — each menu switches its own panels */
+  Array.prototype.slice.call(document.querySelectorAll(".mega-cat")).forEach(function (menu) {
+    var catTabs = Array.prototype.slice.call(menu.querySelectorAll(".mega-cat-tab"));
+    var catPanels = Array.prototype.slice.call(menu.querySelectorAll(".mega-cat-panel"));
+    function selectCat(cat) {
+      catTabs.forEach(function (t) {
+        var on = t.getAttribute("data-cat") === cat;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      catPanels.forEach(function (p) { p.classList.toggle("active", p.getAttribute("data-cat") === cat); });
+    }
     catTabs.forEach(function (t) {
-      var on = t.getAttribute("data-cat") === cat;
-      t.classList.toggle("active", on);
-      t.setAttribute("aria-selected", on ? "true" : "false");
+      var cat = t.getAttribute("data-cat");
+      t.addEventListener("mouseenter", function () { selectCat(cat); });
+      t.addEventListener("click", function (e) { e.preventDefault(); selectCat(cat); });
     });
-    catPanels.forEach(function (p) { p.classList.toggle("active", p.getAttribute("data-cat") === cat); });
-  }
-  catTabs.forEach(function (t) {
-    var cat = t.getAttribute("data-cat");
-    t.addEventListener("mouseenter", function () { selectCat(cat); });
-    t.addEventListener("click", function (e) { e.preventDefault(); selectCat(cat); });
   });
 })();
