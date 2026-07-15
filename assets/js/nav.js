@@ -43,7 +43,7 @@
                   <div class="mega-cat-panel" data-cat="access">
                     <div class="mega-grid">
                       <a class="mega-card" href="${root}access-control/door-readers"><b>Door Readers</b></a>
-                      <a class="mega-card" href="${root}access-control/face-recognition"><b>Face Recognition</b></a>
+                      <a class="mega-card" href="${root}access-control/facial-recognition"><b>Face Recognition</b></a>
                     </div>
                   </div>
                 </div>
@@ -51,7 +51,7 @@
             </div>
           </li>
 
-          <!-- Industries -->
+          <!-- Industries — hidden for now; restore by uncommenting
           <li class="nav-item">
             <button class="nav-trigger" aria-expanded="false" aria-haspopup="true">Industries
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -70,6 +70,8 @@
               </div>
             </div>
           </li>
+          -->
+
 
           <!-- Resources -->
           <li class="nav-item">
@@ -95,13 +97,10 @@
             <div class="mega">
               <div class="wrap mega-inner mega-inner--simple">
                 <span class="mega-aside">Partners</span>
-                <div class="mega-content mega-cards mega-cards--4">
-                  <a class="mega-card" href="#"><b>Partner Program</b><small>Lorem ipsum dolor sit amet, consectetur.</small></a>
-                  <a class="mega-card" href="#"><b>Partner Portal</b><small>Lorem ipsum dolor sit amet, consectetur.</small></a>
-                  <a class="mega-card" href="#"><b>Partner Training</b><small>Lorem ipsum dolor sit amet, consectetur.</small></a>
-                  <a class="mega-card" href="#"><b>Certification Lookup</b><small>Lorem ipsum dolor sit amet, consectetur.</small></a>
-                  <a class="mega-card" href="#"><b>Become a Partner</b><small>Lorem ipsum dolor sit amet, consectetur.</small></a>
-                  <a class="mega-card" href="#"><b>Find a Partner</b><small>Lorem ipsum dolor sit amet, consectetur.</small></a>
+                <div class="mega-content mega-cards mega-cards--3">
+                  <a class="mega-card" href="${root}partner"><b>Partner Program</b></a>
+                  <a class="mega-card" href="${root}partner/apply"><b>Become a Partner</b></a>
+                  <a class="mega-card" href="${root}partner/find-partner"><b>Find a Partner</b></a>
                 </div>
               </div>
             </div>
@@ -130,13 +129,16 @@
       <a href="${root}integrations">Integrations</a>
       <span class="m-sublabel">Access Control</span>
       <a href="${root}access-control/door-readers">Door Readers</a>
-      <a href="${root}access-control/face-recognition">Face Recognition</a>
+      <a href="${root}access-control/facial-recognition">Face Recognition</a>
     </details>
+    <!-- Industries — hidden for now; restore by uncommenting
     <details class="m-group">
       <summary>Industries<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
       <a href="${root}industries/office">Office</a>
       <a href="${root}industries/factory">Factory</a>
     </details>
+    -->
+
     <details class="m-group">
       <summary>Resources<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
       <a href="${root}about">About</a>
@@ -144,10 +146,9 @@
     </details>
     <details class="m-group">
       <summary>Partners<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <a href="#">Partner Program</a>
-      <a href="#">Partner Portal</a>
-      <a href="#">Partner Training</a>
-      <a href="#">Become a Partner</a>
+      <a href="${root}partner">Partner Program</a>
+      <a href="${root}partner/apply">Become a Partner</a>
+      <a href="${root}partner/find-partner">Find a Partner</a>
     </details>
     <a href="" class="btn btn-ghost">Login</a>
     <a href="${root}contact" class="btn btn-dark">Get Started</a>

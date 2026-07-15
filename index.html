@@ -587,45 +587,108 @@
     </div>
   </section>
 
-  <!-- ============== BUILT FOR — hidden ============== -->
-  <section class="section" id="built-for" hidden>
+  <!-- ============== BUILT FOR — industries carousel (cards bleed to the right edge) ============== -->
+  <section class="section pass-block ind-sec" id="built-for">
     <div class="wrap">
+      <div class="ind-head reveal">
+        <h2>Modern protection for any space.</h2>
+        <div class="ind-nav">
+          <button class="unlock-arrow ind-arrow" type="button" data-dir="-1" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+          <button class="unlock-arrow ind-arrow" type="button" data-dir="1" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
 
-      <div class="builtfor reveal">
-        <!-- live image preview -->
-        <div class="bf-preview">
-          <div class="bf-pane active" data-ind="office">
+      <div class="ind-track reveal" id="indTrack">
+        <article class="ind-card">
+          <div class="ind-media">
             <img src="assets/img/office-3.jpg" alt="Sentritec in an office" loading="lazy" decoding="async" />
+            <h3>Office</h3>
+            <a class="ind-more" href="industries/office">Learn more
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
-          <div class="bf-pane" data-ind="factory">
-            <img src="assets/img/factory-4.jpg" alt="Sentritec in a factory" loading="lazy" decoding="async" />
-          </div>
-          <span class="bf-tag" id="bfTag">Office</span>
-        </div>
+        </article>
 
-        <!-- industry list -->
-        <div class="bf-list">
-          <div class="section-head reveal">
-            <h2>Industries</h2>
+        <article class="ind-card">
+          <div class="ind-media">
+            <img src="assets/img/factory-4.jpg" alt="Sentritec in a factory" loading="lazy" decoding="async" />
+            <h3>Factory</h3>
+            <a class="ind-more" href="industries/factory">Learn more
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
-          <a class="bf-item active" href="industries/office" data-ind="office">
-            <span class="bf-index">01</span>
-            <div class="bf-text">
-              <h3>Office</h3>
-            </div>
-            <svg class="bf-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="bf-item" href="industries/factory" data-ind="factory">
-            <span class="bf-index">02</span>
-            <div class="bf-text">
-              <h3>Factory</h3>
-            </div>
-            <svg class="bf-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
+        </article>
+
+        <article class="ind-card">
+          <div class="ind-media">
+            <!-- final asset: <img src="assets/img/education.jpg" alt="Sentritec in a school" loading="lazy" decoding="async" /> -->
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Sentritec in a school" loading="lazy" decoding="async" />
+            <h3>Education</h3>
+            <a class="ind-more" href="#">Learn more
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="ind-card">
+          <div class="ind-media">
+            <!-- final asset: <img src="assets/img/healthcare.jpg" alt="Sentritec in a healthcare facility" loading="lazy" decoding="async" /> -->
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Sentritec in a healthcare facility" loading="lazy" decoding="async" />
+            <h3>Healthcare</h3>
+            <a class="ind-more" href="#">Learn more
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="ind-card">
+          <div class="ind-media">
+            <!-- final asset: <img src="assets/img/property.jpg" alt="Sentritec in a residential property" loading="lazy" decoding="async" /> -->
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Sentritec in a residential property" loading="lazy" decoding="async" />
+            <h3>Property</h3>
+            <a class="ind-more" href="#">Learn more
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
+
+  <script>
+    /* Industries carousel — arrows scroll the track (same behavior as the Pass carousel) */
+    (function () {
+      var track = document.getElementById("indTrack");
+      if (!track) return;
+      var arrows = Array.prototype.slice.call(document.querySelectorAll(".ind-arrow"));
+      var nav = document.querySelector(".ind-nav");
+      function step() {
+        /* distance between two cards = real card width + real (responsive) gap */
+        var cards = track.querySelectorAll(".ind-card");
+        if (cards.length > 1) return cards[1].offsetLeft - cards[0].offsetLeft;
+        return Math.round(track.clientWidth * 0.7);
+      }
+      function sync() {
+        var prev = arrows.filter(function (a) { return a.getAttribute("data-dir") === "-1"; })[0];
+        var next = arrows.filter(function (a) { return a.getAttribute("data-dir") === "1"; })[0];
+        var max = track.scrollWidth - track.clientWidth - 2;
+        /* nothing to scroll (all cards fit) — hide the arrows entirely */
+        if (nav) nav.style.display = max <= 4 ? "none" : "";
+        if (prev) prev.disabled = track.scrollLeft <= 2;
+        if (next) next.disabled = track.scrollLeft >= max;
+      }
+      arrows.forEach(function (a) {
+        a.addEventListener("click", function () {
+          var dir = parseInt(a.getAttribute("data-dir"), 10) || 1;
+          track.scrollBy({ left: dir * step(), behavior: "smooth" });
+        });
+      });
+      track.addEventListener("scroll", sync, { passive: true });
+      window.addEventListener("resize", sync);
+      window.addEventListener("load", sync);
+      sync();
+    })();
+  </script>
 
   <!-- ============== WHO TRUSTS US (continuous logo marquee) ============== -->
   <section class="trust-sec" id="trust">
@@ -726,53 +789,8 @@
   </section>
 
   <!-- ============== FOOTER ============== -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="assets/sentritec-logo.svg" alt="Sentritec" />
-          <p>One cloud platform for building access — manage doors, people and activity from a single dashboard, powered by Sentritec readers.</p>
-        </div>
-        <div>
-          <h5>Platform</h5>
-          <ul>
-            <li><a href="#platform">Cloud Dashboard</a></li>
-            <li><a href="#platform">Mobile Access</a></li>
-            <li><a href="#platform">Integrations</a></li>
-            <li><a href="#platform">Reports &amp; Audit</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Devices</h5>
-          <ul>
-            <li><a href="#face-core">Face Core</a></li>
-            <li><a href="#access-core">Access Core</a></li>
-            <li><a href="#access-core-pro">Access Core Pro</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Solutions</h5>
-          <ul>
-            <li><a href="#built-for">Office</a></li>
-            <li><a href="#built-for">Factory</a></li>
-            <li><a href="#ecosystem">Ecosystem</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Company</h5>
-          <ul>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact">Request a Demo</a></li>
-            <li><a href="#top">Back to top</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Sentritec. All rights reserved.</span>
-        <span>Privacy · Terms · Cookies</span>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer" data-root=""></div>
+  <script src="assets/js/footer.js"></script>
 
   <script src="assets/js/main.js"></script>
 </body>

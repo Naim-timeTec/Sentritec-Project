@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentritec — Become a Partner</title>
+  <meta name="description" content="Apply to join the Sentritec partner ecosystem. Tell us about your business capabilities and our team will connect with you within 24 business hours." />
+  <link rel="icon" type="image/svg+xml" href="../assets/sentritec-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=3" />
+</head>
+<body>
+
+  <a class="skip-link" href="#apply">Skip to content</a>
+
+  <!-- ============== NAV (single source: assets/js/nav.js) ============== -->
+  <div id="site-nav" data-root="../"></div>
+  <script src="../assets/js/nav.js"></script>
+
+  <!-- ============== MINI BANNER ============== -->
+  <div class="pa-hero" id="top" aria-hidden="true">
+    <!-- swap for a dark brand/product image when ready: -->
+    <!-- <img src="../assets/img/cta-section.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" /> -->
+    <img src="../assets/img/cta-section.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;" />
+    <!-- <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 7v10l10 5 10-5V7L12 2Zm0 2.2 7.5 3.75L12 11.7 4.5 7.95 12 4.2ZM4 9.6l7 3.5v6.7l-7-3.5V9.6Zm9 10.2v-6.7l7-3.5v6.7l-7 3.5Z"/></svg> -->
+  </div>
+
+  <!-- ============== APPLICATION CARD ============== -->
+  <section class="pa-main" id="apply">
+    <div class="wrap">
+      <div class="pa-card" id="paCard">
+        <h1>Join the Ecosystem</h1>
+        <p class="pa-sub">Let&rsquo;s work together to build better value for our shared clients. Tell us about your business capabilities, and our team will connect with you within 24 business hours.</p>
+
+        <form class="pa-form" id="paForm" novalidate>
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label for="paName">Full Name <span class="req">*</span></label>
+              <input type="text" id="paName" name="fullName" autocomplete="name" required />
+            </div>
+            <div class="cf-field">
+              <label for="paTitle">Job Title <span class="req">*</span></label>
+              <input type="text" id="paTitle" name="jobTitle" autocomplete="organization-title" required />
+            </div>
+          </div>
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label for="paEmail">Business Email <span class="req">*</span></label>
+              <input type="email" id="paEmail" name="email" autocomplete="email" placeholder="name@company.com" required />
+              <p class="pa-err" id="paEmailErr">Please use your business email address (personal domains such as Gmail or Yahoo are not accepted).</p>
+            </div>
+            <div class="cf-field">
+              <label for="paPhone">Direct Phone <span class="req">*</span></label>
+              <input type="tel" id="paPhone" name="phone" autocomplete="tel" required />
+            </div>
+          </div>
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label for="paCompany">Company Name <span class="req">*</span></label>
+              <input type="text" id="paCompany" name="company" autocomplete="organization" required />
+            </div>
+            <div class="cf-field">
+              <label for="paWebsite">Website URL <span class="req">*</span></label>
+              <input type="url" id="paWebsite" name="website" placeholder="https://" required />
+            </div>
+          </div>
+
+          <div class="cf-row">
+            <div class="cf-field pa-combo" id="paCountryCombo">
+              <label for="paCountry">Country/Region of Operation <span class="req">*</span></label>
+              <input type="text" id="paCountry" name="country" placeholder="Select or search country/region" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" required />
+              <div class="pa-combo-panel">
+                <ul class="fp-list" id="paCountryList"></ul>
+              </div>
+            </div>
+            <div class="cf-field pa-combo" id="paRevenueCombo">
+              <label for="paRevenue">Annual Revenue Bracket (Access Control/Security) <span class="req">*</span></label>
+              <input type="text" id="paRevenue" name="revenue" placeholder="Select revenue bracket" readonly required role="combobox" aria-expanded="false" />
+              <div class="pa-combo-panel">
+                <ul class="fp-list" id="paRevenueList">
+                  <li><button class="fp-opt" type="button" data-value="Under $500k"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Under $500k</button></li>
+                  <li><button class="fp-opt" type="button" data-value="$500k&ndash;$2M"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>$500k&ndash;$2M</button></li>
+                  <li><button class="fp-opt" type="button" data-value="$2M&ndash;$10M"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>$2M&ndash;$10M</button></li>
+                  <li><button class="fp-opt" type="button" data-value="$10M+"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>$10M+</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <fieldset class="pa-fieldset" id="paFocus">
+            <legend>Primary Business Focus <span class="req">*</span></legend>
+            <div class="pa-checks pa-checks--2">
+              <label class="pa-check"><input type="checkbox" name="focus" value="System Integrator" />System Integrator</label>
+              <label class="pa-check"><input type="checkbox" name="focus" value="Security Installer" />Security Installer</label>
+              <label class="pa-check"><input type="checkbox" name="focus" value="Managed Service Provider (MSP)" />Managed Service Provider (MSP)</label>
+              <label class="pa-check"><input type="checkbox" name="focus" value="Software Developer/ISV" />Software Developer/ISV</label>
+            </div>
+            <p class="pa-err" id="paFocusErr">Please select at least one business focus.</p>
+          </fieldset>
+
+          <fieldset class="pa-fieldset" id="paIndustry">
+            <legend>Primary Industry Served <span class="req">*</span></legend>
+            <div class="pa-checks">
+              <label class="pa-check"><input type="checkbox" name="industry" value="Commercial Office" />Commercial Office</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Retail" />Retail</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Government" />Government</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Education" />Education</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Healthcare" />Healthcare</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Multi-Family Residential" />Multi-Family Residential</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Manufacturing" />Manufacturing</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Banking Finance" />Banking Finance</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Hotel/Restaurant" />Hotel/Restaurant</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Property Management" />Property Management</label>
+              <label class="pa-check"><input type="checkbox" name="industry" value="Others" />Others</label>
+            </div>
+            <p class="pa-err" id="paIndustryErr">Please select at least one industry.</p>
+          </fieldset>
+
+          <div class="cf-field">
+            <label for="paBrands">Current Brands Carried <span class="req">*</span></label>
+            <input type="text" id="paBrands" name="brands" required />
+          </div>
+
+          <fieldset class="pa-fieldset" id="paTeam">
+            <legend>Do you have an in-house technical team for installations? <span class="req">*</span></legend>
+            <div class="pa-radios">
+              <label class="pa-check"><input type="radio" name="techTeam" value="Yes" required />Yes</label>
+              <label class="pa-check"><input type="radio" name="techTeam" value="No" />No</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="pa-fieldset" id="paIntegrate">
+            <legend>Do you have an existing application or platform you intend to integrate with our system? <span class="req">*</span></legend>
+            <div class="pa-radios">
+              <label class="pa-check"><input type="radio" name="integrate" value="Yes" required />Yes</label>
+              <label class="pa-check"><input type="radio" name="integrate" value="No" />No</label>
+            </div>
+          </fieldset>
+
+          <div class="cf-field">
+            <label for="paAbout">Tell us about your business or current project needs</label>
+            <textarea id="paAbout" name="about" rows="5" placeholder="Briefly describe what your company does, and if you have any upcoming projects where you see a fit for our cloud-based solution."></textarea>
+          </div>
+
+          <label class="pa-consent">
+            <input type="checkbox" id="paConsent" required />
+            <span>I agree to receive communications regarding the partner program and certify that I am authorized to submit this inquiry on behalf of my organization. <span class="req">*</span></span>
+          </label>
+          <p class="pa-err" id="paConsentErr">Please confirm the statement above to submit your application.</p>
+
+          <button class="btn btn-dark pa-submit" type="submit">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <div id="site-footer" data-root="../"></div>
+  <script src="../assets/js/footer.js"></script>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      /* country/region options */
+      var COUNTRIES = ["Australia", "Brunei", "Cambodia", "China", "Hong Kong", "India", "Indonesia", "Japan",
+        "Malaysia", "Myanmar", "New Zealand", "Philippines", "Qatar", "Saudi Arabia", "Singapore", "South Korea",
+        "Taiwan", "Thailand", "United Arab Emirates", "United Kingdom", "United States", "Vietnam", "Other"];
+      /* searchable country combobox */
+      var combo = document.getElementById("paCountryCombo");
+      var countryInput = document.getElementById("paCountry");
+      var countryList = document.getElementById("paCountryList");
+      function buildCountryList(term) {
+        term = (term || "").toLowerCase();
+        var items = COUNTRIES.filter(function (c) { return c.toLowerCase().indexOf(term) !== -1; });
+        countryList.innerHTML = items.length
+          ? items.map(function (c) {
+              var on = c === countryInput.value ? " selected" : "";
+              return '<li><button class="fp-opt' + on + '" type="button" data-country="' + c + '">' +
+                '<svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>' +
+                c + "</button></li>";
+            }).join("")
+          : '<li class="pa-combo-empty">No matches found</li>';
+      }
+      function openCombo(term) {
+        combo.classList.add("open");
+        countryInput.setAttribute("aria-expanded", "true");
+        buildCountryList(term);
+      }
+      function closeCombo() {
+        combo.classList.remove("open");
+        countryInput.setAttribute("aria-expanded", "false");
+      }
+      countryInput.addEventListener("focus", function () { openCombo(""); });
+      countryInput.addEventListener("input", function () {
+        countryInput.setCustomValidity("");
+        openCombo(countryInput.value);
+      });
+      countryInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          var first = countryList.querySelector("[data-country]");
+          if (first && combo.classList.contains("open")) { countryInput.value = first.getAttribute("data-country"); countryInput.setCustomValidity(""); closeCombo(); }
+        }
+        if (e.key === "Escape") closeCombo();
+      });
+      countryList.addEventListener("mousedown", function (e) {
+        var b = e.target.closest("[data-country]");
+        if (!b) return;
+        e.preventDefault();
+        countryInput.value = b.getAttribute("data-country");
+        countryInput.setCustomValidity("");
+        closeCombo();
+      });
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest("#paCountryCombo")) closeCombo();
+      });
+
+      /* revenue bracket — styled dropdown (readonly input + option panel) */
+      var revCombo = document.getElementById("paRevenueCombo");
+      var revInput = document.getElementById("paRevenue");
+      var revList = document.getElementById("paRevenueList");
+      function closeRev() { revCombo.classList.remove("open"); revInput.setAttribute("aria-expanded", "false"); }
+      revInput.addEventListener("click", function () {
+        var open = revCombo.classList.toggle("open");
+        revInput.setAttribute("aria-expanded", open ? "true" : "false");
+        Array.prototype.slice.call(revList.querySelectorAll(".fp-opt")).forEach(function (o) {
+          o.classList.toggle("selected", o.getAttribute("data-value") === revInput.value);
+        });
+      });
+      revInput.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeRev();
+        if (e.key === "Enter") e.preventDefault();
+      });
+      revList.addEventListener("mousedown", function (e) {
+        var b = e.target.closest("[data-value]");
+        if (!b) return;
+        e.preventDefault();
+        revInput.value = b.getAttribute("data-value");
+        revInput.setCustomValidity("");
+        closeRev();
+      });
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest("#paRevenueCombo")) closeRev();
+      });
+
+      /* business email — reject common personal domains */
+      var FREE_DOMAINS = ["gmail.com", "googlemail.com", "yahoo.com", "ymail.com", "hotmail.com", "outlook.com",
+        "live.com", "msn.com", "icloud.com", "me.com", "aol.com", "proton.me", "protonmail.com", "mail.com", "gmx.com"];
+      var emailEl = document.getElementById("paEmail");
+      var emailErr = document.getElementById("paEmailErr");
+      function isBusinessEmail(v) {
+        var at = v.lastIndexOf("@");
+        if (at === -1) return false;
+        return FREE_DOMAINS.indexOf(v.slice(at + 1).toLowerCase().trim()) === -1;
+      }
+      emailEl.addEventListener("input", function () {
+        emailErr.classList.remove("show");
+        emailEl.setCustomValidity("");
+      });
+
+      /* at-least-one helpers for checkbox groups */
+      function groupChecked(name) {
+        return !!document.querySelector('input[name="' + name + '"]:checked');
+      }
+
+      var form = document.getElementById("paForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var ok = true;
+
+        /* clear previous custom errors */
+        ["paFocusErr", "paIndustryErr", "paConsentErr"].forEach(function (id) {
+          document.getElementById(id).classList.remove("show");
+        });
+        emailErr.classList.remove("show");
+        emailEl.setCustomValidity("");
+
+        /* business email check (runs before native validation so the message shows) */
+        if (emailEl.value && !isBusinessEmail(emailEl.value)) {
+          emailErr.classList.add("show");
+          emailEl.setCustomValidity("Please use a business email address.");
+          ok = false;
+        }
+
+        /* country must match an option from the list */
+        countryInput.setCustomValidity("");
+        if (countryInput.value && COUNTRIES.indexOf(countryInput.value) === -1) {
+          countryInput.setCustomValidity("Please select a country/region from the list.");
+          ok = false;
+        }
+
+        /* native validation (required fields, email/url formats, radios, consent) */
+        if (!form.checkValidity()) {
+          ok = false;
+          if (!document.getElementById("paConsent").checked) {
+            document.getElementById("paConsentErr").classList.add("show");
+          }
+        }
+
+        /* checkbox groups */
+        if (!groupChecked("focus")) { document.getElementById("paFocusErr").classList.add("show"); ok = false; }
+        if (!groupChecked("industry")) { document.getElementById("paIndustryErr").classList.add("show"); ok = false; }
+
+        if (!ok) {
+          form.reportValidity();
+          var firstErr = document.querySelector(".pa-err.show, input:invalid, select:invalid");
+          if (firstErr) firstErr.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+
+        /* success — replace the card content (hook a real endpoint here later) */
+        document.getElementById("paCard").innerHTML =
+          '<div class="pa-success">' +
+          '<span class="pa-success-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
+          "<h2>Application received.</h2>" +
+          "<p>Thank you for your interest in the Sentritec partner ecosystem. Our partnerships team will review your application and connect with you within 24 business hours.</p>" +
+          "</div>";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    })();
+  </script>
+</body>
+</html>
