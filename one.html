@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=3" />
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
 </head>
 <body>
 
@@ -216,8 +216,104 @@
           </div>
         </div>
       </div>
+
+      <!-- mobile only: the same four features as a swipeable carousel -->
+      <div class="oc-carousel reveal" id="ocCarousel" aria-label="Control features">
+        <article class="oc-slide">
+          <div class="oc-slide-media">
+            <img src="assets/one/remote-unlock.jpg" alt="Glass office doors ready to unlock remotely" loading="lazy" decoding="async" />
+          </div>
+          <div class="oc-slide-body">
+            <b>Remote Unlock</b>
+            <p>Unlock any connected door instantly from your browser console to grant immediate, one-off entry from anywhere.</p>
+          </div>
+        </article>
+
+        <article class="oc-slide">
+          <div class="oc-slide-media">
+            <video muted playsinline preload="metadata" aria-label="Triggering a lockdown across connected doors">
+              <source src="assets/one/lockdown.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="oc-slide-body">
+            <b>Lockdown</b>
+            <p>Trigger a global or zone-specific lockdown with a single click, instantly securing every connected perimeter.</p>
+          </div>
+        </article>
+
+        <article class="oc-slide">
+          <div class="oc-slide-media">
+            <img src="assets/one/smart-schedules.jpg" alt="Hourglass representing scheduled access windows" loading="lazy" decoding="async" />
+          </div>
+          <div class="oc-slide-body">
+            <b>Smart Schedules</b>
+            <p>Set automated lock/unlock intervals for main entries or high-traffic zones based on your recurring operational hours.</p>
+          </div>
+        </article>
+
+        <article class="oc-slide">
+          <div class="oc-slide-media">
+            <img src="assets/platform/temporary-key.jpg" alt="Temporary QR access pass on a smartphone" loading="lazy" decoding="async" />
+          </div>
+          <div class="oc-slide-body">
+            <b>Temporary Keys</b>
+            <p>Generate secure, time-bound PINs for contractors or visitors that automatically expire after their scheduled window.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- carousel pagination dots (mobile only) -->
+      <div class="oc-dots" id="ocDots" role="tablist" aria-label="Control features slides">
+        <button class="oc-dot active" type="button" data-i="0" aria-label="Slide 1"></button>
+        <button class="oc-dot" type="button" data-i="1" aria-label="Slide 2"></button>
+        <button class="oc-dot" type="button" data-i="2" aria-label="Slide 3"></button>
+        <button class="oc-dot" type="button" data-i="3" aria-label="Slide 4"></button>
+      </div>
     </div>
   </section>
+
+  <script>
+    /* mobile carousel — the lockdown video plays from the start whenever its slide scrolls into view */
+    (function () {
+      var vids = Array.prototype.slice.call(document.querySelectorAll("#ocCarousel video"));
+      if (!vids.length || !("IntersectionObserver" in window)) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var v = en.target;
+          if (en.isIntersecting) {
+            v.currentTime = 0;
+            var p = v.play();
+            if (p && p.catch) p.catch(function () {});
+          } else {
+            v.pause();
+          }
+        });
+      }, { threshold: 0.6 });
+      vids.forEach(function (v) { obs.observe(v); });
+    })();
+
+    /* carousel dots — follow the scroll position, click to jump to a slide */
+    (function () {
+      var track = document.getElementById("ocCarousel");
+      var dots = Array.prototype.slice.call(document.querySelectorAll("#ocDots .oc-dot"));
+      if (!track || !dots.length) return;
+      var slides = Array.prototype.slice.call(track.querySelectorAll(".oc-slide"));
+      function setActive(i) {
+        dots.forEach(function (d, idx) { d.classList.toggle("active", idx === i); });
+      }
+      track.addEventListener("scroll", function () {
+        var step = slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : 1;
+        var i = Math.round(track.scrollLeft / step);
+        setActive(Math.max(0, Math.min(slides.length - 1, i)));
+      }, { passive: true });
+      dots.forEach(function (d) {
+        d.addEventListener("click", function () {
+          var s = slides[parseInt(d.getAttribute("data-i"), 10) || 0];
+          if (s) s.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+        });
+      });
+    })();
+  </script>
 
   <!-- ============== 5. CTA (same as home page) ============== -->
   <section class="cta-section" id="contact">

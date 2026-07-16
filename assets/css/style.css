@@ -770,10 +770,21 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .why3-pane .img-ph { width: 100%; height: 100%; border-radius: 0; }
 .why3-pane img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* inline tab image — only used on mobile, where it sits above the active tab's text */
+.why3-tab-media { display: none; }
+
 @media (max-width: 920px) {
   .why3-head { margin-bottom: clamp(28px, 5vw, 40px); }
   .why3 { grid-template-columns: 1fr; gap: clamp(28px, 5vw, 40px); }
-  .why3-media { aspect-ratio: 16 / 10; }
+  /* the shared media stage is replaced by the per-tab image above the active item */
+  .why3-media { display: none !important; }
+  .why3-tab.active .why3-tab-media { display: block; aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; margin: 4px 0 14px; animation: tabMediaIn .5s var(--ease) both; }
+  .why3-tab-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+}
+/* smooth reveal for inline tab media — expands and fades in instead of popping */
+@keyframes tabMediaIn {
+  from { opacity: 0; max-height: 0; transform: translateY(6px); }
+  to   { opacity: 1; max-height: 340px; transform: none; }
 }
 
 /* The Software Experience — one frame, Admin/User toggle swaps screen + copy */
@@ -857,6 +868,13 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 
 /* copy anchored to the bottom-left */
 .sw2-hero .sw2-copy { margin-top: auto; max-width: 600px; padding-top: clamp(40px, 8vw, 90px); }
+
+/* mobile: breathing room top/bottom + compact single-word tabs */
+@media (max-width: 700px) {
+  .sw2-hero .sw2-overlay { padding-top: clamp(28px, 8vw, 44px); padding-bottom: clamp(36px, 10vw, 52px); }
+  .sw2-hero .sw2-tab { padding: 11px 10px; font-size: 14px; }
+  .sw2-tab-x { display: none; }
+}
 .sw2-hero .sw2-text h3 { color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,.4); }
 .sw2-hero .sw2-text > p { color: rgba(255,255,255,.86); }
 
@@ -897,10 +915,25 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .intg2-tx small { display: block; font-size: 15px; line-height: 1.55; color: #9aa0b4; transition: color .25s var(--ease); }
 .intg2-item.active .intg2-tx small { color: var(--slate); }
 .intg2-cta { align-self: flex-start; margin-top: clamp(22px, 3vw, 32px); }
+/* inline item image — only used on mobile, where it sits above the active item's text */
+.intg2-item-media { display: none; }
+
 @media (max-width: 920px) {
-  .intg2-head { flex-direction: column; gap: clamp(16px, 3vw, 24px); }
+  .intg2-head { flex-direction: column; gap: clamp(16px, 3vw, 24px); margin-bottom: clamp(26px, 6vw, 38px); }
   .intg2 { grid-template-columns: 1fr; gap: clamp(28px, 5vw, 40px); }
-  .intg2-visual { min-height: 0; aspect-ratio: 16 / 11; order: -1; }
+  /* keep a real min-height so the box never collapses on browsers/devices
+     where aspect-ratio doesn't take effect (the panes inside are absolute) */
+  .intg2-visual { min-height: clamp(220px, 62vw, 380px); aspect-ratio: 16 / 11; order: -1; }
+  /* home #integration + integrations #native: the shared visual is replaced
+     by the image above the active item */
+  .home #integration .intg2-visual,
+  #native .intg2-visual { display: none; }
+  .home #integration .intg2,
+  #native .intg2 { gap: 0; }
+  #native .intg2 { margin-top: 0; }
+  .home #integration .intg2-item.active .intg2-item-media,
+  #native .intg2-item.active .intg2-item-media { display: block; aspect-ratio: 16 / 11; border-radius: 14px; overflow: hidden; margin: 2px 0 14px; animation: tabMediaIn .5s var(--ease) both; }
+  .intg2-item-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
 
 /* Homepage — each major section fills ~one viewport with its content vertically
@@ -1498,6 +1531,16 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .dr-dcard-ic svg { width: 22px; height: 22px; }
 .dr-dcard-body h2 { margin: 0 0 10px; color: #fff; font-size: clamp(21px, 2.3vw, 27px); letter-spacing: -0.02em; line-height: 1.16; }
 .dr-dcard-body p { margin: 0; color: rgba(255,255,255,.84); font-size: 15px; line-height: 1.62; }
+/* mobile: no overlaid copy — image on top, text on a clean card below */
+@media (max-width: 700px) {
+  .dr-dcard { min-height: 0; display: flex; flex-direction: column; align-items: stretch; background: var(--paper); border: 1px solid var(--line); }
+  .dr-dcard::after { display: none; }
+  .dr-dcard-bg { position: static; width: 100%; height: auto; aspect-ratio: 16 / 10; }
+  .dr-dcard-body { padding: 20px 18px 24px; }
+  .dr-dcard-ic { background: var(--accent-soft); border-color: transparent; color: var(--accent); -webkit-backdrop-filter: none; backdrop-filter: none; margin-bottom: 12px; }
+  .dr-dcard-body h2 { color: var(--ink); }
+  .dr-dcard-body p { color: var(--slate); }
+}
 
 /* 8. Biometrics — contained dark feature panel (copy left, edge-to-edge image right) */
 .dr-bio { display: grid; grid-template-columns: 1.05fr .95fr; align-items: stretch; background: var(--ink); color: #fff; border-radius: var(--radius-lg); overflow: hidden; }
@@ -1706,7 +1749,9 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
   .wrap { padding: 0 20px; }
   .concept-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; }
+  /* footer: brand full-width, then the four link columns two-by-two */
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 30px 24px; }
+  .footer-brand { grid-column: 1 / -1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2011,7 +2056,34 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 /* Hero reuses the home .hero-v component (full-width, full-height). */
 
 /* Section rhythm — section 4 keeps normal padding; sections 2 & 3 fill the viewport. */
-.one-control { padding: clamp(64px, 9vw, 112px) 0; }
+.one-control { padding: clamp(64px, 9vw, 112px) 0; overflow-x: clip; }
+/* mobile carousel replaces the icon-tab stage on small screens */
+.oc-carousel { display: none; }
+@media (max-width: 860px) {
+  .oc { display: none; }
+  .oc-carousel {
+    display: flex; gap: 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 calc(50% - 50vw);
+    padding: 4px max(28px, calc((100vw - var(--maxw)) / 2 + 28px));
+    scroll-padding-left: max(28px, calc((100vw - var(--maxw)) / 2 + 28px));
+  }
+  .oc-carousel::-webkit-scrollbar { display: none; }
+  .oc-slide { flex: 0 0 min(84vw, 420px); scroll-snap-align: start; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+  .oc-slide-media { position: relative; aspect-ratio: 16 / 11; min-height: 200px; background: #1a1e2b; }
+  .oc-slide-media img, .oc-slide-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .oc-slide-body { padding: 18px 18px 22px; }
+  .oc-slide-body b { display: block; font-size: 16.5px; letter-spacing: -0.01em; margin-bottom: 8px; }
+  .oc-slide-body p { margin: 0; color: var(--slate); font-size: 14.5px; line-height: 1.6; }
+  .oc-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+}
+/* pagination dots — mobile only (the media query above turns them on) */
+@media (min-width: 861px) {
+  .oc-dots { display: none; }
+}
+.oc-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: #d3d5de; cursor: pointer; transition: background .25s var(--ease), width .25s var(--ease); }
+.oc-dot.active { background: var(--accent); width: 22px; }
 
 /* 2 & 3 — full-viewport sections: header (title left / subheading right) over a large media row */
 .one-vh {
@@ -2135,6 +2207,12 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .pass-hero-copy .lead { margin-top: 18px; color: rgba(255,255,255,.85); }
 
 .pass-badges { display: flex; flex-wrap: wrap; gap: 14px; margin-top: clamp(26px, 3vw, 34px); }
+/* mobile: both store badges share one row */
+@media (max-width: 700px) {
+  .pass-badges { flex-wrap: nowrap; gap: 10px; }
+  .pass-badges a { flex: 1 1 0; min-width: 0; display: block; }
+  .pass-badge-ph { width: 100%; min-width: 0; height: 52px; padding: 12px 16px; }
+}
 /* real badge artwork */
 .pass-badge-img { height: 50px; width: auto; display: block; }
 /* placeholder until the PNGs are added */
@@ -2172,6 +2250,13 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .uc-media { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16 / 8.4; background: linear-gradient(160deg, #23273e 0%, #0f1119 100%); }
 /* legibility scrim for the bottom-left copy — black rising from the bottom, gone by mid-card */
 .uc-media::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,0) 50%); }
+/* mobile: the description moves out of the image and sits under the card title */
+.uc-desc-m { display: none; }
+@media (max-width: 700px) {
+  .uc-media-in { display: none; }
+  .uc-media::after { display: none; }
+  .uc-desc-m { display: block; margin: 8px 0 0; color: var(--slate); font-size: 14.5px; line-height: 1.6; font-weight: 400; }
+}
 .uc-badge { position: absolute; top: 16px; left: 16px; z-index: 2; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.82); font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 999px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 .uc-badge svg { width: 10px; height: 10px; }
 /* description anchored to the bottom-left of the card */
@@ -2337,10 +2422,11 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
   .nat-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 720px) {
-  .int-types { grid-template-columns: 1fr; }
+  .int-types { grid-template-columns: 1fr; row-gap: clamp(26px, 5vw, 34px); }
   .nat-grid { grid-template-columns: 1fr; }
-  .sec-grid { grid-template-columns: 1fr; }
+  .sec-grid { grid-template-columns: 1fr; row-gap: clamp(26px, 5vw, 34px); }
   .int-type, .sec-item { padding: 0; }
+  /* even air on both sides of the divider: row-gap above, padding below */
   .int-type + .int-type,
   .sec-item + .sec-item { border-left: 0; border-top: 1px solid var(--line); padding-top: clamp(26px, 5vw, 34px); }
 }
