@@ -260,6 +260,13 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 }
 .hero-v-media { position: absolute; inset: 0; z-index: 0; }
 .hero-v-video, .hero-v-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* mobile: the tall crop cuts the sides — bias every hero image toward its right side,
+   where the subject usually sits (readers, doors, devices) */
+@media (max-width: 700px) {
+  .hero-v-media img, .hero-v-media video,
+  .pass-hero-bg img,
+  .nw-hero-bg img { object-position: 75% center; }
+}
 .hero-v-ph {
   position: absolute; inset: 0; display: grid; place-items: end center;
   padding-bottom: clamp(28px, 6vh, 64px);
@@ -1619,7 +1626,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 /* .spec-dim { flex: none; width: clamp(220px, 28vw, 340px); } */
 .spec-dim { flex: none; width: clamp(220px, 28vw, 340px); display: flex; justify-content: flex-end; }
 .spec-dim img { width: 100%; height: auto; display: block; }
-.spec-dim img.acp { width: auto; height: 350px; display: block; }
+.spec-dim img.acp { width: 100%; height: auto; max-height: 350px; object-fit: contain; display: block; }
 /* near-square drawing: fill the column width and keep its own proportions */
 .spec-dim img.fcd { width: 100%; height: auto; max-height: 400px; object-fit: contain; display: block; }
 .spec-group { margin-top: clamp(44px, 5.5vw, 72px); }
