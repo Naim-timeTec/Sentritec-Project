@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SentriTec — Access Control for Offices</title>
-  <meta name="description" content="Modern access control for office spaces — manage doors, employees, visitors, departments and access activity from one cloud platform, powered by SentriTec readers and mobile credentials." />
+  <title>Sentritec — Access Control for Offices</title>
+  <meta name="description" content="Modern access control, built for every office — secure every entrance, work area, meeting room, and restricted space from one cloud platform with smart readers, encrypted mobile credentials, and Face Unlock." />
   <link rel="icon" type="image/svg+xml" href="../assets/sentritec-icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,49 +19,106 @@
   <div id="site-nav" data-root="../"></div>
   <script src="../assets/js/nav.js"></script>
 
-  <!-- ============== HERO (video) ============== -->
+  <!-- ============== 1. HERO ============== -->
   <section class="hero-v" id="top" tabindex="-1">
     <div class="hero-v-media">
-      <!-- Banner image — drop your image in and uncomment this line: -->
-      <img src="../assets/img/office-3.jpg" alt="Modern access control for office spaces" />
-      <!-- <div class="hero-v-ph">
-        <div class="ph-label">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          Banner image
-          <small>Drop in an office banner image — replace at assets/img/office-banner.jpg</small>
-        </div>
-      </div> -->
+      <img src="../assets/img/office-3.jpg" alt="Modern access control for office spaces" fetchpriority="high" decoding="async" />
     </div>
     <span class="hero-v-scrim"></span>
     <div class="wrap hero-v-inner">
       <div class="hero-v-head">
-        <!-- <p class="eyebrow on-dark">Office</p> -->
-        <h1 class="hero-v-title">Modern Access Control for Office Spaces</h1>
+        <h1 class="hero-v-title">Modern access control, built for every office.</h1>
+        <p class="hero-v-sub">Secure every entrance, work area, meeting room, and restricted space from one cloud platform. Sentritec brings smart readers, encrypted mobile credentials, and Face Unlock together&mdash;without on-prem servers, separate controllers, or complicated wiring.</p>
       </div>
       <div class="hero-v-cta">
-        <a href="#contact" class="btn btn-primary">Get Started</a>
+        <a href="../contact" class="btn btn-secondary">Get Started
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ============== OVERVIEW ============== -->
-  <section class="section" id="overview">
+  <!-- ============== 2. OVERVIEW (alternating media / text rows) ============== -->
+  <section class="section pass-block" id="overview">
     <div class="wrap">
       <div class="section-head center reveal">
         <p class="eyebrow">Overview</p>
-        <h2>Smarter Access Control for Office Operations</h2>
-        <p class="lead">SentriTec helps offices manage doors, employees, visitors, departments, meeting areas, and access activity from one platform — powered by smart access readers, mobile credentials, flexible schedules, and real-time access records.</p>
+        <h2>Protect your workplace. Keep every team moving.</h2>
       </div>
-      <div class="ov-media reveal">
-        <!-- Replace with the real overview image:
-        <img src="../assets/industries/office-overview.jpg" alt="Office access control overview" loading="lazy" decoding="async" /> -->
-        <span class="img-ph"><span class="ph-mini">Video</span></span>
+
+      <div class="feature-stack reveal">
+
+        <!-- 1 · media left, text right -->
+        <div class="feature">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <img src="../assets/one/scim-sso-1.jpg" alt="Syncing users from the IT directory" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Give the right people the right access.</h3>
+            <p>Connect Sentritec with Okta, Microsoft Entra ID, or Google Workspace to automatically sync users and groups from your IT directory. Set access by role, department, location, door, or schedule. The moment someone joins, changes roles, or leaves, their permissions update everywhere across every site.</p>
+          </div>
+        </div>
+
+        <!-- 2 · text left, media right -->
+        <div class="feature reverse">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <img src="../assets/industries/uc-office-flexible-schedule-3.jpg" alt="Access events synced with time and attendance" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Connect access with time and attendance.</h3>
+            <p>Every tap, wave, mobile unlock, or Face Unlock creates a time-stamped access event. Sync that activity with your time and attendance system to support working hours and overtime, then pass approved data directly into your payroll workflow.</p>
+          </div>
+        </div>
+
+        <!-- 3 · media left, text right -->
+        <div class="feature">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <img src="../assets/industries/uc-office-temporary-key-2.jpg" alt="A visitor entering with a temporary QR key" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Welcome visitors without front-desk friction.</h3>
+            <p>Generate a secure, time-bound temporary key before guests arrive, or connect Sentritec with your visitor management system. Visitors simply scan the QR code and enter during their approved window&mdash;no app, physical key, or permanent badge required.</p>
+          </div>
+        </div>
+
+        <!-- 4 · text left, media right -->
+        <div class="feature reverse">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <img src="../assets/industries/uc-office-restricted-room-2.jpg" alt="Two-factor authentication protecting a restricted room" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Double up on protection for critical areas.</h3>
+            <p>Deploy two-factor authentication for access to server rooms, finance departments, HR offices, and executive areas by combining a credential with Face Unlock. Powered by Face Core, 3D infrared depth sensing verifies physical depth and facial contours to help distinguish an authorized user from a spoof attempt.</p>
+          </div>
+        </div>
+
+        <!-- 5 · media left, text right -->
+        <div class="feature">
+          <div class="feature-media">
+            <div class="ftr-card">
+              <img src="../assets/industries/uc-office-access-logs-2.jpg" alt="Live access logs across every location" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-text">
+            <h3>Keep a complete audit trail.</h3>
+            <p>See access events live across every floor and location. Track activity by user, door, and time, then export tamper-proof, time-stamped reports for audits and compliance reviews.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ============== USE CASES ============== -->
-  <section class="section" id="use-cases">
+  <!-- ============== 3. USE CASES ============== -->
+  <section class="section muted pass-block" id="use-cases">
     <div class="wrap">
       <div class="section-head center reveal">
         <h2>Use Cases</h2>
@@ -69,120 +126,94 @@
 
       <div class="uc-grid reveal">
 
-        <article class="uc-card" tabindex="0">
+        <a class="uc-card" href="#">
           <div class="uc-media">
-            <img src="../assets/industries/uc-employee-access-2.jpg" alt="Employee access control" loading="lazy" decoding="async" />
-            <!-- <span class="img-ph"><span class="ph-mini">Image</span></span> -->
-            <div class="uc-overlay"><p>Manage employee access based on role, department, office location, or working schedule. Control who can access entrances, work areas, meeting rooms, and restricted spaces.</p></div>
+            <img src="../assets/industries/uc-employee-access-2.jpg" alt="Workplace time tracking" loading="lazy" decoding="async" />
           </div>
-          <h3>Employee Access Control</h3>
-        </article>
+          <h3>Workplace Time Tracking
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </h3>
+        </a>
 
-        <article class="uc-card" tabindex="0">
+        <a class="uc-card" href="#">
           <div class="uc-media">
-            <img src="../assets/industries/uc-office-temporary-key-2.jpg" alt="Temporary key" loading="lazy" decoding="async" />
-            <!-- <span class="img-ph"><span class="ph-mini">Image</span></span> -->
-            <div class="uc-overlay"><p>Provide controlled access for guests, clients, vendors, and contractors. Manage temporary or limited access without issuing permanent credentials.</p></div>
+            <img src="../assets/industries/uc-office-multi-branch-2.jpg" alt="Visitor management" loading="lazy" decoding="async" />
           </div>
-          <h3>Temporary Key</h3>
-        </article>
+          <h3>Visitor Management
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </h3>
+        </a>
 
-        <article class="uc-card" tabindex="0">
+        <a class="uc-card" href="#">
           <div class="uc-media">
-            <img src="../assets/industries/uc-office-restricted-room-2.jpg" alt="Restricted room management" loading="lazy" decoding="async" />
-            <!-- <span class="img-ph"><span class="ph-mini">Image</span></span> -->
-            <div class="uc-overlay"><p>Protect sensitive areas such as server rooms, finance offices, HR rooms, executive offices, and document storage with controlled door access and stronger authentication options.</p></div>
+            <!-- placeholder — swap for a property/building management shot when ready -->
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Property management" loading="lazy" decoding="async" />
           </div>
-          <h3>Restricted Room Management</h3>
-        </article>
-
-        <article class="uc-card" tabindex="0">
-          <div class="uc-media">
-            <img src="../assets/industries/uc-office-flexible-schedule-3.jpg" alt="Flexible work schedule access" loading="lazy" decoding="async" />
-            <!-- <span class="img-ph"><span class="ph-mini">Image</span></span> -->
-            <div class="uc-overlay"><p>Support hybrid work, flexible hours, and scheduled office access. Assign permissions based on working hours, office days, or specific time windows.</p></div>
-          </div>
-          <h3>Flexible Work Schedule Access</h3>
-        </article>
-
-        <article class="uc-card" tabindex="0">
-          <div class="uc-media">
-            <img src="../assets/industries/uc-office-multi-branch-2.jpg" alt="Multi-branch office management" loading="lazy" decoding="async" />
-            <!-- <span class="img-ph"><span class="ph-mini">Image</span></span> -->
-            <div class="uc-overlay"><p>Manage access across multiple offices or branches from one cloud dashboard. Update users, credentials, door schedules, and permissions without managing each location separately.</p></div>
-          </div>
-          <h3>Multi-Branch Office Management</h3>
-        </article>
-
-        <article class="uc-card" tabindex="0">
-          <div class="uc-media">
-            <img src="../assets/industries/uc-office-access-logs-2.jpg" alt="Access logs and audit trail" loading="lazy" decoding="async" />
-            <!-- <span class="img-ph"><span class="ph-mini">Image</span></span> -->
-            <div class="uc-overlay"><p>Track door access activity with event logs and access records. Review who accessed which door and when — supporting security checks, internal audits, and workplace visibility.</p></div>
-          </div>
-          <h3>Access Logs &amp; Audit Trail</h3>
-        </article>
+          <h3>Property Management
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </h3>
+        </a>
 
       </div>
     </div>
   </section>
 
-  <!-- ============== HOW SENTRITEC HELPS OFFICES (dark) ============== -->
-  <section class="section dark" id="help">
+  <!-- ============== 4. WHY SENTRITEC (dark) ============== -->
+  <section class="section dark pass-block" id="why">
     <div class="wrap">
       <div class="section-head center reveal">
-        <h2>How SentriTec Helps Offices</h2>
+        <h2>Why Sentritec</h2>
       </div>
 
       <div class="help-grid reveal">
 
         <div class="help-item">
           <span class="help-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg></span>
-          <h3>Centralize Access Management</h3>
-          <p>Manage doors, users, credentials, schedules, and access levels from one cloud platform.</p>
+          <h3>One platform. Total control.</h3>
+          <p>Manage every site, door, user, credential, schedule, and access level through Sentritec One&mdash;a single cloud-based dashboard available from any browser.</p>
         </div>
 
         <div class="help-item">
           <span class="help-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/><circle cx="7.5" cy="15.5" r="5.5"/></svg></span>
-          <h3>Support Multiple Unlock Methods</h3>
-          <p>Choose from Face Recognition, BLE, RFID card, NFC, QR code, and PIN.</p>
+          <h3>Choose how your team unlocks.</h3>
+          <p>Let your team tap, wave, walk through, unlock from the app, or use Face Unlock. Sentritec also supports encrypted mobile credentials, low-frequency proximity cards, high-frequency NFC credentials such as DESFire EV3, QR codes, and PINs.</p>
         </div>
 
         <div class="help-item">
           <span class="help-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 6.5 7 8 4-1.5 7-4 7-8V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-          <h3>Improve Workplace Security</h3>
-          <p>Add stronger protection with two-factor authentication and liveness detection.</p>
+          <h3>Double up on protection.</h3>
+          <p>Turn on two-factor authentication for your most sensitive areas by pairing Face Unlock with a PIN or physical card. Face Core uses privacy-first facial verification and 3D infrared depth sensing to help distinguish authorized users from spoof attempts.</p>
         </div>
 
         <div class="help-item">
           <span class="help-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5M9 8V2M15 8V2M6 14V8h12v6a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4Z"/></svg></span>
-          <h3>Simplify Installation</h3>
-          <p>PoE-supported devices reduce wiring complexity and speed up deployment.</p>
+          <h3>Plug it in and you&rsquo;re online.</h3>
+          <p>A single PoE cable carries both power and data. With the access controller built directly inside the reader, there are no on-prem servers, separate control panels, or wiring jungle to install and maintain.</p>
         </div>
 
         <div class="help-item">
           <span class="help-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span>
-          <h3>Monitor Device and Access Activity</h3>
-          <p>Track device status, door activity, and access records from one dashboard.</p>
+          <h3>Complete visibility. Continuous live updates.</h3>
+          <p>See every access event live, monitor reader health and online or offline status, receive instant anomaly alerts, and deploy OTA firmware updates globally&mdash;all from one dashboard.</p>
         </div>
 
         <div class="help-item">
           <span class="help-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
-          <h3>Scale Across Office Locations</h3>
-          <p>Manage users, doors, devices, and access rules across multiple branches.</p>
+          <h3>Grow at your own pace.</h3>
+          <p>Start with one door and add readers, floors, or offices whenever you need them. Manage every location, user, and access rule together from a single browser tab.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ============== CTA ============== -->
+  <!-- ============== 5. CTA ============== -->
   <section class="cta-section" id="contact">
     <a class="cta-link reveal" href="../contact">
       <div class="wrap cta-inner">
         <div class="cta-text">
-          <h2>Secure your space now with SentriTec.</h2>
-          <p>Experience the new standard of frictionless, cloud-based access control.</p>
+          <h2>Ready to modernize your physical security?</h2>
+          <p>Get started with Sentritec today and build an access ecosystem that grows with your business.</p>
         </div>
         <span class="cta-go">Get Started
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

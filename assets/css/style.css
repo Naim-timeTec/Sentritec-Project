@@ -1336,6 +1336,8 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
   display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(32px, 5vw, 72px);
   align-items: center; margin-top: 48px;
 }
+/* the "Built For" heading sits left-aligned above the list */
+#built-for .section-head { margin: 0 0 clamp(28px, 4vw, 48px); max-width: none; text-align: left; }
 /* preview panel */
 .bf-preview {
   position: relative; order: 2; border-radius: var(--radius-lg); overflow: hidden;
@@ -1371,7 +1373,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 }
 .bf-item.active .bf-index { color: var(--accent); }
 .bf-text h3 {
-  font-size: clamp(28px, 4vw, 48px); margin: 0; line-height: 1.04;
+  font-size: clamp(24px, 3vw, 36px); margin: 0; line-height: 1.08;
   color: #c2c4cc; transition: color .3s var(--ease);
 }
 .bf-item.active .bf-text h3, .bf-item:hover .bf-text h3 { color: var(--ink); }
@@ -1811,7 +1813,9 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .uc-media { position: relative; aspect-ratio: 16 / 10; margin-bottom: 16px; border-radius: var(--radius); overflow: hidden; }
 .uc-media .img-ph { border-radius: 0; }
 .uc-media img { height: 100%; object-fit: cover; width: 100%;}
-.uc-card h3 { font-size: clamp(18px, 1.4vw, 21px); margin: 0; }
+.uc-card h3 { font-size: clamp(18px, 1.4vw, 21px); margin: 0; display: flex; align-items: center; gap: 8px; }
+.uc-card h3 svg { flex: none; transition: transform .2s var(--ease); }
+a.uc-card:hover h3 svg { transform: translateX(4px); }
 /* description sits over the image on a frosted layer, revealed on hover/focus */
 .uc-overlay {
   position: absolute; inset: 0; display: flex; align-items: center;

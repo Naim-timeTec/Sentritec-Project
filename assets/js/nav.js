@@ -51,7 +51,7 @@
             </div>
           </li>
 
-          <!-- Industries — hidden for now; restore by uncommenting
+          <!-- Industries -->
           <li class="nav-item">
             <button class="nav-trigger" aria-expanded="false" aria-haspopup="true">Industries
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -70,7 +70,6 @@
               </div>
             </div>
           </li>
-          -->
 
 
           <!-- Resources -->
@@ -146,13 +145,11 @@
       <a href="${root}access-control/door-readers">Door Readers</a>
       <a href="${root}access-control/facial-recognition">Face Recognition</a>
     </details>
-    <!-- Industries — hidden for now; restore by uncommenting
     <details class="m-group">
       <summary>Industries<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
       <a href="${root}industries/office">Office</a>
       <a href="${root}industries/factory">Factory</a>
     </details>
-    -->
 
     <details class="m-group">
       <summary>Resources<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
