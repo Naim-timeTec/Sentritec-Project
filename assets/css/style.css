@@ -279,7 +279,11 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .hero-v-ph .ph-label small { color: rgba(255,255,255,.32); }
 .hero-v-scrim {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(180deg, rgba(8,9,14,.55) 0%, rgba(8,9,14,.28) 38%, rgba(8,9,14,.62) 100%);
+  /* diagonal: dark anchored bottom-left, fading out toward the upper-right half,
+     plus a faint top strip so the transparent nav stays legible over bright images */
+  background:
+    linear-gradient(180deg, rgba(8,9,14,.35) 0%, rgba(8,9,14,0) 16%),
+    linear-gradient(45deg, rgba(8,9,14,.8) 0%, rgba(8,9,14,.42) 30%, rgba(8,9,14,0) 55%);
 }
 /* variant: dark rises from the bottom-left corner and is gone by mid-screen */
 .hero-v-scrim--corner {
