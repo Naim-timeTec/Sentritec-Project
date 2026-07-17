@@ -1829,7 +1829,8 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 /* Use cases — image + title; description reveals on hover (kept clean at a glance) */
 .uc-grid { display: grid; grid-template-columns: repeat(3, 1fr); align-items: start; gap: clamp(28px, 3vw, 44px) clamp(20px, 2.4vw, 32px); margin-top: clamp(40px, 5vw, 60px); }
 .uc-card { display: flex; flex-direction: column; outline: none; }
-.uc-media { position: relative; aspect-ratio: 16 / 10; margin-bottom: 16px; border-radius: var(--radius); overflow: hidden; }
+/* .uc-card scoping matters: the Pass carousel styles .uc-media too (later in the file) */
+.uc-card .uc-media { position: relative; aspect-ratio: 4 / 3.2; margin-bottom: 16px; border-radius: var(--radius); overflow: hidden; }
 .uc-media .img-ph { border-radius: 0; }
 .uc-media img { height: 100%; object-fit: cover; width: 100%;}
 .uc-card h3 { font-size: clamp(18px, 1.4vw, 21px); margin: 0; display: flex; align-items: center; gap: 8px; }
