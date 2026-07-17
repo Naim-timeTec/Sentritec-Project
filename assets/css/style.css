@@ -965,6 +965,17 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
   padding-top: clamp(72px, 9vh, 120px);
   padding-bottom: clamp(72px, 9vh, 120px);
 }
+/* mobile: drop the one-screen-per-section constraint — stacked content is much
+   shorter than the viewport, so centering it leaves huge gaps top and bottom */
+@media (max-width: 920px) {
+  .home #why-sentritec,
+  .home #products,
+  .home #integration {
+    min-height: 0;
+    padding-top: clamp(56px, 10vw, 80px);
+    padding-bottom: clamp(56px, 10vw, 80px);
+  }
+}
 /* a */
 
   .home #integration.sec-bg{
