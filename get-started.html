@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentritec — Get Started</title>
+  <meta name="description" content="Let's modernize your access control. Tell us about your project or facility needs and our team will get back to you within one working day." />
+  <link rel="icon" type="image/svg+xml" href="assets/sentritec-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
+</head>
+<body>
+
+  <a class="skip-link" href="#top">Skip to content</a>
+
+  <!-- ============== NAV (single source: assets/js/nav.js) ============== -->
+  <div id="site-nav" data-root=""></div>
+  <script src="assets/js/nav.js"></script>
+
+  <!-- ============== GET STARTED (copy left · inquiry form right) ============== -->
+  <section class="section gs-sec" id="top" tabindex="-1">
+    <div class="wrap">
+      <div class="cf-grid reveal">
+
+        <!-- left: copy -->
+        <div class="cf-intro gs-intro">
+          <h1>Let&rsquo;s modernize your access control.</h1>
+          <p class="lead">Transitioning to cloud-first physical security shouldn&rsquo;t be complicated. Our platform is built to simplify your operations, secure your assets, and scale alongside your business.</p>
+
+          <div class="one-list pp-list gs-points">
+            <div class="one-litem">
+              <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></span>
+              <div class="one-litem-tx">
+                <b>Unified Cloud Management</b>
+                <p>Manage users, credentials, and access permissions across all your locations from a single, modern dashboard.</p>
+              </div>
+            </div>
+            <div class="one-litem">
+              <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+              <div class="one-litem-tx">
+                <b>Built for Scale</b>
+                <p>Whether you are securing a single door or integrating access control natively with your existing platforms via open APIs, we have you covered.</p>
+              </div>
+            </div>
+            <div class="one-litem">
+              <span class="one-litem-ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <div class="one-litem-tx">
+                <b>A Collaborative Approach</b>
+                <p>We work closely with our certified regional partners to ensure your hardware and cloud licensing are deployed flawlessly.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="apid-note" style="margin-top: clamp(22px, 3vw, 30px); margin-bottom: 0;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            <span>We respect your time. Our team will review your project details and get back to your inquiry within 1 working day to guide you toward the right deployment path.</span>
+          </div>
+        </div>
+
+        <!-- right: inquiry form (mock — wire to your form handler when ready) -->
+        <form class="cf-form pa-form" id="gsForm" novalidate>
+          <div class="cf-field">
+            <label for="gs-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="gs-name" name="full_name" autocomplete="name" required />
+          </div>
+          <div class="cf-field">
+            <label for="gs-email">Business Email <span class="req">*</span></label>
+            <input type="email" id="gs-email" name="email" placeholder="you@company.com" autocomplete="email" required />
+            <p class="pa-err" id="gsEmailErr">Please use your business email address (personal domains such as Gmail or Yahoo are not accepted).</p>
+          </div>
+          <div class="cf-row">
+            <div class="cf-field">
+              <label for="gs-phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="gs-phone" name="phone" autocomplete="tel" required />
+            </div>
+            <div class="cf-field">
+              <label for="gs-company">Company Name <span class="req">*</span></label>
+              <input type="text" id="gs-company" name="company" autocomplete="organization" required />
+            </div>
+          </div>
+          <div class="cf-row">
+            <div class="cf-field">
+              <label for="gs-city">City &amp; Country <span class="req">*</span></label>
+              <input type="text" id="gs-city" name="city_country" required />
+            </div>
+            <div class="cf-field pa-combo" id="gsDoorsCombo">
+              <label for="gs-doors">Approximate Number of Doors <span class="req">*</span></label>
+              <input type="text" id="gs-doors" name="doors" placeholder="Select a range" readonly required role="combobox" aria-expanded="false" />
+              <div class="pa-combo-panel">
+                <ul class="fp-list" id="gsDoorsList">
+                  <li><button class="fp-opt" type="button" data-value="1&ndash;5"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1&ndash;5</button></li>
+                  <li><button class="fp-opt" type="button" data-value="6&ndash;20"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>6&ndash;20</button></li>
+                  <li><button class="fp-opt" type="button" data-value="21&ndash;50"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>21&ndash;50</button></li>
+                  <li><button class="fp-opt" type="button" data-value="50+"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>50+</button></li>
+                  <li><button class="fp-opt" type="button" data-value="Not sure yet"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Not sure yet</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="cf-field">
+            <label for="gs-message">Tell us about your project or facility needs <span class="req">*</span></label>
+            <textarea id="gs-message" name="message" rows="5" placeholder="E.g., We are looking to upgrade our office security, or we need to integrate physical access with our existing platform..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark cf-submit pa-submit">Get Started</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <div id="site-footer" data-root=""></div>
+  <script src="assets/js/footer.js"></script>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      /* doors dropdown — styled panel, readonly input */
+      var combo = document.getElementById("gsDoorsCombo");
+      var doorsInput = document.getElementById("gs-doors");
+      var doorsList = document.getElementById("gsDoorsList");
+      function closeDoors() { combo.classList.remove("open"); doorsInput.setAttribute("aria-expanded", "false"); }
+      doorsInput.addEventListener("click", function () {
+        var open = combo.classList.toggle("open");
+        doorsInput.setAttribute("aria-expanded", open ? "true" : "false");
+        Array.prototype.slice.call(doorsList.querySelectorAll(".fp-opt")).forEach(function (o) {
+          o.classList.toggle("selected", o.getAttribute("data-value") === doorsInput.value);
+        });
+      });
+      doorsInput.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeDoors();
+        if (e.key === "Enter") e.preventDefault();
+      });
+      doorsList.addEventListener("mousedown", function (e) {
+        var b = e.target.closest("[data-value]");
+        if (!b) return;
+        e.preventDefault();
+        doorsInput.value = b.textContent.trim();
+        doorsInput.setCustomValidity("");
+        closeDoors();
+      });
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest("#gsDoorsCombo")) closeDoors();
+      });
+
+      /* business email — reject common personal domains */
+      var FREE_DOMAINS = ["gmail.com", "googlemail.com", "yahoo.com", "ymail.com", "hotmail.com", "outlook.com",
+        "live.com", "msn.com", "icloud.com", "me.com", "aol.com", "proton.me", "protonmail.com", "mail.com", "gmx.com"];
+      var emailEl = document.getElementById("gs-email");
+      var emailErr = document.getElementById("gsEmailErr");
+      function isBusinessEmail(v) {
+        var at = v.lastIndexOf("@");
+        if (at === -1) return false;
+        return FREE_DOMAINS.indexOf(v.slice(at + 1).toLowerCase().trim()) === -1;
+      }
+      emailEl.addEventListener("input", function () {
+        emailErr.classList.remove("show");
+        emailEl.setCustomValidity("");
+      });
+
+      /* mock submit — validates, then shows a confirmation (hook a real endpoint later) */
+      var form = document.getElementById("gsForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        emailErr.classList.remove("show");
+        emailEl.setCustomValidity("");
+        if (emailEl.value && !isBusinessEmail(emailEl.value)) {
+          emailErr.classList.add("show");
+          emailEl.setCustomValidity("Please use a business email address.");
+        }
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        form.innerHTML =
+          '<div class="pa-success">' +
+          '<span class="pa-success-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
+          "<h2>Inquiry received.</h2>" +
+          "<p>Thanks for reaching out &mdash; our team will review your project details and get back to you within 1 working day to guide you toward the right deployment path.</p>" +
+          "</div>";
+      });
+    })();
+  </script>
+</body>
+</html>

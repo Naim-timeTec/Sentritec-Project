@@ -35,15 +35,25 @@
                 <div class="mega-cat-body">
                   <div class="mega-cat-panel active" data-cat="platform">
                     <div class="mega-grid">
-                      <a class="mega-card" href="${root}one"><b>Sentritec One</b></a>
-                      <a class="mega-card" href="${root}pass"><b>Sentritec Pass</b></a>
-                      <a class="mega-card" href="${root}integrations"><b>Integrations</b></a>
+                      <a class="mega-card mega-card--img" href="${root}one"><b>Sentritec One</b>
+                        <span class="mega-card-img"><img class="fit" src="${root}assets/img/navi-one.png" alt="" loading="lazy" /></span>
+                      </a>
+                      <a class="mega-card mega-card--img" href="${root}pass"><b>Sentritec Pass</b>
+                        <span class="mega-card-img"><img class="fit" src="${root}assets/img/navi-pass.png" alt="" loading="lazy" /></span>
+                      </a>
+                      <a class="mega-card mega-card--img" href="${root}integrations"><b>Integrations</b>
+                        <span class="mega-card-img"><img class="fit" src="${root}assets/img/navi-inter.png" alt="" loading="lazy" /></span>
+                      </a>
                     </div>
                   </div>
                   <div class="mega-cat-panel" data-cat="access">
                     <div class="mega-grid">
-                      <a class="mega-card" href="${root}access-control/door-readers"><b>Door Readers</b></a>
-                      <a class="mega-card" href="${root}access-control/facial-recognition"><b>Face Recognition</b></a>
+                      <a class="mega-card mega-card--img" href="${root}access-control/door-readers"><b>Door Readers</b>
+                        <span class="mega-card-img"><img class="fit" src="${root}assets/img/door-reader.png" alt="" loading="lazy" /></span>
+                      </a>
+                      <a class="mega-card mega-card--img" href="${root}access-control/facial-recognition"><b>Face Recognition</b>
+                        <span class="mega-card-img"><img class="fit" src="${root}assets/img/face-core.png" alt="" loading="lazy" /></span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -123,8 +133,8 @@
         </ul>
       </nav>
       <div class="nav-right">
-        <a href="" class="btn btn-ghost nav-login">Login</a>
-        <a href="${root}contact" class="btn btn-dark nav-cta">Get Started</a>
+        <a href="https://app.sentritec.io/login" class="btn btn-ghost nav-login">Login</a>
+        <a href="${root}get-started" class="btn btn-dark nav-cta">Get Started</a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -168,8 +178,8 @@
       <a href="${root}partner/apply">Become a Partner</a>
       <a href="${root}partner/find-partner">Find a Partner</a>
     </details>
-    <a href="" class="btn btn-ghost">Login</a>
-    <a href="${root}contact" class="btn btn-dark">Get Started</a>
+    <a href="https://app.sentritec.io/login" class="btn btn-ghost">Login</a>
+    <a href="${root}get-started" class="btn btn-dark">Get Started</a>
   </div>`;
 
   /* Category-rail megas (Products, Resources) — each menu switches its own panels */

@@ -98,12 +98,14 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
   background: #fff;
   box-shadow: 0 1px 0 var(--line);
 }
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+/* links sit left, right after the logo; the actions push to the far right */
+.nav .wrap { display: flex; align-items: center; justify-content: flex-start; gap: clamp(24px, 3vw, 44px); }
+.nav-right { margin-left: auto; }
 .nav-logo { height: 26px; height: 30px;width: auto; margin-left: -9px; }
 .nav-logo.white { display: none; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
 .nav-links a {
-  font-size: 15px; font-weight: 500; opacity: .92;
+  font-size: 14px; font-weight: 500; opacity: .92;
   position: relative; padding: 6px 0;
   transition: opacity .2s var(--ease);
 }
@@ -118,13 +120,12 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 /* nav triggers (mega-menu parents) */
 .nav-trigger {
   display: inline-flex; align-items: center; gap: 6px;
-  font: inherit; font-size: 15px; font-weight: 500; color: inherit; opacity: .92;
+  font: inherit; font-size: 14px; font-weight: 300; color: inherit; opacity: .92;
   background: none; border: 0; cursor: pointer; padding: 6px 0;
-  transition: opacity .2s var(--ease);
+  transition: opacity .2s var(--ease), color .2s var(--ease);
 }
-.nav-trigger:hover { opacity: 1; }
-.nav-trigger svg { transition: transform .25s var(--ease); margin-top: 1px; }
-.nav-item:hover .nav-trigger svg, .nav-item.open .nav-trigger svg { transform: rotate(180deg); }
+.nav-trigger:hover, .nav-item:hover .nav-trigger, .nav-item.open .nav-trigger { opacity: 1; color: var(--accent); }
+.nav-trigger svg { display: none; }
 
 /* solid nav: on scroll OR while a mega menu is open */
 .nav.scrolled,
@@ -161,7 +162,14 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
   opacity: 1; visibility: visible; transform: none;
 }
 .nav .mega-inner { display: flex; justify-content: flex-start; align-items: flex-start; gap: clamp(36px, 5vw, 72px); padding: clamp(28px, 3vw, 44px) 0 clamp(32px, 3.5vw, 48px); }
-.nav .mega-inner--simple { align-items: center; }
+/* simple megas share the Products anatomy: fixed label rail + divider line + content */
+.nav .mega-inner--simple { align-items: stretch; gap: 0; }
+.mega-inner--simple .mega-aside {
+  flex: 0 0 clamp(150px, 14vw, 190px); border-right: 1px solid var(--line); padding-right: clamp(20px, 2vw, 32px);
+  /* match the Products rail tabs: same size, weight and text position */
+  font-size: 15.5px; font-weight: 600; letter-spacing: 0; padding-top: 9px; padding-left: 6px;
+}
+.mega-inner--simple .mega-content { padding-left: clamp(24px, 3vw, 44px); }
 .mega-feature { flex: 0 0 clamp(280px, 26vw, 360px); }
 .mega-content { flex: 0 1 auto; min-width: 0; }
 .mega-cards--4 { flex: 1 1 auto; }
@@ -229,9 +237,15 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .mega-cards--4 { grid-template-columns: repeat(3, 1fr); max-width: none; }
 .mega-cards--fixed { grid-template-columns: repeat(2, 230px); max-width: none; }
 .mega-cards--3 { grid-template-columns: repeat(3, 230px); max-width: none; }
-.mega-card { display: block; padding: 18px 20px; border-radius: 14px; background: var(--paper-2); transition: background .2s var(--ease), transform .2s var(--ease); }
+.mega-card { display: block; padding: 18px 20px; border-radius: 14px; background: #fafafa; transition: background .2s var(--ease), transform .2s var(--ease); }
 .mega-card:hover { background: #eef0f4; }
-.mega-card b { display: block; font-size: 15.5px; font-weight: 600; margin-bottom: 5px; }
+.mega-card b { display: block; font-size: 14px; font-weight: 300; margin-bottom: 5px; }
+/* card with an image below the label (Products menu) */
+.mega-card--img b { margin-bottom: 12px; }
+.mega-card-img { display: block; width: 100%; aspect-ratio: 16 / 10; border-radius: 10px; overflow: hidden; }
+.mega-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* product renders (transparent PNGs): contained with breathing room, never cropped */
+.mega-card-img img.fit { object-fit: contain; padding: 12px; }
 .mega-card small { font-size: 13px; color: var(--slate); line-height: 1.5; }
 
 /* mega card with a leading icon (Industries) */
@@ -1514,11 +1528,23 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
 .ftr-pane.active { display: block; animation: mfIn .5s var(--ease) both; }
 .ftr-card {
   position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-lg);
-  background: radial-gradient(120% 130% at 15% 0%, #2b2f4a 0%, #1a1c2b 48%, #0e0f16 100%);
+  /* background: radial-gradient(120% 130% at 15% 0%, #2b2f4a 0%, #1a1c2b 48%, #0e0f16 100%); */
   color: #fff;
   display: grid; place-items: center; padding: clamp(24px, 2.6vw, 44px); text-align: center;
 }
-.ftr-card video, .ftr-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.ftr-card video, .ftr-card img { 
+  position: absolute; 
+  inset: 0; 
+  width: 100%; 
+  /* height: 100%;  */
+  height: auto; 
+  object-fit: cover; 
+  z-index: 0; 
+  border-radius: var(--radius-lg);
+}
+/* add class="fit" to a composed graphic (e.g. PNG with its own background)
+   so it shows in full — contained and centered, never cover-cropped */
+.ftr-card img.fit, .ftr-card video.fit { object-fit: contain; height: 100%;}
 .features-cta { display: flex; justify-content: center; margin-top: clamp(44px, 5.5vw, 72px); }
 
 /* ---------- Door Readers page — modern layout components ---------- */
@@ -2795,6 +2821,13 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
   .apid-shell { grid-template-columns: 1fr; }
   .apid-side { position: static; height: auto; max-height: none; border-right: 0; border-bottom: 1px solid var(--line); }
 }
+
+/* ---------- Get Started page (get-started.html) ---------- */
+.gs-sec { padding: calc(var(--nav-h) + clamp(40px, 6vw, 72px)) 0 clamp(64px, 8vw, 100px); }
+.gs-sec .cf-grid { align-items: flex-start; }
+.gs-intro h1 { margin: 0 0 14px; font-size: clamp(30px, 3.8vw, 46px); letter-spacing: -0.02em; line-height: 1.1; }
+.gs-intro .lead { margin: 0; }
+.gs-points { margin-top: clamp(24px, 3vw, 36px); }
 
 /* ---------- Partner Program page (partner.html) ---------- */
 .pt-hero .btn { margin-top: clamp(22px, 3vw, 32px); }
