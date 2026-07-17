@@ -229,6 +229,15 @@
       // hovering (or keyboard focus) swaps the preview; clicking follows the link to the page
       it.addEventListener("mouseenter", function () { activate(ind, label); });
       it.addEventListener("focus", function () { activate(ind, label); });
+      // touch devices have no hover: tapping the item only selects it (swaps the
+      // preview + reveals the Learn more button); only the button follows the link
+      it.addEventListener("click", function (e) {
+        var noHover = window.matchMedia && window.matchMedia("(hover: none)").matches;
+        if (!noHover) return;
+        if (e.target.closest(".bf-more")) return;   // the button navigates
+        e.preventDefault();
+        activate(ind, label);
+      });
     });
   })();
 
