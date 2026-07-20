@@ -2297,9 +2297,12 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
 /* mobile: both store badges share one row */
 @media (max-width: 700px) {
   .pass-badges { flex-wrap: nowrap; gap: 10px; }
-  .pass-badges a { flex: 1 1 0; min-width: 0; display: block; }
+  .pass-badges a, .pass-badges .pass-badge-off { flex: 1 1 0; min-width: 0; display: block; }
   .pass-badge-ph { width: 100%; min-width: 0; height: 52px; padding: 12px 16px; }
 }
+/* store listings not live yet — badges are dimmed, non-clickable, with a note */
+.pass-badge-off { display: block; opacity: .45; cursor: default; user-select: none; }
+.pass-badges-note { margin-top: 14px; font-size: 13.5px; color: rgba(255,255,255,.7); }
 /* real badge artwork */
 .pass-badge-img { height: 50px; width: auto; display: block; }
 /* placeholder until the PNGs are added */
@@ -2386,6 +2389,7 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
 .pass-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 5vw, 64px); flex-wrap: wrap; }
 .pass-cta h2 { margin: 0; color: #fff; }
 .pass-cta .pass-badges { justify-content: flex-start; margin: 0; }
+.pass-cta-dl .pass-badges-note { margin-top: 12px; text-align: center; }
 
 /* Standardized section title & subheading sizes across the Pass page (hero excluded) */
 .unlock-head h2,
