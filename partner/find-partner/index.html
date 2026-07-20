@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sentritec — Find a Partner</title>
   <meta name="description" content="Find an authorized Sentritec partner near you. Search by postal code or partner name, filter by country, membership level, trainings and designations." />
-  <link rel="icon" type="image/svg+xml" href="../assets/sentritec-icon.svg" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/sentritec-icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="../../assets/css/style.css?v=4" />
 </head>
 <body>
 
   <a class="skip-link" href="#top">Skip to content</a>
 
   <!-- ============== NAV (single source: assets/js/nav.js) ============== -->
-  <div id="site-nav" data-root="../"></div>
-  <script src="../assets/js/nav.js"></script>
+  <div id="site-nav" data-root="../../"></div>
+  <script src="../../assets/js/nav.js"></script>
 
   <!-- ============== HEADER ============== -->
   <section class="pt-hero" id="top" tabindex="-1">
@@ -145,7 +145,7 @@
 
   <!-- ============== CTA — become a partner ============== -->
   <section class="cta-section" id="become-partner">
-    <a class="cta-link reveal" href="apply">
+    <a class="cta-link reveal" href="../apply">
       <div class="wrap cta-inner">
         <div class="cta-text">
           <h2>Interested in becoming a Sentritec Partner?</h2>
@@ -159,16 +159,19 @@
   </section>
 
   <!-- ============== FOOTER ============== -->
-  <div id="site-footer" data-root="../"></div>
-  <script src="../assets/js/footer.js"></script>
+  <div id="site-footer" data-root="../../"></div>
+  <script src="../../assets/js/footer.js"></script>
 
-  <script src="../assets/js/main.js"></script>
+  <script src="../../assets/js/main.js"></script>
   <script>
     (function () {
       "use strict";
 
-      /* ---------- placeholder partner directory ---------- */
+      /* ---------- partner directory (empty for now) ----------
+         uncomment the sample entries below — or replace them with the real
+         partner list — when the directory is ready to go live */
       var PARTNERS = [
+        /*
         { name: "Infoline Technologies Pte", tier: "Gold", country: "Malaysia",
           address: ["D-01-01 Menara Mitraland No 13A Jalan PJU 5/1", "Kota Damansara Kota Damansara, 47810", "Malaysia"],
           postal: "47810", phone: "603 7624 8124", website: "#",
@@ -205,6 +208,7 @@
           address: ["Menara Rajawali Lt. 7, Mega Kuningan", "Jakarta Selatan 12950", "Indonesia"],
           postal: "12950", phone: "62 21 576 1800", website: "#",
           certs: ["Cloud Platform Specialist"], designations: [] }
+        */
       ];
 
       var COUNTRIES = ["All Countries", "Australia", "Brunei", "Cambodia", "China", "Hong Kong", "India", "Indonesia",
@@ -246,13 +250,15 @@
         countEl.innerHTML = "<b>" + numberWord(list.length) + "</b> Authorized Partner" + (list.length === 1 ? "" : "s");
 
         if (!list.length) {
-          grid.innerHTML = '<div class="fp-empty">No partners match your search. Try a different postal code or clear the filters.</div>';
+          grid.innerHTML = PARTNERS.length === 0
+            ? '<div class="fp-empty">No partners are listed yet. Our certified partner directory is coming soon &mdash; check back shortly.</div>'
+            : '<div class="fp-empty">No partners match your search. Try a different postal code or clear the filters.</div>';
           return;
         }
         grid.innerHTML = list.map(function (p) {
           return '<article class="fp-card">' +
             "<h3>" + esc(p.name) + "</h3>" +
-            '<div class="fp-tier"><img src="../assets/partner/' + p.tier.toLowerCase() + '-level.svg" alt="" loading="lazy" decoding="async" />' + esc(p.tier) + " Partner</div>" +
+            '<div class="fp-tier"><img src="../../assets/partner/' + p.tier.toLowerCase() + '-level.svg" alt="" loading="lazy" decoding="async" />' + esc(p.tier) + " Partner</div>" +
             '<p class="fp-label">Corporate HQ</p>' +
             '<address class="fp-addr">' + p.address.map(esc).join("<br />") + "</address>" +
             '<p class="fp-meta">Phone <a href="tel:+' + p.phone.replace(/\D/g, "") + '">' + esc(p.phone) + "</a></p>" +

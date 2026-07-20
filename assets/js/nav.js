@@ -142,6 +142,9 @@
     </div>
   </header>
 
+  <!-- announcement bar -->
+  <div class="anno-bar" role="note"><b>Early Access Preview:</b> Explore our upcoming features. Official launch this <b>October 2026</b>.</div>
+
   <!-- mobile menu -->
   <div class="nav-mobile" id="navMobile">
     <!-- Products — nested: Products > Access Control > Door Access -->

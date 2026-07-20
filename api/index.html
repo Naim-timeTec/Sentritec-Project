@@ -3,93 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sentritec — Help Center</title>
-  <meta name="description" content="Sentritec Help Center — setup guides, configuration articles and troubleshooting for door readers, face recognition and the Sentritec cloud platform. Coming soon." />
-  <link rel="icon" type="image/svg+xml" href="assets/sentritec-icon.svg" />
+  <title>Sentritec — API Documentation</title>
+  <meta name="description" content="Sentritec API documentation — endpoints, authentication and webhooks for building on the Sentritec cloud access control platform. Full documentation coming soon." />
+  <link rel="icon" type="image/svg+xml" href="../assets/sentritec-icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=4" />
 </head>
 <body>
 
   <a class="skip-link" href="#apid-main">Skip to content</a>
 
-  <!-- ============== HELP CENTER SHELL (standalone — no site nav/footer) ============== -->
+  <!-- ============== DOCS SHELL (standalone — no site nav/footer) ============== -->
   <div class="apid-shell">
 
-    <!-- Left: categories — each item opens its own page on the right -->
+    <!-- Left: navigation — each item opens its own page on the right -->
     <aside class="apid-side">
-      <a class="apid-brand" href="./" title="Back to sentritec.io">
-        <img src="assets/sentritec-icon.svg" alt="" />
-        Sentritec Help Center
+      <a class="apid-brand" href=".././" title="Back to sentritec.io">
+        <img src="../assets/sentritec-icon.svg" alt="" />
+        Sentritec API
       </a>
 
       <div class="apid-search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text" id="apidSearch" placeholder="Search articles" aria-label="Filter help topics" />
+        <input type="text" id="apidSearch" placeholder="Jump to" aria-label="Filter documentation navigation" />
         <kbd>CTRL-/</kbd>
       </div>
 
-      <nav id="apidNav" aria-label="Help Center topics">
-        <span class="apid-label">Getting Started</span>
-        <a class="apid-item active" href="#welcome" data-page="welcome">Welcome</a>
-        <a class="apid-item" href="#get-started" data-page="get-started" data-title="Get Started with Sentritec">Get Started with Sentritec <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#quick-reference" data-page="quick-reference" data-title="Quick Reference Guide">Quick Reference Guide <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#roles-permissions" data-page="roles-permissions" data-title="Roles &amp; Permissions">Roles &amp; Permissions <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#network-settings" data-page="network-settings" data-title="Network Settings">Network Settings <span class="tag">Soon</span></a>
+      <nav id="apidNav" aria-label="API documentation">
+        <span class="apid-label">Overview</span>
+        <a class="apid-item active" href="#introduction" data-page="introduction">Introduction</a>
+        <a class="apid-item" href="#example-use-cases" data-page="example-use-cases" data-title="Example Use Cases">Example Use Cases <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#quick-start-guide" data-page="quick-start-guide" data-title="Quick Start Guide">Quick Start Guide <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#authentication" data-page="authentication" data-title="Authentication">Authentication <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#pagination" data-page="pagination" data-title="Pagination">Pagination <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#rate-limiting" data-page="rate-limiting" data-title="Rate Limiting">Rate Limiting <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#response-codes" data-page="response-codes" data-title="Response Codes">Response Codes <span class="tag">Soon</span></a>
 
-        <span class="apid-label">Installation</span>
-        <a class="apid-item" href="#deployment-best-practices" data-page="deployment-best-practices" data-title="Deployment Best Practices">Deployment Best Practices <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#wiring-poe" data-page="wiring-poe" data-title="Wiring a Door Reader (PoE)">Wiring a Door Reader (PoE) <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#face-core-install" data-page="face-core-install" data-title="Face Core Installation">Face Core Installation <span class="tag">Soon</span></a>
-
-        <span class="apid-label">Configuration</span>
-        <a class="apid-item" href="#managing-users" data-page="managing-users" data-title="Managing Users">Managing Users <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#access-groups-schedules" data-page="access-groups-schedules" data-title="Access Groups &amp; Schedules">Access Groups &amp; Schedules <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#credentials-cards" data-page="credentials-cards" data-title="Credentials &amp; Cards">Credentials &amp; Cards <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#lockdown-alerts" data-page="lockdown-alerts" data-title="Lockdown &amp; Alerts">Lockdown &amp; Alerts <span class="tag">Soon</span></a>
+        <span class="apid-label">Endpoints</span>
+        <a class="apid-item" href="#doors" data-page="doors" data-title="Doors">Doors <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#users" data-page="users" data-title="Users">Users <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#credentials" data-page="credentials" data-title="Credentials">Credentials <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#access-groups" data-page="access-groups" data-title="Access Groups">Access Groups <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#access-events" data-page="access-events" data-title="Access Events">Access Events <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#schedules" data-page="schedules" data-title="Schedules">Schedules <span class="tag">Soon</span></a>
         <a class="apid-item" href="#temporary-keys" data-page="temporary-keys" data-title="Temporary Keys">Temporary Keys <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#devices" data-page="devices" data-title="Devices">Devices <span class="tag">Soon</span></a>
 
-        <span class="apid-label">Sentritec Pass</span>
-        <a class="apid-item" href="#mobile-unlock" data-page="mobile-unlock" data-title="Mobile Unlock">Mobile Unlock <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#facial-registration" data-page="facial-registration" data-title="Facial Registration">Facial Registration <span class="tag">Soon</span></a>
-
-        <span class="apid-label">Troubleshooting</span>
-        <a class="apid-item" href="#device-offline" data-page="device-offline" data-title="Device Offline / Connectivity">Device Offline / Connectivity <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#firmware-updates" data-page="firmware-updates" data-title="Firmware Updates">Firmware Updates <span class="tag">Soon</span></a>
-        <a class="apid-item" href="#faq" data-page="faq" data-title="Frequently Asked Questions">Frequently Asked Questions <span class="tag">Soon</span></a>
+        <span class="apid-label">Webhooks</span>
+        <a class="apid-item" href="#webhooks-overview" data-page="webhooks-overview" data-title="Webhooks Overview">Overview <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#event-payloads" data-page="event-payloads" data-title="Event Payloads">Event Payloads <span class="tag">Soon</span></a>
+        <a class="apid-item" href="#signature-verification" data-page="signature-verification" data-title="Signature Verification">Signature Verification <span class="tag">Soon</span></a>
       </nav>
     </aside>
 
-    <!-- Right: one page per topic; only the active page is visible -->
+    <!-- Right: one page per sidebar item; only the active page is visible -->
     <main class="apid-main" id="apid-main">
 
-      <!-- Welcome (landing page) -->
-      <section class="apid-page active" id="page-welcome">
-        <h1>Sentritec Help Center</h1>
-        <span class="apid-ver">Knowledge Base · In Progress</span>
+      <!-- Introduction (landing page) -->
+      <section class="apid-page active" id="page-introduction">
+        <h1>Sentritec API</h1>
+        <span class="apid-ver">v1.0 · Private Beta</span>
+
+        <div class="apid-base">
+          <div class="apid-base-head">API Base URL</div>
+          <div class="apid-base-row">
+            <b>Sentritec Production:</b>
+            <code>https://api.sentritec.io</code>
+          </div>
+        </div>
 
         <div class="apid-coming">
           <span class="apid-coming-ic">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><path d="M12 17.5h.01"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
           </span>
-          <h2>Help Center coming soon.</h2>
-          <p>Our support knowledge base — setup guides, configuration articles and troubleshooting steps for every Sentritec product — is being written and will be published here soon. In the meantime, our team is happy to help you directly.</p>
-          <a href="contact" class="btn btn-dark">Contact Support
+          <h2>API documentation coming soon.</h2>
+          <p>Our public API is currently in a closed beta testing program. Full documentation — including REST endpoints, authentication, pagination and real-time webhooks — will be published here in October 2026. If you would like early access to build against the Sentritec platform, get in touch with our team.</p>
+          <a href="../contact" class="btn btn-dark">Request Beta Access
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="mailto:support@sentritec.io" class="btn btn-ghost">support@sentritec.io</a>
+          <a href="../integrations" class="btn btn-ghost">Explore Integrations</a>
         </div>
 
         <section class="apid-sec">
-          <h3>Popular topics</h3>
+          <h3>Introduction</h3>
           <div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         </section>
       </section>
 
-      <!-- topic pages are generated as placeholders by the script below;
-           replace each with real articles at launch -->
+      <!-- the other pages are generated as placeholders by the script below;
+           replace each with real content at launch -->
       <div id="apidPages"></div>
     </main>
 
@@ -99,7 +103,7 @@
     </aside>
   </div>
 
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
   <script>
     (function () {
       "use strict";
@@ -108,7 +112,7 @@
       if (!nav || !holder) return;
       var links = Array.prototype.slice.call(nav.querySelectorAll(".apid-item"));
 
-      /* build a placeholder page for every topic that doesn't have one yet */
+      /* build a placeholder page for every sidebar item that doesn't have one yet */
       links.forEach(function (l) {
         var id = l.getAttribute("data-page");
         if (!id || document.getElementById("page-" + id)) return;
@@ -120,24 +124,26 @@
           "<h1>" + title + "</h1>" +
           '<div class="apid-note">' +
           '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>' +
-          "<span>This article is being written and will be published here soon. Need help now? Email <a href=\"mailto:support@sentritec.io\">support@sentritec.io</a>.</span>" +
+          "<span>This section is being written as part of our beta testing program and will be published with the public API launch in October 2026.</span>" +
           "</div>" +
           '<div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div>' +
           '<section class="apid-sec"><h3>Overview</h3>' +
           '<div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div></section>' +
-          '<section class="apid-sec"><h3>Step-by-step</h3>' +
+          '<section class="apid-sec"><h3>Request &amp; Response</h3>' +
+          '<div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div></section>' +
+          '<section class="apid-sec"><h3>Reference</h3>' +
           '<div class="apid-skel" aria-hidden="true"><span></span><span></span><span></span><span></span></div></section>';
         holder.appendChild(sec);
       });
 
       var pages = Array.prototype.slice.call(document.querySelectorAll(".apid-page"));
 
-      /* "on this page" rail */
+      /* ---------- "On this page" mini-TOC (right rail) ---------- */
       var tocList = document.getElementById("apidTocList");
       var tocObs = null;
       function slug(s) { return s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
       function renderToc(page) {
-        if (!tocList || !page) return;
+        if (!tocList) return;
         if (tocObs) { tocObs.disconnect(); tocObs = null; }
         tocList.innerHTML = "";
         var heads = Array.prototype.slice.call(page.querySelectorAll("h2, h3"));
@@ -155,6 +161,7 @@
           li.appendChild(a);
           tocList.appendChild(li);
         });
+        /* highlight the heading currently in view */
         if ("IntersectionObserver" in window && heads.length) {
           tocObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (en) {
@@ -177,21 +184,24 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
         renderToc(page);
       }
+      renderToc(document.querySelector(".apid-page.active"));
+
       links.forEach(function (l) {
         l.addEventListener("click", function (e) {
           e.preventDefault();
           show(l.getAttribute("data-page"), true);
         });
       });
+
+      /* deep-link support: /api#quick-start-guide opens that page */
       var initial = location.hash.slice(1);
       if (initial && document.getElementById("page-" + initial)) show(initial, false);
       window.addEventListener("hashchange", function () {
         var id = location.hash.slice(1);
         if (document.getElementById("page-" + id)) show(id, false);
       });
-      renderToc(document.querySelector(".apid-page.active"));
 
-      /* sidebar search — filters the topics as you type (CTRL-/ focuses it) */
+      /* sidebar search — filters the nav items as you type (CTRL-/ focuses it) */
       var input = document.getElementById("apidSearch");
       var labels = Array.prototype.slice.call(nav.querySelectorAll(".apid-label"));
       if (input) {

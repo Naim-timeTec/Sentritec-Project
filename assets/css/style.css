@@ -89,6 +89,15 @@ h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margi
 .link-arrow svg { transition: transform .25s var(--ease); }
 .link-arrow:hover svg { transform: translateX(4px); }
 
+/* ---------- Announcement bar (fixed just below the nav) ---------- */
+.anno-bar {
+  position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 95;
+  background: var(--ink); color: rgba(255,255,255,.82);
+  text-align: center; font-size: 13.5px; line-height: 1.5;
+  padding: 10px clamp(16px, 4vw, 24px);
+}
+.anno-bar b { color: #fff; font-weight: 600; }
+
 /* ---------- Nav ---------- */
 .nav {
   position: fixed; inset: 0 0 auto 0; height: var(--nav-h); z-index: 100;
