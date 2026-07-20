@@ -14,9 +14,9 @@
   <!-- ============== NAV ============== -->
   <header class="nav" id="nav">
     <div class="wrap">
-      <a href="${home}" aria-label="SentriTec home">
-        <img src="${root}assets/sentritec-logo-white.svg" alt="SentriTec" class="nav-logo white" />
-        <img src="${root}assets/sentritec-logo.svg" alt="SentriTec" class="nav-logo dark" />
+      <a href="${home}" aria-label="Sentritec home">
+        <img src="${root}assets/sentritec-logo-white.svg" alt="Sentritec" class="nav-logo white" />
+        <img src="${root}assets/sentritec-logo.svg" alt="Sentritec" class="nav-logo dark" />
       </a>
       <nav class="nav-primary" aria-label="Primary">
         <ul class="nav-links">
