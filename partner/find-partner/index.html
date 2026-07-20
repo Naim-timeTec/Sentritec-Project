@@ -171,6 +171,10 @@
          uncomment the sample entries below — or replace them with the real
          partner list — when the directory is ready to go live */
       var PARTNERS = [
+        { name: "TimeTec Group", tier: "Diamond", country: "Malaysia",
+          address: ["Level 18, Tower, 5 @ PFCC, Jalan Puteri 1/2,", "Bandar Puteri Puchong, 47100 Puchong, Selangor", "Malaysia"],
+          postal: "47100", phone: "+603-8070 9933", website: "https://www.timeteccloud.com/",
+          certs: [], designations: [] }
         /*
         { name: "Infoline Technologies Pte", tier: "Gold", country: "Malaysia",
           address: ["D-01-01 Menara Mitraland No 13A Jalan PJU 5/1", "Kota Damansara Kota Damansara, 47810", "Malaysia"],
@@ -262,7 +266,7 @@
             '<p class="fp-label">Corporate HQ</p>' +
             '<address class="fp-addr">' + p.address.map(esc).join("<br />") + "</address>" +
             '<p class="fp-meta">Phone <a href="tel:+' + p.phone.replace(/\D/g, "") + '">' + esc(p.phone) + "</a></p>" +
-            '<p class="fp-meta"><a href="' + p.website + '">Website</a></p>' +
+            '<p class="fp-meta"><a target="_blank" href="' + p.website + '">Website</a></p>' +
             "</article>";
         }).join("");
       }

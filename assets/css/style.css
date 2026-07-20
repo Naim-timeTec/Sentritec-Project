@@ -2654,6 +2654,11 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
 .fp-meta a:hover { color: var(--accent); }
 .fp-empty { grid-column: 1 / -1; text-align: center; color: var(--slate); font-size: 15.5px; padding: clamp(40px, 6vw, 72px) 0; }
 
+/* ---------- News / Blog / Docs — empty state (no content published yet) ---------- */
+.nw-empty { text-align: center; padding: clamp(56px, 9vw, 110px) 0; }
+.nw-empty h3 { font-size: clamp(19px, 2.2vw, 23px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+.nw-empty p { color: var(--slate); font-size: 15.5px; line-height: 1.65; max-width: 52ch; margin: 0 auto; }
+
 @media (max-width: 860px) {
   .fp-search { flex: 1 1 100%; }
   .fp-filter-panel { grid-template-columns: 1fr; width: min(360px, calc(100vw - 48px)); }
