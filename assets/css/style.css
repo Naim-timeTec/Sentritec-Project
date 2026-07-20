@@ -2654,6 +2654,14 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
 .fp-meta a:hover { color: var(--accent); }
 .fp-empty { grid-column: 1 / -1; text-align: center; color: var(--slate); font-size: 15.5px; padding: clamp(40px, 6vw, 72px) 0; }
 
+/* ---------- 404 page ---------- */
+.nf-sec { min-height: calc(100svh - var(--nav-h)); display: flex; align-items: center; padding: calc(var(--nav-h) + 64px) 0 96px; }
+.nf-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+.nf-code { display: block; font-size: clamp(64px, 10vw, 104px); font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: var(--accent); margin-bottom: 20px; }
+.nf-inner h1 { font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.02em; margin-bottom: 14px; }
+.nf-inner p { color: var(--slate); font-size: 16px; line-height: 1.7; max-width: 46ch; margin: 0 auto 32px; }
+.nf-cta { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; }
+
 /* ---------- News / Blog / Docs — empty state (no content published yet) ---------- */
 .nw-empty { text-align: center; padding: clamp(56px, 9vw, 110px) 0; }
 .nw-empty h3 { font-size: clamp(19px, 2.2vw, 23px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
