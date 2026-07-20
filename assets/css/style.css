@@ -2662,6 +2662,9 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
 .nf-inner p { color: var(--slate); font-size: 16px; line-height: 1.7; max-width: 46ch; margin: 0 auto 32px; }
 .nf-cta { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; }
 
+/* ---------- Coming-soon pages (shared body: assets/js/coming-soon.js) ---------- */
+.cs-eyebrow { display: block; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+
 /* ---------- News / Blog / Docs — empty state (no content published yet) ---------- */
 .nw-empty { text-align: center; padding: clamp(56px, 9vw, 110px) 0; }
 .nw-empty h3 { font-size: clamp(19px, 2.2vw, 23px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
