@@ -185,6 +185,19 @@
     <a href="${root}get-started" class="btn btn-dark">Get Started</a>
   </div>`;
 
+  /* Announcement bar is fixed below the nav — push the page down by its
+     real height (it wraps to two lines on small screens) so nothing is
+     hidden underneath. Sets --anno-h, consumed by body padding-top. */
+  var annoBar = document.querySelector(".anno-bar");
+  if (annoBar) {
+    var setAnnoH = function () {
+      document.documentElement.style.setProperty("--anno-h", annoBar.offsetHeight + "px");
+    };
+    setAnnoH();
+    window.addEventListener("resize", setAnnoH);
+    window.addEventListener("load", setAnnoH);
+  }
+
   /* Category-rail megas (Products, Resources) — each menu switches its own panels */
   Array.prototype.slice.call(document.querySelectorAll(".mega-cat")).forEach(function (menu) {
     var catTabs = Array.prototype.slice.call(menu.querySelectorAll(".mega-cat-tab"));
