@@ -17,7 +17,6 @@
       <div class="footer-top">
         <div class="footer-brand">
           <img src="${root}assets/sentritec-logo.svg" alt="Sentritec" />
-          <p>One cloud platform for building access — manage doors, people and activity from a single dashboard, powered by Sentritec readers.</p>
         </div>
         <div>
           <h5>Company</h5>
