@@ -55,7 +55,6 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 Sentritec. All rights reserved.</span>
-        <span>Privacy · Terms · Cookies</span>
       </div>
     </div>
   </footer>`;
