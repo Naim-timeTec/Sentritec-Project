@@ -41,7 +41,7 @@
           <h5>Support</h5>
           <ul>
             <li><a href="${root}contact">Contact</a></li>
-            <li><a href="${root}help">Help Centre</a></li>
+            <li><a href="https://help.sentritec.io">Help Centre</a></li>
             <li><a href="${root}partner/find-partner">Find an Installer</a></li>
           </ul>
         </div>
