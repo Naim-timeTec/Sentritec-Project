@@ -104,7 +104,7 @@
                   </div>
                   <div class="mega-cat-panel" data-cat="support">
                     <div class="mega-grid">
-                      <a class="mega-card" href="https://help.sentritec.io"><b>Help Centre</b></a>
+                      <a class="mega-card" href="${root}help"><b>Help Centre</b></a>
                       <a class="mega-card" href="${root}contact"><b>Contact</b></a>
                     </div>
                   </div>
@@ -172,7 +172,7 @@
       <a href="${root}docs">Datasheet</a>
       <a href="${root}api">Sentritec API</a>
       <span class="m-sublabel">Support</span>
-      <a href="https://help.sentritec.io">Help Centre</a>
+      <a href="${root}help">Help Centre</a>
       <a href="${root}contact">Contact</a>
     </details>
     <details class="m-group">
