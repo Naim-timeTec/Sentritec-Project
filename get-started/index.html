@@ -162,8 +162,27 @@
         emailEl.setCustomValidity("");
       });
 
-      /* mock submit — validates, then shows a confirmation (hook a real endpoint later) */
+      /* submit → POST /contact/sales (Sentritec Mail API) */
+      /* Base URL of the Mail API — same origin, mounted under /contact-api.
+         Full endpoint: /contact-api/contact/sales */
+      var API_BASE = "/contact-api";
       var form = document.getElementById("gsForm");
+      var btn = form.querySelector(".cf-submit");
+      var btnText = btn.textContent;
+
+      function showError(msg) {
+        btn.disabled = false;
+        btn.textContent = btnText;
+        var n = form.querySelector(".cf-fail");
+        if (!n) {
+          n = document.createElement("p");
+          n.className = "cf-fail";
+          n.setAttribute("style", "color:#c0392b;font-size:14px;line-height:1.5;margin:14px 0 0;");
+          btn.insertAdjacentElement("afterend", n);
+        }
+        n.textContent = msg;
+      }
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         emailErr.classList.remove("show");
@@ -173,12 +192,42 @@
           emailEl.setCustomValidity("Please use a business email address.");
         }
         if (!form.checkValidity()) { form.reportValidity(); return; }
-        form.innerHTML =
-          '<div class="pa-success">' +
-          '<span class="pa-success-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
-          "<h2>Inquiry received.</h2>" +
-          "<p>Thanks for reaching out &mdash; our team will review your project details and get back to you within 1 working day to guide you toward the right deployment path.</p>" +
-          "</div>";
+        var oldFail = form.querySelector(".cf-fail");
+        if (oldFail) oldFail.remove();
+
+        var payload = {
+          full_name: form.full_name.value.trim(),
+          business_email: form.email.value.trim(),
+          phone_number: form.phone.value.trim(),
+          company_name: form.company.value.trim(),
+          city_country: form.city_country.value.trim(),
+          approximate_number_of_doors: doorsInput.value.trim(),
+          project_or_facility_needs: form.message.value.trim()
+        };
+
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+
+        fetch(API_BASE + "/contact/sales", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            if (res.ok && data.sent) {
+              form.innerHTML =
+                '<div class="pa-success">' +
+                '<span class="pa-success-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
+                "<h2>Inquiry received.</h2>" +
+                "<p>Thanks for reaching out &mdash; our team will review your project details and get back to you within 1 working day to guide you toward the right deployment path.</p>" +
+                "</div>";
+            } else {
+              showError(data.error || "Sorry, your inquiry couldn't be sent. Please try again, or email us at support@sentritec.io.");
+            }
+          });
+        }).catch(function () {
+          showError("Network error — please check your connection and try again, or email us at support@sentritec.io.");
+        });
       });
     })();
   </script>
