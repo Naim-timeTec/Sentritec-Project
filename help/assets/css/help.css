@@ -1,0 +1,132 @@
+/* =========================================================
+   Sentritec Help Center — help.sentritec.io
+   Self-contained stylesheet. This site does NOT share assets
+   with the main sentritec.io site; everything the Help Center
+   needs lives here (extracted from the main site's style.css).
+   ========================================================= */
+
+:root {
+  --ink:        #161618;
+  --ink-2:      #26262b;
+  --slate:      #5b5f6b;
+  --line:       #e6e6ea;
+  --paper:      #ffffff;
+  --paper-2:    #f6f6f8;
+  --accent:     #616794;   /* Sentritec brand indigo */
+  --accent-2:   #4a4f73;
+  --accent-soft:#eef0f6;
+  --radius:     16px;
+  --radius-lg:  24px;
+  --ease:       cubic-bezier(.22,.61,.36,1);
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { letter-spacing: -0.03em; line-height: 1.05; font-weight: 600; margin: 0; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
+  padding: 7px 25px; border-radius: 999px;
+  border: 1px solid transparent; cursor: pointer;
+  transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-dark:hover { background: #2c2c30; }
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: fixed; left: 14px; top: -64px; z-index: 200;
+  background: var(--ink); color: #fff; padding: 11px 18px; border-radius: 10px;
+  font-size: 14px; font-weight: 600; transition: top .2s var(--ease);
+}
+.skip-link:focus { top: 14px; }
+
+/* =========================================================
+   Help Center shell — three columns: nav / article / on-this-page
+   ========================================================= */
+.apid-shell { display: grid; grid-template-columns: 280px minmax(0, 1fr) 240px; min-height: 100svh; }
+.apid-side {
+  position: sticky; top: 0; height: 100svh; overflow-y: auto;
+  padding: 24px 16px 40px; background: var(--paper-2); border-right: 1px solid var(--line);
+  scrollbar-width: thin; scrollbar-color: var(--line) transparent;
+}
+.apid-side::-webkit-scrollbar { width: 6px; }
+.apid-side::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
+.apid-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15.5px; color: var(--ink); padding: 4px 8px 18px; }
+.apid-brand img { width: 26px; height: 26px; }
+.apid-search { display: flex; align-items: center; gap: 9px; margin: 0 4px 20px; padding: 10px 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.apid-search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.apid-search svg { flex: none; color: var(--slate); }
+.apid-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: 14px; color: var(--ink); }
+.apid-search kbd { flex: none; font-family: inherit; font-size: 10.5px; font-weight: 600; color: var(--slate); border: 1px solid var(--line); border-radius: 5px; padding: 2px 6px; background: var(--paper-2); }
+.apid-label { display: block; margin: 18px 8px 8px; font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--slate); }
+.apid-item {
+  display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
+  padding: 9px 12px; border-radius: 8px; font-size: 14px; color: var(--ink);
+  background: none; border: 0; cursor: pointer; font-family: inherit;
+  transition: background .15s var(--ease);
+}
+.apid-item:hover { background: #fff; }
+.apid-item.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.apid-item .tag { margin-left: auto; flex: none; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--slate); background: var(--line); border-radius: 999px; padding: 3px 8px; }
+.apid-main { padding: clamp(28px, 4vw, 56px) clamp(24px, 4.5vw, 80px) clamp(56px, 7vw, 96px); }
+.apid-main h1 { margin: 0 0 12px; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.02em; }
+.apid-ver { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 5px 12px; margin-bottom: clamp(22px, 3vw, 32px); }
+/* coming-soon panel */
+.apid-coming { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(28px, 4vw, 48px); background: linear-gradient(140deg, var(--accent-soft) 0%, #fff 55%); margin-bottom: clamp(30px, 4vw, 48px); }
+.apid-coming-ic { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: var(--accent); color: #fff; margin-bottom: 18px; }
+.apid-coming h2 { margin: 0 0 10px; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; }
+.apid-coming p { margin: 0; max-width: 62ch; color: var(--slate); font-size: 15.5px; line-height: 1.65; }
+.apid-coming .btn { margin-top: 24px; margin-right: 10px; }
+/* one page per sidebar item; only the active one is shown */
+.apid-page { display: none; }
+.apid-page.active { display: block; animation: tlFade .3s var(--ease) both; }
+.apid-note { display: flex; align-items: flex-start; gap: 12px; background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent); border-radius: 12px; padding: 14px 18px; font-size: 14.5px; line-height: 1.55; color: var(--slate); margin-bottom: clamp(24px, 3vw, 36px); }
+.apid-note svg { flex: none; color: var(--accent); margin-top: 1px; }
+.apid-sec { padding-top: clamp(26px, 3.4vw, 40px); margin-top: clamp(26px, 3.4vw, 40px); border-top: 1px solid var(--line); scroll-margin-top: 12px; }
+.apid-sec h3 { margin: 0 0 16px; font-size: 20px; letter-spacing: -0.01em; }
+.apid-skel { display: grid; gap: 12px; }
+.apid-skel span { display: block; height: 13px; border-radius: 999px; background: linear-gradient(90deg, var(--paper-2) 25%, #ececf1 45%, var(--paper-2) 65%); background-size: 300% 100%; animation: apidShimmer 1.8s linear infinite; }
+.apid-skel span:nth-child(1) { width: 92%; }
+.apid-skel span:nth-child(2) { width: 78%; }
+.apid-skel span:nth-child(3) { width: 85%; }
+.apid-skel span:nth-child(4) { width: 55%; }
+@keyframes apidShimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@keyframes tlFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+/* right rail — "On this page" */
+.apid-toc { position: sticky; top: 0; height: max-content; max-height: 100svh; overflow-y: auto; padding: clamp(28px, 4vw, 56px) 28px clamp(28px, 4vw, 56px) 0; }
+.apid-toc ul { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+.apid-toc a { display: block; padding: 6px 0 6px 14px; margin-left: -2px; border-left: 2px solid transparent; font-size: 13px; line-height: 1.45; color: var(--slate); transition: color .15s var(--ease), border-color .15s var(--ease); }
+.apid-toc a:hover { color: var(--ink); }
+.apid-toc a.active { color: var(--ink); border-left-color: var(--ink); font-weight: 600; }
+@media (max-width: 1200px) {
+  .apid-shell { grid-template-columns: 280px minmax(0, 1fr); }
+  .apid-toc { display: none; }
+}
+@media (max-width: 920px) {
+  .apid-shell { grid-template-columns: 1fr; }
+  .apid-side { position: static; height: auto; max-height: none; border-right: 0; border-bottom: 1px solid var(--line); }
+}
