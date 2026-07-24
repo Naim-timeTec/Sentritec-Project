@@ -25,6 +25,7 @@
             <li><a href="${root}contact">Contact</a></li>
             <li><a href="${root}legal">Legal</a></li>
             <li><a href="${root}trust">Trust</a></li>
+            <li><a href="${root}privacy-policy">Privacy Policy</a></li>
           </ul>
         </div>
         <div>

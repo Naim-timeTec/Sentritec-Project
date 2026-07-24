@@ -2661,6 +2661,19 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
 .fp-meta a:hover { color: var(--accent); }
 .fp-empty { grid-column: 1 / -1; text-align: center; color: var(--slate); font-size: 15.5px; padding: clamp(40px, 6vw, 72px) 0; }
 
+/* ---------- Legal document pages (privacy policy, terms, ...) ---------- */
+.ld-sec { padding: calc(var(--nav-h) + clamp(44px, 6vw, 80px)) 0 clamp(72px, 9vw, 120px); }
+.ld-doc { max-width: 800px; margin: 0 auto; }
+.ld-doc h1 { font-size: clamp(30px, 3.8vw, 44px); letter-spacing: -0.02em; margin: 0 0 10px; }
+.ld-updated { margin: 0 0 clamp(30px, 4vw, 44px); color: var(--slate); font-size: 14.5px; }
+.ld-doc h2 { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.4; margin: clamp(28px, 3.6vw, 38px) 0 10px; }
+.ld-doc h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.4; margin: 22px 0 8px; }
+.ld-doc p { margin: 0 0 14px; font-size: 15px; line-height: 1.75; color: #3f434f; }
+.ld-doc a { color: var(--accent); }
+.ld-doc a:hover { text-decoration: underline; }
+.ld-doc ul { margin: 0 0 14px; padding-left: 22px; font-size: 15px; line-height: 1.75; color: #3f434f; }
+.ld-doc li { margin-bottom: 6px; }
+
 /* ---------- 404 page ---------- */
 .nf-sec { min-height: calc(100svh - var(--nav-h)); display: flex; align-items: center; padding: calc(var(--nav-h) + 64px) 0 96px; }
 .nf-inner { text-align: center; max-width: 640px; margin: 0 auto; }
