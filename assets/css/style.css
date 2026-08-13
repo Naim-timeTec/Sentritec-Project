@@ -1592,6 +1592,8 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--anno-h, 0px) + 14px);
 /* add class="fit" to a composed graphic (e.g. PNG with its own background)
    so it shows in full — contained and centered, never cover-cropped */
 .ftr-card img.fit, .ftr-card video.fit { object-fit: cover; height: 100%;}
+.ftr-card img.fit, .ftr-card video.fitcontain { object-fit: contain; height: 100%;}
+
 .features-cta { display: flex; justify-content: center; margin-top: clamp(44px, 5.5vw, 72px); }
 
 /* ---------- Door Readers page — modern layout components ---------- */
@@ -2306,7 +2308,8 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
    Sentritec Pass — mobile app page
    ============================================================ */
 .pass-eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; font-weight: 600; color: var(--accent); margin: 0 0 18px; }
-.pass-block { padding: clamp(64px, 9vw, 112px) 0; }
+/* .pass-block { padding: clamp(64px, 9vw, 112px) 0; } */
+.pass-block { padding: clamp(64px, 9vw, 62px) 0; }
 /* when a feature-stack is the only content (no section-head above it), drop its top margin */
 .pass-block > .wrap > .feature-stack:first-child { margin-top: 0; }
 .pass-block .section-head { max-width: 780px; margin: 0 auto; }
