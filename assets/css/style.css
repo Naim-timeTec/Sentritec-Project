@@ -557,7 +557,7 @@ body { padding-top: var(--anno-h, 0px); }
 .acs-note p { font-size: clamp(13.5px, 1.5vw, 15px); line-height: 1.6; margin: 0; }
 
 .acs2-num { display: block; font-size: clamp(40px, 5vw, 66px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--accent); opacity: .28; margin-bottom: clamp(14px, 2vw, 22px); }
-.acs2-text h3 { font-size: clamp(28px, 3.6vw, 46px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 16px; max-width: 14ch; }
+.acs2-text h3 { font-size: clamp(28px, 3.6vw, 46px); font-weight: 600; letter-spacing: -0.03em; line-hseight: 1.08; margin: 0 0 16px; max-width: 14ch; }
 .acs2-text p { font-size: clamp(16px, 1.9vw, 20px); color: var(--slate); line-height: 1.55; margin: 0; max-width: 42ch; }
 
 .acs-cta { display: flex; justify-content: center; margin-top: clamp(48px, 7vw, 84px); }
@@ -574,7 +574,8 @@ body { padding-top: var(--anno-h, 0px); }
   display: grid; grid-template-columns: 1fr 1fr; align-items: center;
   gap: clamp(40px, 6vw, 88px);
 }
-.feature + .feature { margin-top: clamp(72px, 10vw, 128px); }
+/* .feature + .feature { margin-top: clamp(72px, 10vw, 128px); } */
+.feature + .feature { margin-top: clamp(72px, 10vw, 80px); }
 .feature.reverse .feature-media { order: 2; }
 .feature h3 { font-size: clamp(26px, 3.4vw, 40px); margin-bottom: 18px; }
 .feature p { color: var(--slate); font-size: 18px; max-width: 46ch; }
@@ -1592,7 +1593,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--anno-h, 0px) + 14px);
 /* add class="fit" to a composed graphic (e.g. PNG with its own background)
    so it shows in full — contained and centered, never cover-cropped */
 .ftr-card img.fit, .ftr-card video.fit { object-fit: cover; height: 100%;}
-.ftr-card img.fit, .ftr-card video.fitcontain { object-fit: contain; height: 100%;}
+.ftr-card video.fitcontain { object-fit: contain; height: 100%;}
 
 .features-cta { display: flex; justify-content: center; margin-top: clamp(44px, 5.5vw, 72px); }
 
