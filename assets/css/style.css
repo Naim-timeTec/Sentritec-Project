@@ -1106,13 +1106,40 @@ body { padding-top: var(--anno-h, 0px); }
 #compliance .section-head h2,
 #trust .section-head h2,
 #integration .intg2-head h2,
-#integration .intg-copy h2 {
+#integration .intg-copy h2,
+#integration .section-head h2 {
   font-size: clamp(30px, 4vw, 50px); letter-spacing: -0.03em; line-height: 1.06;
 }
 #why-sentritec .why3-head .lead,
 #compliance .section-head .lead,
-#integration .intg2-head .lead {
+#integration .intg2-head .lead,
+#integration .section-head .lead {
   font-size: clamp(16px, 1.6vw, 18.5px);
+}
+
+/* Homepage integration — centered head, then a grid of app-icon logo tiles
+   (logo list mirrors integrations/partners) */
+#integration .section-head .link-arrow { margin-top: 18px; }
+.itg-grid {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: clamp(16px, 2.6vw, 38px);
+  /* cap the row at exactly 4 tiles so 7 logos break 4 + 3 (centered),
+     never 6 + 1 with a lone tile on the second row */
+  max-width: calc(4 * clamp(76px, 8.6vw, 104px) + 3 * clamp(16px, 2.6vw, 38px));
+  margin: clamp(36px, 5vw, 60px) auto 0;
+}
+.itg-tile {
+  width: clamp(76px, 8.6vw, 104px); aspect-ratio: 1 / 1;
+  border-radius: 26px; background: #fff; border: 1px solid var(--line);
+  display: grid; place-items: center; padding: clamp(15px, 1.9vw, 21px);
+  box-shadow: 0 12px 26px -20px rgba(22,22,24,.3);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.itg-tile:hover { transform: translateY(-4px); box-shadow: 0 18px 32px -20px rgba(22,22,24,.4); }
+.itg-tile img { width: 100%; height: 100%; object-fit: contain; }
+@media (max-width: 640px) {
+  .itg-tile { width: clamp(60px, 17vw, 76px); border-radius: 18px; padding: 12px; }
+  .itg-grid { gap: 14px; max-width: calc(4 * clamp(60px, 17vw, 76px) + 3 * 14px); }
 }
 
 /* Homepage — one standardized gap between every section title and its content
