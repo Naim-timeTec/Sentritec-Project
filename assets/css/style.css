@@ -586,6 +586,11 @@ body { padding-top: var(--anno-h, 0px); }
 .section.dark .feature-list svg { color: #aab0d6; }
 .feature-stack { margin-top: clamp(40px, 5vw, 72px); }
 .feature-media .ftr-card { width: 100%; }
+.feature-media .ftr-card.fitcard 
+{     
+  aspect-ratio: 1;
+  border-radius: 0; 
+}
 .feature-text .link-arrow { margin-top: 22px; }
 
 /* ---------- Placeholder media ---------- */
@@ -1586,7 +1591,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--anno-h, 0px) + 14px);
 }
 /* add class="fit" to a composed graphic (e.g. PNG with its own background)
    so it shows in full — contained and centered, never cover-cropped */
-.ftr-card img.fit, .ftr-card video.fit { object-fit: contain; height: 100%;}
+.ftr-card img.fit, .ftr-card video.fit { object-fit: cover; height: 100%;}
 .features-cta { display: flex; justify-content: center; margin-top: clamp(44px, 5.5vw, 72px); }
 
 /* ---------- Door Readers page — modern layout components ---------- */
@@ -2515,6 +2520,9 @@ a.uc-card:hover h3 svg { transform: translateX(4px); }
 /* 4. API — copy + dark code block */
 .api-split { align-items: stretch; }
 .api-split .pass-points { margin-top: 0; }
+/* right column — API illustration (replaced the mock code block) */
+.api-media { align-self: center; border-radius: var(--radius-lg); overflow: hidden; }
+.api-media img { display: block; width: 100%; height: auto; }
 .api-code { border-radius: var(--radius-lg); overflow: hidden; background: #0e1017; border: 1px solid #23283a; box-shadow: var(--shadow); display: flex; flex-direction: column; }
 .api-code-top { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid #23283a; }
 .api-code-top span { width: 11px; height: 11px; border-radius: 50%; background: #3a4055; }
