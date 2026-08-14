@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=7" />
 </head>
 <body>
 
@@ -119,30 +119,206 @@
     </div>
   </section>
 
-  <!-- ============== 3. SECURITY PERIMETER (icon columns + full-width globe) ============== -->
-  <section class="section muted pass-block perim-sec" id="perimeter">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <h2>Prevent unauthorized remote unlocks with precise, administrator-defined security perimeters.</h2>
-      </div>
+  <!-- ============== 3. SECURITY PERIMETER (interactive GPS / Wi-Fi rule demos) ============== -->
+  <section class="pf" id="perimeter" aria-labelledby="pf-title">
+    <div class="pf__inner">
 
-      <div class="perim-grid reveal">
-        <div class="perim-item">
-          <span class="perim-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <h3>GPS Geofencing</h3>
-          <p>Enforce location compliance. Administrators can require users to be physically present within the facility's geographic boundaries before a remote unlock command is permitted.</p>
-        </div>
-        <div class="perim-item">
-          <span class="perim-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></span>
-          <h3>Wi-Fi Fencing</h3>
-          <p>Secure critical perimeters by mandating that a user's phone must be actively connected to the secure, corporate on-site Wi-Fi network to authorize an app-based unlock.</p>
-        </div>
-      </div>
-    </div>
+      <p class="pf__eyebrow">Perimeter rules</p>
+      <h2 class="pf__title" id="pf-title">Prevent unauthorized remote unlocks with precise, administrator-defined security perimeters.</h2>
+      <p class="pf__sub">Two independent rules decide whether an app-based unlock is even possible. Apply either one, or require both.</p>
 
-    <!-- full-width globe with site pins, bleeding out of the bottom of the section -->
-    <div class="perim-globe reveal">
-      <img src="../assets/pass/globe-with-pin.png" alt="A globe marked with pins showing protected Sentritec sites" loading="lazy" decoding="async" />
+      <div class="pf__grid">
+
+        <!-- ============================ GPS ============================ -->
+        <article class="pf-card" id="pf-gps" data-state="allow">
+          <p class="pf-card__tag">Rule <b>A</b> — where the phone is</p>
+
+          <button class="pf-demo" data-demo="gps" data-state="allow" type="button"
+                  aria-label="Toggle the geofence demonstration between inside and outside the boundary">
+            <svg viewBox="0 0 400 260" role="img" aria-hidden="true">
+              <!-- map plate -->
+              <rect width="400" height="260" fill="#E3E3E4"/>
+              <!-- blocks -->
+              <g fill="#DBDBDD">
+                <rect x="18"  y="24"  width="86" height="58" rx="4"/>
+                <rect x="128" y="14"  width="64" height="44" rx="4"/>
+                <rect x="222" y="26"  width="102" height="52" rx="4"/>
+                <rect x="344" y="34"  width="52" height="70" rx="4"/>
+                <rect x="14"  y="112" width="70" height="74" rx="4"/>
+                <rect x="112" y="96"  width="58" height="52" rx="4"/>
+                <rect x="256" y="106" width="74" height="46" rx="4"/>
+                <rect x="30"  y="212" width="94" height="46" rx="4"/>
+                <rect x="152" y="200" width="76" height="58" rx="4"/>
+                <rect x="266" y="196" width="110" height="62" rx="4"/>
+                <rect x="352" y="132" width="44" height="42" rx="4"/>
+              </g>
+              <!-- roads -->
+              <g stroke="#EDEDEE" stroke-width="9" stroke-linecap="square">
+                <path d="M0 96 H400"/><path d="M0 190 H400"/>
+                <path d="M104 0 V260"/><path d="M244 0 V260"/><path d="M340 0 V260"/>
+              </g>
+              <g stroke="#E7E7E8" stroke-width="4">
+                <path d="M0 46 H400"/><path d="M186 0 V260"/>
+              </g>
+
+              <!-- geofence -->
+              <circle cx="196" cy="140" r="86" fill="rgba(97,103,148,0.13)"/>
+              <circle class="pf-gps-ring-hit pf-fade" cx="196" cy="140" r="86" fill="rgba(97,103,148,0.09)"/>
+              <circle cx="196" cy="140" r="86" fill="none" stroke="#616794" stroke-width="1.6"
+                      stroke-dasharray="7 6" opacity="0.9"/>
+
+              <!-- radius indicator, kept clear of the phone -->
+              <g font-family="Inter, sans-serif" font-weight="600" font-size="9.5" letter-spacing="0.6">
+                <path d="M196 140 H110" stroke="#616794" stroke-width="1" opacity=".45" stroke-dasharray="2 4"/>
+                <path d="M110 134 V146" stroke="#616794" stroke-width="1" opacity=".45"/>
+                <text x="153" y="133" text-anchor="middle" fill="#767C9E">150 m</text>
+              </g>
+
+              <!-- tether from facility to phone -->
+              <path class="pf-gps-tether pf-fade" d="M196 140 L244 102" stroke="#616794"
+                    stroke-width="1.2" stroke-dasharray="3 4" opacity="0.6"/>
+
+              <!-- facility pin (centre) -->
+              <g transform="translate(196,140)">
+                <ellipse cx="0" cy="2" rx="9" ry="3" fill="#000" opacity="0.10"/>
+                <path d="M0 0 c-8.5 -12.5 -12.5 -17.5 -12.5 -24.5 a12.5 12.5 0 1 1 25 0 c0 7 -4 12 -12.5 24.5 z"
+                      fill="#616794"/>
+                <circle cx="0" cy="-24.5" r="4.6" fill="#F4F4F4"/>
+              </g>
+              <text x="196" y="176" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600"
+                    font-size="9.5" fill="#7A7C82" letter-spacing="0.8">FACILITY</text>
+
+              <!-- the phone -->
+              <g transform="translate(244,102)">
+                <g class="pf-gps-dot pf-mover">
+                  <circle class="halo" cx="0" cy="0" r="16"/>
+                  <circle class="core" cx="0" cy="0" r="6"/>
+                  <circle cx="0" cy="0" r="6" fill="none" stroke="#F4F4F4" stroke-width="2"/>
+                </g>
+              </g>
+            </svg>
+            <span class="pf-demo__hint">tap to move the phone</span>
+          </button>
+
+          <h3 class="pf-card__h">GPS Geofencing</h3>
+          <p class="pf-card__p">Draw a boundary around the site. A remote unlock only goes through when the user's phone reports a location inside it — anywhere else, the command is refused before it reaches the door.</p>
+
+          <dl class="pf-params">
+            <div class="pf-param"><dt>Boundary</dt><dd>150 m</dd></div>
+            <div class="pf-param"><dt>Phone location</dt><dd data-slot="gps-read">44 m inside</dd></div>
+          </dl>
+
+          <span class="pf-verdict"><span class="pf-verdict__dot"></span><span data-slot="gps-verdict">Unlock permitted</span></span>
+        </article>
+
+        <!-- ============================ WI-FI ============================ -->
+        <article class="pf-card" id="pf-wifi" data-state="allow">
+          <p class="pf-card__tag">Rule <b>B</b> — what the phone is on</p>
+
+          <button class="pf-demo" data-demo="wifi" data-state="allow" type="button"
+                  aria-label="Toggle the Wi-Fi fencing demonstration between connected and disconnected">
+            <svg viewBox="0 0 400 260" role="img" aria-hidden="true">
+              <rect width="400" height="260" fill="#E3E3E4"/>
+
+              <!-- faint grid, not a map: a network canvas -->
+              <g stroke="#DCDCDE" stroke-width="1">
+                <path d="M0 66 H400"/><path d="M0 194 H400"/>
+              </g>
+              <g fill="#D6D6D8">
+                <circle cx="40" cy="66" r="2"/><circle cx="200" cy="66" r="2"/><circle cx="360" cy="66" r="2"/>
+                <circle cx="40" cy="194" r="2"/><circle cx="200" cy="194" r="2"/><circle cx="360" cy="194" r="2"/>
+              </g>
+
+              <!-- access point: three-antenna router, slight top perspective -->
+              <g>
+                <!-- antennas -->
+                <g stroke="#B0B0B5" stroke-width="5" stroke-linecap="round">
+                  <path d="M296 103 L274 60"/>
+                  <path d="M320 101 V52"/>
+                  <path d="M344 103 L366 60"/>
+                </g>
+                <g fill="#A4A4AA">
+                  <circle cx="296" cy="103" r="3.6"/>
+                  <circle cx="320" cy="101" r="3.6"/>
+                  <circle cx="344" cy="103" r="3.6"/>
+                </g>
+
+                <!-- contact shadow -->
+                <ellipse cx="320" cy="153" rx="54" ry="4.5" fill="#000" opacity="0.07"/>
+
+                <!-- top plane -->
+                <path d="M286 102 H354 L366 118 H274 Z" fill="#CFCFD3"/>
+                <!-- vent slits -->
+                <g stroke="#BCBCC2" stroke-width="1.6" stroke-linecap="round" opacity="0.9">
+                  <path d="M296 106 H344"/>
+                  <path d="M293 110 H347"/>
+                  <path d="M290 114 H350"/>
+                </g>
+
+                <!-- front face -->
+                <path d="M274 118 H366 V144 a6 6 0 0 1 -6 6 H280 a6 6 0 0 1 -6 -6 Z" fill="#C0C0C5"/>
+                <path d="M274 118 H366" stroke="#B2B2B8" stroke-width="1"/>
+
+                <!-- status LEDs -->
+                <circle class="pf-ap-led pf-fade" cx="288" cy="133" r="2.8" fill="#616794"/>
+                <g fill="#ACACB2">
+                  <circle cx="300" cy="133" r="2.8"/>
+                  <circle cx="312" cy="133" r="2.8"/>
+                  <circle cx="324" cy="133" r="2.8"/>
+                </g>
+
+                <!-- feet -->
+                <g fill="#A8A8AE">
+                  <rect x="290" y="149" width="15" height="3.5" rx="1.6"/>
+                  <rect x="335" y="149" width="15" height="3.5" rx="1.6"/>
+                </g>
+              </g>
+              <text x="320" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600"
+                    font-size="9.5" fill="#7A7C82" letter-spacing="0.8">AP · LOBBY</text>
+
+              <!-- signal arcs -->
+              <path class="pf-wave pf-wave-1" stroke-width="2.6" d="M276.4 88.4 A 56 56 0 0 0 276.4 167.6"/>
+              <path class="pf-wave pf-wave-2" stroke-width="2.3" d="M248.1 60.1 A 96 96 0 0 0 248.1 195.9"/>
+              <path class="pf-wave pf-wave-3" stroke-width="2"   d="M219.8 31.8 A 136 136 0 0 0 219.8 224.2"/>
+
+              <!-- link + break -->
+              <path class="pf-link pf-fade" d="M128 128 H184" stroke="#616794" stroke-width="1.6"
+                    stroke-dasharray="4 5" opacity="0.8"/>
+              <g class="pf-break pf-fade" opacity="0" stroke="#8A8C92" stroke-width="1.8" stroke-linecap="round">
+                <path d="M128 128 H146"/><path d="M166 128 H184"/>
+                <path d="M151 120 L161 136"/><path d="M161 120 L151 136"/>
+              </g>
+
+              <!-- phone -->
+              <g>
+                <rect class="pf-phone-body pf-fade" x="64" y="74" width="64" height="112" rx="12"
+                      fill="#EFEFF0" stroke="#616794" stroke-width="1.6"/>
+                <rect x="82" y="80" width="28" height="4" rx="2" fill="#D3D3D6"/>
+                <g transform="translate(96,124)">
+                  <path class="pf-wave pf-wave-1" stroke-width="2" d="M-13 2 A 18 18 0 0 1 13 2"/>
+                  <path class="pf-wave pf-wave-2" stroke-width="2" d="M-7.5 10 A 10.5 10.5 0 0 1 7.5 10"/>
+                  <circle class="pf-wave pf-wave-3" cx="0" cy="19" r="2.2" stroke-width="2.6"/>
+                </g>
+                <rect x="80" y="158" width="32" height="4" rx="2" fill="#D3D3D6"/>
+              </g>
+              <text x="96" y="206" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600"
+                    font-size="9.5" fill="#7A7C82" letter-spacing="0.8">USER PHONE</text>
+            </svg>
+            <span class="pf-demo__hint">tap to drop the connection</span>
+          </button>
+
+          <h3 class="pf-card__h">Wi-Fi Fencing</h3>
+          <p class="pf-card__p">Bind the unlock to your own network. The phone has to be actively joined to an approved on-site SSID, so being near the building — or spoofing a location — isn't enough on its own.</p>
+
+          <dl class="pf-params">
+            <div class="pf-param"><dt>Approved SSID</dt><dd>VERLANIX-CORP</dd></div>
+            <div class="pf-param"><dt>Phone network</dt><dd data-slot="wifi-read">VERLANIX-CORP</dd></div>
+          </dl>
+
+          <span class="pf-verdict"><span class="pf-verdict__dot"></span><span data-slot="wifi-verdict">Unlock permitted</span></span>
+        </article>
+
+      </div>
     </div>
   </section>
 
@@ -236,5 +412,56 @@
   <script src="../assets/js/footer.js"></script>
 
   <script src="../assets/js/main.js"></script>
+  <script>
+    /* Security-perimeter demos — toggle allow/deny on tap, auto-alternate otherwise */
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var COPY = {
+        gps: {
+          allow: { read: '44 m inside',   readOff: false, verdict: 'Unlock permitted' },
+          deny:  { read: '195 m outside', readOff: true,  verdict: 'Unlock blocked' }
+        },
+        wifi: {
+          allow: { read: 'VERLANIX-CORP', readOff: false, verdict: 'Unlock permitted' },
+          deny:  { read: 'Mobile data',   readOff: true,  verdict: 'Unlock blocked' }
+        }
+      };
+
+      document.querySelectorAll('.pf-demo').forEach(function (demo) {
+        var key     = demo.dataset.demo;
+        var card    = demo.closest('.pf-card');
+        var read    = card.querySelector('[data-slot="' + key + '-read"]');
+        var verdict = card.querySelector('[data-slot="' + key + '-verdict"]');
+        var timer;
+
+        function set(state) {
+          demo.dataset.state = state;
+          card.dataset.state = state;
+          var c = COPY[key][state];
+          read.textContent = c.read;
+          read.classList.toggle('is-off', c.readOff);
+          verdict.textContent = c.verdict;
+        }
+
+        function loop(delay) {
+          if (reduce) return;
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            set(demo.dataset.state === 'allow' ? 'deny' : 'allow');
+            loop(4200);
+          }, delay);
+        }
+
+        demo.addEventListener('click', function () {
+          set(demo.dataset.state === 'allow' ? 'deny' : 'allow');
+          loop(6500);
+        });
+
+        set('allow');
+        loop(key === 'gps' ? 3600 : 5400);
+      });
+    })();
+  </script>
 </body>
 </html>
