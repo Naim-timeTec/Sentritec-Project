@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=8" />
 </head>
 <body>
 
@@ -133,8 +133,7 @@
         <article class="pf-card" id="pf-gps" data-state="allow">
           <p class="pf-card__tag">Rule <b>A</b> — where the phone is</p>
 
-          <button class="pf-demo" data-demo="gps" data-state="allow" type="button"
-                  aria-label="Toggle the geofence demonstration between inside and outside the boundary">
+          <div class="pf-demo" aria-hidden="true">
             <svg viewBox="0 0 400 260" role="img" aria-hidden="true">
               <!-- map plate -->
               <rect width="400" height="260" fill="#E3E3E4"/>
@@ -197,26 +196,17 @@
                 </g>
               </g>
             </svg>
-            <span class="pf-demo__hint">tap to move the phone</span>
-          </button>
+          </div>
 
           <h3 class="pf-card__h">GPS Geofencing</h3>
           <p class="pf-card__p">Draw a boundary around the site. A remote unlock only goes through when the user's phone reports a location inside it — anywhere else, the command is refused before it reaches the door.</p>
-
-          <dl class="pf-params">
-            <div class="pf-param"><dt>Boundary</dt><dd>150 m</dd></div>
-            <div class="pf-param"><dt>Phone location</dt><dd data-slot="gps-read">44 m inside</dd></div>
-          </dl>
-
-          <span class="pf-verdict"><span class="pf-verdict__dot"></span><span data-slot="gps-verdict">Unlock permitted</span></span>
         </article>
 
         <!-- ============================ WI-FI ============================ -->
         <article class="pf-card" id="pf-wifi" data-state="allow">
           <p class="pf-card__tag">Rule <b>B</b> — what the phone is on</p>
 
-          <button class="pf-demo" data-demo="wifi" data-state="allow" type="button"
-                  aria-label="Toggle the Wi-Fi fencing demonstration between connected and disconnected">
+          <div class="pf-demo" aria-hidden="true">
             <svg viewBox="0 0 400 260" role="img" aria-hidden="true">
               <rect width="400" height="260" fill="#E3E3E4"/>
 
@@ -304,18 +294,10 @@
               <text x="96" y="206" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600"
                     font-size="9.5" fill="#7A7C82" letter-spacing="0.8">USER PHONE</text>
             </svg>
-            <span class="pf-demo__hint">tap to drop the connection</span>
-          </button>
+          </div>
 
           <h3 class="pf-card__h">Wi-Fi Fencing</h3>
           <p class="pf-card__p">Bind the unlock to your own network. The phone has to be actively joined to an approved on-site SSID, so being near the building — or spoofing a location — isn't enough on its own.</p>
-
-          <dl class="pf-params">
-            <div class="pf-param"><dt>Approved SSID</dt><dd>VERLANIX-CORP</dd></div>
-            <div class="pf-param"><dt>Phone network</dt><dd data-slot="wifi-read">VERLANIX-CORP</dd></div>
-          </dl>
-
-          <span class="pf-verdict"><span class="pf-verdict__dot"></span><span data-slot="wifi-verdict">Unlock permitted</span></span>
         </article>
 
       </div>
@@ -412,56 +394,5 @@
   <script src="../assets/js/footer.js"></script>
 
   <script src="../assets/js/main.js"></script>
-  <script>
-    /* Security-perimeter demos — toggle allow/deny on tap, auto-alternate otherwise */
-    (function () {
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      var COPY = {
-        gps: {
-          allow: { read: '44 m inside',   readOff: false, verdict: 'Unlock permitted' },
-          deny:  { read: '195 m outside', readOff: true,  verdict: 'Unlock blocked' }
-        },
-        wifi: {
-          allow: { read: 'VERLANIX-CORP', readOff: false, verdict: 'Unlock permitted' },
-          deny:  { read: 'Mobile data',   readOff: true,  verdict: 'Unlock blocked' }
-        }
-      };
-
-      document.querySelectorAll('.pf-demo').forEach(function (demo) {
-        var key     = demo.dataset.demo;
-        var card    = demo.closest('.pf-card');
-        var read    = card.querySelector('[data-slot="' + key + '-read"]');
-        var verdict = card.querySelector('[data-slot="' + key + '-verdict"]');
-        var timer;
-
-        function set(state) {
-          demo.dataset.state = state;
-          card.dataset.state = state;
-          var c = COPY[key][state];
-          read.textContent = c.read;
-          read.classList.toggle('is-off', c.readOff);
-          verdict.textContent = c.verdict;
-        }
-
-        function loop(delay) {
-          if (reduce) return;
-          clearTimeout(timer);
-          timer = setTimeout(function () {
-            set(demo.dataset.state === 'allow' ? 'deny' : 'allow');
-            loop(4200);
-          }, delay);
-        }
-
-        demo.addEventListener('click', function () {
-          set(demo.dataset.state === 'allow' ? 'deny' : 'allow');
-          loop(6500);
-        });
-
-        set('allow');
-        loop(key === 'gps' ? 3600 : 5400);
-      });
-    })();
-  </script>
 </body>
 </html>
