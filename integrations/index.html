@@ -138,7 +138,7 @@
         </div>
       </div>
 
-      <div class="pass-split api-split media-big reveal">
+      <div class="pass-split api-split reveal">
         <div class="pass-split-copy">
           <div class="pass-points">
             <div class="pass-point">
@@ -165,9 +165,21 @@
           </div>
         </div>
 
-        <div class="api-media">
-          <img src="../assets/integrations/sentritec-api-3.png" alt="The Sentritec API connecting doors, events and custom applications" loading="lazy" decoding="async" />
-        </div>
+        <div class="api-code">
+        <div class="api-code-top"><span></span><span></span><span></span><em>POST /v1/doors/unlock</em></div>
+        <pre class="api-code-body"><span class="c-m">POST</span> /v1/doors/<span class="c-s">{door_id}</span>/unlock
+<span class="c-k">Host</span>: api.sentritec.io
+<span class="c-k">Authorization</span>: <span class="c-s">Bearer sk_live_...</span>
+
+{
+  <span class="c-k">"reason"</span>: <span class="c-s">"remote_unlock"</span>,
+  <span class="c-k">"duration_secs"</span>: <span class="c-m">5</span>,
+  <span class="c-k">"actor"</span>: <span class="c-s">"portal@acme.com"</span>
+}
+
+<span class="c-d">// 200 OK</span>
+{ <span class="c-k">"status"</span>: <span class="c-s">"unlocked"</span>, <span class="c-k">"door"</span>: <span class="c-s">"lobby-front"</span> }</pre>
+      </div>
     </div>
   </section>
 
